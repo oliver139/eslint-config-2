@@ -63,6 +63,8 @@ export const GLOB_EXCLUDE = [
 
   '**/output',
   '**/coverage',
+  '**/docs',
+  '**/fixtures',
   '**/temp',
   '**/.temp',
   '**/tmp',
