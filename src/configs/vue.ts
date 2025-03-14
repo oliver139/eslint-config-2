@@ -118,7 +118,7 @@ export async function vue(
         'ts/explicit-function-return-type': 'off',
 
         'vue/block-order': ['error', {
-          order: ['script', 'template', 'style'],
+          order: ['template', 'script', 'style'],
         }],
         'vue/component-name-in-template-casing': ['error', 'PascalCase'],
         'vue/component-options-name-casing': ['error', 'PascalCase'],
@@ -133,8 +133,12 @@ export async function vue(
         'vue/eqeqeq': ['error', 'smart'],
         'vue/html-indent': ['error', indent],
         'vue/html-quotes': ['error', 'double'],
-        'vue/max-attributes-per-line': 'off',
+        'vue/max-attributes-per-line': ['warn', {
+          multiline: 1,
+          singleline: 3,
+        }],
         'vue/multi-word-component-names': 'off',
+        'vue/no-console': 'error',
         'vue/no-dupe-keys': 'off',
         'vue/no-empty-pattern': 'error',
         'vue/no-irregular-whitespace': 'error',
@@ -148,7 +152,8 @@ export async function vue(
         'vue/no-restricted-v-bind': ['error', '/^v-/'],
         'vue/no-setup-props-reactivity-loss': 'off',
         'vue/no-sparse-arrays': 'error',
-        'vue/no-unused-refs': 'error',
+        'vue/no-unused-refs': 'warn',
+        'vue/no-unused-vars': 'warn',
         'vue/no-useless-v-bind': 'error',
         'vue/no-v-html': 'off',
         'vue/object-shorthand': [
@@ -164,6 +169,7 @@ export async function vue(
         'vue/prop-name-casing': ['error', 'camelCase'],
         'vue/require-default-prop': 'off',
         'vue/require-prop-types': 'off',
+        'vue/singleline-html-element-content-newline': 'off',
         'vue/space-infix-ops': 'error',
         'vue/space-unary-ops': ['error', { nonwords: false, words: true }],
 

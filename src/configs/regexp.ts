@@ -13,8 +13,9 @@ export async function regexp(
 
   if (options.level === 'warn') {
     for (const key in rules) {
-      if (rules[key] === 'error')
+      if (rules[key] === 'error') {
         rules[key] = 'warn'
+      }
     }
   }
 

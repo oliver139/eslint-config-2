@@ -11,7 +11,7 @@ export const StylisticConfigDefaults: StylisticConfig = {
 }
 
 export interface StylisticOptions extends StylisticConfig, OptionsOverrides {
-  lessOpinionated?: boolean
+  lessOpinionated?: boolean,
 }
 
 export async function stylistic(
@@ -57,13 +57,26 @@ export async function stylistic(
               curly: ['error', 'all'],
             }
           : {
-              'antfu/curly': 'error',
+              'antfu/curly': 'off',
               'antfu/if-newline': 'error',
               'antfu/top-level-function': 'error',
+              'curly': ['error', 'multi-line', 'consistent'],
             }
         ),
 
+        'style/brace-style': ['error', '1tbs', { allowSingleLine: false }],
         'style/generator-star-spacing': ['error', { after: true, before: false }],
+        'style/member-delimiter-style': ['error', {
+          multiline: {
+            delimiter: 'comma',
+            requireLast: true,
+          },
+          multilineDetection: 'brackets',
+          singleline: {
+            delimiter: 'comma',
+            requireLast: false,
+          },
+        }],
         'style/yield-star-spacing': ['error', { after: true, before: false }],
 
         ...overrides,
