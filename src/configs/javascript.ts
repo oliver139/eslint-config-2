@@ -52,7 +52,6 @@ export async function javascript(
         'array-callback-return': 'error',
         'block-scoped-var': 'error',
         'constructor-super': 'error',
-        'curly': ['error', 'multi-line', 'consistent'],
         'default-case-last': 'error',
         'dot-notation': ['error', { allowKeywords: true }],
         'eqeqeq': ['error', 'smart'],
