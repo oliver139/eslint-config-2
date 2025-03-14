@@ -1,16 +1,15 @@
 {
-  "name": "@antfu/eslint-config",
+  "name": "@oliver139/eslint-config",
   "type": "module",
-  "version": "4.10.1",
+  "version": "2.0.0",
   "packageManager": "pnpm@10.6.2",
-  "description": "Anthony's ESLint config",
-  "author": "Anthony Fu <anthonyfu117@hotmail.com> (https://github.com/antfu/)",
+  "description": " Oliver's ESLint config preset powered by @antfu/eslint-config",
+  "author": "Oliver Mak <oliver139.working@gmail.com> (https://github.com/oliver139)",
   "license": "MIT",
-  "funding": "https://github.com/sponsors/antfu",
-  "homepage": "https://github.com/antfu/eslint-config",
+  "homepage": "https://github.com/oliver139/eslint-config-new",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/antfu/eslint-config.git"
+    "url": "git+https://github.com/oliver139/eslint-config-new.git"
   },
   "bugs": {
     "url": "https://github.com/antfu/eslint-config/issues"
