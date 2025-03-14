@@ -13,20 +13,21 @@ import { vscodeSettingsString } from '../constants'
 export async function updateVscodeSettings(result: PromptResult): Promise<void> {
   const cwd = process.cwd()
 
-  if (!result.updateVscodeSettings)
+  if (!result.updateVscodeSettings) {
     return
+  }
 
   const dotVscodePath: string = path.join(cwd, '.vscode')
   const settingsPath: string = path.join(dotVscodePath, 'settings.json')
 
-  if (!fs.existsSync(dotVscodePath))
+  if (!fs.existsSync(dotVscodePath)) {
     await fsp.mkdir(dotVscodePath, { recursive: true })
+  }
 
   if (!fs.existsSync(settingsPath)) {
     await fsp.writeFile(settingsPath, `{${vscodeSettingsString}}\n`, 'utf-8')
     p.log.success(green`Created .vscode/settings.json`)
-  }
-  else {
+  } else {
     let settingsContent = await fsp.readFile(settingsPath, 'utf8')
 
     settingsContent = settingsContent.trim().replace(/\s*\}$/, '')

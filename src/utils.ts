@@ -62,8 +62,9 @@ export function renameRules(
     Object.entries(rules)
       .map(([key, value]) => {
         for (const [from, to] of Object.entries(map)) {
-          if (key.startsWith(`${from}/`))
+          if (key.startsWith(`${from}/`)) {
             return [to + key.slice(from.length), value]
+          }
         }
         return [key, value]
       }),
@@ -87,14 +88,16 @@ export function renameRules(
 export function renamePluginInConfigs(configs: TypedFlatConfigItem[], map: Record<string, string>): TypedFlatConfigItem[] {
   return configs.map((i) => {
     const clone = { ...i }
-    if (clone.rules)
+    if (clone.rules) {
       clone.rules = renameRules(clone.rules, map)
+    }
     if (clone.plugins) {
       clone.plugins = Object.fromEntries(
         Object.entries(clone.plugins)
           .map(([key, value]) => {
-            if (key in map)
+            if (key in map) {
               return [map[key], value]
+            }
             return [key, value]
           }),
       )
@@ -117,26 +120,31 @@ export function isPackageInScope(name: string): boolean {
 }
 
 export async function ensurePackages(packages: (string | undefined)[]): Promise<void> {
-  if (process.env.CI || process.stdout.isTTY === false || isCwdInScope === false)
+  if (process.env.CI || process.stdout.isTTY === false || isCwdInScope === false) {
     return
+  }
 
   const nonExistingPackages = packages.filter(i => i && !isPackageInScope(i)) as string[]
-  if (nonExistingPackages.length === 0)
+  if (nonExistingPackages.length === 0) {
     return
+  }
 
   const p = await import('@clack/prompts')
   const result = await p.confirm({
     message: `${nonExistingPackages.length === 1 ? 'Package is' : 'Packages are'} required for this config: ${nonExistingPackages.join(', ')}. Do you want to install them?`,
   })
-  if (result)
+  if (result) {
     await import('@antfu/install-pkg').then(i => i.installPackage(nonExistingPackages, { dev: true }))
+  }
 }
 
 export function isInEditorEnv(): boolean {
-  if (process.env.CI)
+  if (process.env.CI) {
     return false
-  if (isInGitHooksOrLintStaged())
+  }
+  if (isInGitHooksOrLintStaged()) {
     return false
+  }
   return !!(false
     || process.env.VSCODE_PID
     || process.env.VSCODE_CWD

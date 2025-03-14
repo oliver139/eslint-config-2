@@ -37,8 +37,9 @@ export async function updatePackageJson(result: PromptResult): Promise<void> {
             'eslint-plugin-format',
             result.frameworks.includes('astro') ? 'prettier-plugin-astro' : null,
           ]).forEach((f) => {
-            if (!f)
+            if (!f) {
               return
+            }
             pkg.devDependencies[f] = pkgJson.devDependencies[f]
             addedPackages.push(f)
           })
@@ -65,8 +66,9 @@ export async function updatePackageJson(result: PromptResult): Promise<void> {
     }
   }
 
-  if (addedPackages.length)
+  if (addedPackages.length) {
     p.note(c.dim(addedPackages.join(', ')), 'Added packages')
+  }
 
   await fsp.writeFile(pathPackageJSON, JSON.stringify(pkg, null, 2))
   p.log.success(c.green`Changes wrote to package.json`)

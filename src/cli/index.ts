@@ -23,8 +23,7 @@ cli
     header()
     try {
       await run(args)
-    }
-    catch (error) {
+    } catch (error) {
       p.log.error(c.inverse.red(' Failed to migrate '))
       p.log.error(c.red`✘ ${String(error)}`)
       process.exit(1)

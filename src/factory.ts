@@ -102,9 +102,9 @@ export function antfu(
   let isInEditor = options.isInEditor
   if (isInEditor == null) {
     isInEditor = isInEditorEnv()
-    if (isInEditor)
-      // eslint-disable-next-line no-console
+    if (isInEditor) {
       console.log('[@antfu/eslint-config] Detected running in editor, some rules are disabled.')
+    }
   }
 
   const stylisticOptions = options.stylistic === false
@@ -113,8 +113,9 @@ export function antfu(
       ? options.stylistic
       : {}
 
-  if (stylisticOptions && !('jsx' in stylisticOptions))
+  if (stylisticOptions && !('jsx' in stylisticOptions)) {
     stylisticOptions.jsx = enableJsx
+  }
 
   const configs: Awaitable<TypedFlatConfigItem[]>[] = []
 
@@ -124,8 +125,7 @@ export function antfu(
         name: 'antfu/gitignore',
         ...enableGitignore,
       })]))
-    }
-    else {
+    } else {
       configs.push(interopDefault(import('eslint-config-flat-gitignore')).then(r => [r({
         name: 'antfu/gitignore',
         strict: false,
@@ -304,12 +304,14 @@ export function antfu(
   // User can optionally pass a flat config item to the first argument
   // We pick the known keys as ESLint would do schema validation
   const fusedConfig = flatConfigProps.reduce((acc, key) => {
-    if (key in options)
+    if (key in options) {
       acc[key] = options[key] as any
+    }
     return acc
   }, {} as TypedFlatConfigItem)
-  if (Object.keys(fusedConfig).length)
+  if (Object.keys(fusedConfig).length) {
     configs.push([fusedConfig])
+  }
 
   let composer = new FlatConfigComposer<TypedFlatConfigItem, ConfigNames>()
 
