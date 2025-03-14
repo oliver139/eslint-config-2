@@ -142,10 +142,10 @@
     "yaml-eslint-parser": "catalog:prod"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "workspace:*",
     "@antfu/ni": "catalog:dev",
     "@eslint-react/eslint-plugin": "catalog:peer",
     "@eslint/config-inspector": "catalog:dev",
+    "@oliver139/eslint-config": "workspace:*",
     "@prettier/plugin-xml": "catalog:peer",
     "@stylistic/eslint-plugin-migrate": "catalog:dev",
     "@types/node": "catalog:dev",

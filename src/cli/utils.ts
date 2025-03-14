@@ -14,7 +14,7 @@ export function getEslintConfigContent(
   additionalConfigs?: string[],
 ): string {
   return `
-import antfu from '@antfu/eslint-config'
+import antfu from '@oliver139/eslint-config'
 
 export default antfu({
 ${mainConfig}

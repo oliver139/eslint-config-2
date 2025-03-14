@@ -103,7 +103,7 @@ export function antfu(
   if (isInEditor == null) {
     isInEditor = isInEditorEnv()
     if (isInEditor) {
-      console.log('[@antfu/eslint-config] Detected running in editor, some rules are disabled.')
+      console.log('[@oliver139/eslint-config] Detected running in editor, some rules are disabled.')
     }
   }
 
@@ -298,7 +298,7 @@ export function antfu(
   )
 
   if ('files' in options) {
-    throw new Error('[@antfu/eslint-config] The first argument should not contain the "files" property as the options are supposed to be global. Place it in the second or later config instead.')
+    throw new Error('[@oliver139/eslint-config] The first argument should not contain the "files" property as the options are supposed to be global. Place it in the second or later config instead.')
   }
 
   // User can optionally pass a flat config item to the first argument
