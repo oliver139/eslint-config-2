@@ -1,0 +1,39 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Deploy config preview on release
+
+on:
+  push:
+    tags:
+      - '^v[0-9]+.[0-9]+.[0-9]+$'
+  release:
+    types: [published]
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Check out the repository
+      - name: Checkout Main
+        uses: actions/checkout@v4
+
+      # Install PNPM
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm and dependicies
+        with:
+          run_install: true
+
+      - name: Build the project
+        run: pnpm build
+
+      - name: Try to build the ESLint config preview site
+        run: pnpm dlx @eslint/config-inspector build --base "/eslint-config-2/"
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          # github will auto-generate a token for this job and use it
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./.eslint-config-inspector
+          publish_branch: config-preview
