@@ -47,7 +47,7 @@ export async function javascript(
       rules: {
         'accessor-pairs': ['error', { enforceForClassMembers: true, setWithoutGet: true }],
 
-        'antfu/no-top-level-await': 'error',
+        'antfu/no-top-level-await': 'warn',
 
         'array-callback-return': 'error',
         'block-scoped-var': 'error',
