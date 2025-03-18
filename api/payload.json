@@ -85,6 +85,7 @@
     {
       "ignores": [
         "**/node_modules",
+        "**/bin",
         "**/dist",
         "**/package-lock.json",
         "**/yarn.lock",
@@ -2777,9 +2778,9 @@
         ],
         "vue/brace-style": [
           "error",
-          "stroustrup",
+          "1tbs",
           {
-            "allowSingleLine": true
+            "allowSingleLine": false
           }
         ],
         "vue/comma-dangle": [
@@ -25416,20 +25417,6 @@
       ]
     },
     {
-      "filepath": "bin/index.js",
-      "globs": [
-        "**/*.js",
-        "**/*.?([cm])[jt]s?(x)",
-        "**/bin/**/*"
-      ],
-      "configs": [
-        2,
-        26,
-        61,
-        63
-      ]
-    },
-    {
       "filepath": "eslint.config.ts",
       "globs": [
         "**/*.?([cm])ts",
@@ -26294,7 +26281,7 @@
     }
   ],
   "meta": {
-    "lastUpdate": 1741944692266,
+    "lastUpdate": 1742266945481,
     "basePath": "",
     "configPath": ""
   }
