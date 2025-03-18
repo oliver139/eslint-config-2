@@ -4,6 +4,7 @@ import { pluginAntfu } from '../plugins'
 import { interopDefault } from '../utils'
 
 export const StylisticConfigDefaults: StylisticConfig = {
+  braceStyle: '1tbs',
   indent: 2,
   jsx: true,
   quotes: 'single',
@@ -18,6 +19,7 @@ export async function stylistic(
   options: StylisticOptions = {},
 ): Promise<TypedFlatConfigItem[]> {
   const {
+    braceStyle,
     indent,
     jsx,
     lessOpinionated = false,
@@ -64,7 +66,7 @@ export async function stylistic(
             }
         ),
 
-        'style/brace-style': ['error', '1tbs', { allowSingleLine: false }],
+        'style/brace-style': ['error', braceStyle, { allowSingleLine: false }],
         'style/generator-star-spacing': ['error', { after: true, before: false }],
         'style/member-delimiter-style': ['error', {
           multiline: {
