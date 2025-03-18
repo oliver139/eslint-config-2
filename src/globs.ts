@@ -55,6 +55,7 @@ export const GLOB_ALL_SRC = [
 
 export const GLOB_EXCLUDE = [
   '**/node_modules',
+  '**/bin',
   '**/dist',
   '**/package-lock.json',
   '**/yarn.lock',
