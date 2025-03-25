@@ -563,6 +563,27 @@ Running `npx eslint` should prompt you to install the required dependencies, oth
 npm i -D eslint-plugin-vuejs-accessibility
 ```
 
+#### Vue Accessibility
+
+To enable Vue accessibility support, you need to explicitly turn it on:
+
+```js
+// eslint.config.js
+import antfu from '@antfu/eslint-config'
+
+export default antfu({
+  vue: {
+    a11y: true
+  },
+})
+```
+
+Running `npx eslint` should prompt you to install the required dependencies, otherwise, you can install them manually:
+
+```bash
+npm i -D eslint-plugin-vuejs-accessibility
+```
+
 ### Optional Configs
 
 We provide some optional configs for specific use cases, that we don't include their dependencies by default.
