@@ -127,6 +127,7 @@ export async function vue(
         'vue/block-order': ['error', {
           order: ['template', 'script', 'style'],
         }],
+        'vue/component-api-style ': ['error', ['script-setup', 'composition']],
         'vue/component-name-in-template-casing': ['error', 'PascalCase'],
         'vue/component-options-name-casing': ['error', 'PascalCase'],
         // this is deprecated
@@ -138,6 +139,7 @@ export async function vue(
         'vue/dot-location': ['error', 'property'],
         'vue/dot-notation': ['error', { allowKeywords: true }],
         'vue/eqeqeq': ['error', 'smart'],
+        'vue/html-button-has-type': 'error',
         'vue/html-indent': ['error', indent],
         'vue/html-quotes': ['error', 'double'],
         'vue/max-attributes-per-line': ['warn', {
