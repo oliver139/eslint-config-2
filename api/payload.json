@@ -1354,7 +1354,7 @@
             "setWithoutGet": true
           }
         ],
-        "antfu/no-top-level-await": "error",
+        "antfu/no-top-level-await": "warn",
         "array-callback-return": "error",
         "block-scoped-var": "error",
         "constructor-super": "error",
@@ -2517,10 +2517,10 @@
             ".vue"
           ],
           "parser": {
-            "version": "8.26.1",
+            "version": "8.28.0",
             "meta": {
               "name": "typescript-eslint/parser",
-              "version": "8.26.1"
+              "version": "8.28.0"
             }
           },
           "sourceType": "module"
@@ -2901,33 +2901,6 @@
       },
       "name": "antfu/react/rules",
       "rules": {
-        "react-dom/no-children-in-void-dom-elements": "warn",
-        "react-dom/no-dangerously-set-innerhtml": "warn",
-        "react-dom/no-dangerously-set-innerhtml-with-children": "error",
-        "react-dom/no-find-dom-node": "error",
-        "react-dom/no-missing-button-type": "warn",
-        "react-dom/no-missing-iframe-sandbox": "warn",
-        "react-dom/no-namespace": "error",
-        "react-dom/no-render-return-value": "error",
-        "react-dom/no-script-url": "warn",
-        "react-dom/no-unsafe-iframe-sandbox": "warn",
-        "react-dom/no-unsafe-target-blank": "warn",
-        "react-hooks/exhaustive-deps": "warn",
-        "react-hooks/rules-of-hooks": "error",
-        "react-refresh/only-export-components": [
-          "warn",
-          {
-            "allowConstantExport": true,
-            "allowExportNames": []
-          }
-        ],
-        "react-web-api/no-leaked-event-listener": "warn",
-        "react-web-api/no-leaked-interval": "warn",
-        "react-web-api/no-leaked-resize-observer": "warn",
-        "react-web-api/no-leaked-timeout": "warn",
-        "react/ensure-forward-ref-using-ref": "warn",
-        "react/jsx-no-duplicate-props": "warn",
-        "react/jsx-uses-vars": "warn",
         "react/no-access-state-in-setstate": "error",
         "react/no-array-index-key": "warn",
         "react/no-children-count": "warn",
@@ -2944,11 +2917,12 @@
         "react/no-create-ref": "error",
         "react/no-default-props": "error",
         "react/no-direct-mutation-state": "error",
-        "react/no-duplicate-key": "error",
+        "react/no-duplicate-jsx-props": "warn",
+        "react/no-duplicate-key": "warn",
         "react/no-forward-ref": "warn",
         "react/no-implicit-key": "warn",
         "react/no-missing-key": "error",
-        "react/no-nested-components": "error",
+        "react/no-nested-component-definitions": "error",
         "react/no-prop-types": "error",
         "react/no-redundant-should-component-update": "error",
         "react/no-set-state-in-component-did-mount": "warn",
@@ -2962,9 +2936,39 @@
         "react/no-unstable-default-props": "warn",
         "react/no-unused-class-component-members": "warn",
         "react/no-unused-state": "warn",
-        "react/prefer-destructuring-assignment": "warn",
-        "react/prefer-shorthand-boolean": "warn",
-        "react/prefer-shorthand-fragment": "warn"
+        "react/no-use-context": "warn",
+        "react/no-useless-forward-ref": "warn",
+        "react/use-jsx-vars": "warn",
+        "react-dom/no-dangerously-set-innerhtml": "warn",
+        "react-dom/no-dangerously-set-innerhtml-with-children": "error",
+        "react-dom/no-find-dom-node": "error",
+        "react-dom/no-flush-sync": "error",
+        "react-dom/no-hydrate": "error",
+        "react-dom/no-missing-button-type": "warn",
+        "react-dom/no-missing-iframe-sandbox": "warn",
+        "react-dom/no-namespace": "error",
+        "react-dom/no-render": "error",
+        "react-dom/no-render-return-value": "error",
+        "react-dom/no-script-url": "warn",
+        "react-dom/no-unsafe-iframe-sandbox": "warn",
+        "react-dom/no-unsafe-target-blank": "warn",
+        "react-dom/no-use-form-state": "error",
+        "react-dom/no-void-elements-with-children": "error",
+        "react-hooks/exhaustive-deps": "warn",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks-extra/no-direct-set-state-in-use-effect": "warn",
+        "react-hooks-extra/no-unnecessary-use-prefix": "warn",
+        "react-web-api/no-leaked-event-listener": "warn",
+        "react-web-api/no-leaked-interval": "warn",
+        "react-web-api/no-leaked-resize-observer": "warn",
+        "react-web-api/no-leaked-timeout": "warn",
+        "react-refresh/only-export-components": [
+          "warn",
+          {
+            "allowConstantExport": true,
+            "allowExportNames": []
+          }
+        ]
       },
       "index": 26
     },
@@ -3052,10 +3056,10 @@
             ".svelte"
           ],
           "parser": {
-            "version": "8.26.1",
+            "version": "8.28.0",
             "meta": {
               "name": "typescript-eslint/parser",
-              "version": "8.26.1"
+              "version": "8.28.0"
             }
           }
         }
@@ -3150,10 +3154,10 @@
             ".astro"
           ],
           "parser": {
-            "version": "8.26.1",
+            "version": "8.28.0",
             "meta": {
               "name": "typescript-eslint/parser",
-              "version": "8.26.1"
+              "version": "8.28.0"
             }
           }
         },
@@ -3414,6 +3418,7 @@
               "useDefineForClassFields",
               "emitDecoratorMetadata",
               "experimentalDecorators",
+              "libReplacement",
               "baseUrl",
               "rootDir",
               "rootDirs",
@@ -3483,6 +3488,7 @@
               "isolatedModules",
               "preserveSymlinks",
               "verbatimModuleSyntax",
+              "erasableSyntaxOnly",
               "skipDefaultLibCheck",
               "skipLibCheck"
             ],
@@ -4078,7 +4084,8 @@
     {
       "ignores": [
         "fixtures",
-        "_fixtures"
+        "_fixtures",
+        "**/constants-generated.ts"
       ],
       "index": 65
     },
@@ -4449,6 +4456,11 @@
       "plugin": "eslint"
     },
     "class-methods-use-this": {
+      "dialects": [
+        "javascript",
+        "typescript"
+      ],
+      "language": "javascript",
       "type": "suggestion",
       "defaultOptions": [
         {
@@ -4679,6 +4691,11 @@
       "plugin": "eslint"
     },
     "default-param-last": {
+      "dialects": [
+        "javascript",
+        "typescript"
+      ],
+      "language": "javascript",
       "type": "suggestion",
       "docs": {
         "description": "Enforce default parameters to be last",
@@ -8024,6 +8041,11 @@
       "plugin": "eslint"
     },
     "no-useless-constructor": {
+      "dialects": [
+        "javascript",
+        "typescript"
+      ],
+      "language": "javascript",
       "type": "suggestion",
       "docs": {
         "description": "Disallow unnecessary constructors",
@@ -10660,7 +10682,7 @@
       "docs": {
         "category": "Static analysis",
         "description": "Ensure imports point to a file/module that can be resolved.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-unresolved.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/no-unresolved.md"
       },
       "name": "import/no-unresolved",
       "plugin": "import"
@@ -10670,7 +10692,7 @@
       "docs": {
         "category": "Static analysis",
         "description": "Ensure named imports correspond to a named export in the remote file.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/named.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/named.md"
       },
       "name": "import/named",
       "plugin": "import"
@@ -10680,7 +10702,7 @@
       "docs": {
         "category": "Static analysis",
         "description": "Ensure a default export is present, given a default import.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/default.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/default.md"
       },
       "name": "import/default",
       "plugin": "import"
@@ -10690,7 +10712,7 @@
       "docs": {
         "category": "Static analysis",
         "description": "Ensure imported namespaces contain dereferenced properties as they are dereferenced.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/namespace.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/namespace.md"
       },
       "name": "import/namespace",
       "plugin": "import"
@@ -10700,7 +10722,7 @@
       "docs": {
         "category": "Style guide",
         "description": "Forbid namespace (a.k.a. \"wildcard\" `*`) imports.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-namespace.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/no-namespace.md"
       },
       "fixable": "code",
       "name": "import/no-namespace",
@@ -10711,7 +10733,7 @@
       "docs": {
         "category": "Helpful warnings",
         "description": "Forbid any invalid exports, i.e. re-export of the same name.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/export.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/export.md"
       },
       "name": "import/export",
       "plugin": "import"
@@ -10721,7 +10743,7 @@
       "docs": {
         "category": "Helpful warnings",
         "description": "Forbid the use of mutable exports with `var` or `let`.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-mutable-exports.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/no-mutable-exports.md"
       },
       "name": "import/no-mutable-exports",
       "plugin": "import"
@@ -10731,7 +10753,7 @@
       "docs": {
         "category": "Style guide",
         "description": "Ensure consistent use of file extension within the import path.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/extensions.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/extensions.md"
       },
       "name": "import/extensions",
       "plugin": "import"
@@ -10741,7 +10763,7 @@
       "docs": {
         "category": "Static analysis",
         "description": "Enforce which files can be imported in a given folder.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-restricted-paths.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/no-restricted-paths.md"
       },
       "name": "import/no-restricted-paths",
       "plugin": "import"
@@ -10751,7 +10773,7 @@
       "docs": {
         "category": "Static analysis",
         "description": "Forbid importing the submodules of other modules.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-internal-modules.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/no-internal-modules.md"
       },
       "name": "import/no-internal-modules",
       "plugin": "import"
@@ -10761,7 +10783,7 @@
       "docs": {
         "category": "Style guide",
         "description": "Prefer named exports to be grouped together in a single export declaration.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/group-exports.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/group-exports.md"
       },
       "name": "import/group-exports",
       "plugin": "import"
@@ -10771,7 +10793,7 @@
       "docs": {
         "category": "Static analysis",
         "description": "Forbid importing packages through relative paths.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-relative-packages.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/no-relative-packages.md"
       },
       "fixable": "code",
       "name": "import/no-relative-packages",
@@ -10782,7 +10804,7 @@
       "docs": {
         "category": "Static analysis",
         "description": "Forbid importing modules from parent directories.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-relative-parent-imports.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/no-relative-parent-imports.md"
       },
       "name": "import/no-relative-parent-imports",
       "plugin": "import"
@@ -10792,7 +10814,7 @@
       "docs": {
         "category": "Style guide",
         "description": "Enforce or ban the use of inline type-only markers for named imports.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/consistent-type-specifier-style.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/consistent-type-specifier-style.md"
       },
       "fixable": "code",
       "name": "import/consistent-type-specifier-style",
@@ -10804,7 +10826,7 @@
         "category": "Static analysis",
         "description": "Forbid a module from importing itself.",
         "recommended": true,
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-self-import.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/no-self-import.md"
       },
       "name": "import/no-self-import",
       "plugin": "import"
@@ -10814,7 +10836,7 @@
       "docs": {
         "category": "Static analysis",
         "description": "Forbid a module from importing a module with a dependency path back to itself.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-cycle.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/no-cycle.md"
       },
       "name": "import/no-cycle",
       "plugin": "import"
@@ -10824,7 +10846,7 @@
       "docs": {
         "category": "Style guide",
         "description": "Forbid named default exports.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-named-default.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/no-named-default.md"
       },
       "name": "import/no-named-default",
       "plugin": "import"
@@ -10834,7 +10856,7 @@
       "docs": {
         "category": "Helpful warnings",
         "description": "Forbid use of exported name as identifier of default export.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-named-as-default.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/no-named-as-default.md"
       },
       "name": "import/no-named-as-default",
       "plugin": "import"
@@ -10844,7 +10866,7 @@
       "docs": {
         "category": "Helpful warnings",
         "description": "Forbid use of exported name as property of default export.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-named-as-default-member.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/no-named-as-default-member.md"
       },
       "name": "import/no-named-as-default-member",
       "plugin": "import"
@@ -10854,7 +10876,7 @@
       "docs": {
         "category": "Style guide",
         "description": "Forbid anonymous values as default exports.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-anonymous-default-export.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/no-anonymous-default-export.md"
       },
       "name": "import/no-anonymous-default-export",
       "plugin": "import"
@@ -10864,7 +10886,7 @@
       "docs": {
         "category": "Helpful warnings",
         "description": "Forbid importing a default export by a different name.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-rename-default.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/no-rename-default.md"
       },
       "name": "import/no-rename-default",
       "plugin": "import"
@@ -10874,7 +10896,7 @@
       "docs": {
         "category": "Helpful warnings",
         "description": "Forbid modules without exports, or exports without matching import in another module.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-unused-modules.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/no-unused-modules.md"
       },
       "name": "import/no-unused-modules",
       "plugin": "import"
@@ -10884,7 +10906,7 @@
       "docs": {
         "category": "Module systems",
         "description": "Forbid CommonJS `require` calls and `module.exports` or `exports.*`.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-commonjs.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/no-commonjs.md"
       },
       "name": "import/no-commonjs",
       "plugin": "import"
@@ -10894,7 +10916,7 @@
       "docs": {
         "category": "Module systems",
         "description": "Forbid AMD `require` and `define` calls.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-amd.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/no-amd.md"
       },
       "name": "import/no-amd",
       "plugin": "import"
@@ -10904,7 +10926,7 @@
       "docs": {
         "category": "Style guide",
         "description": "Forbid repeated import of the same module in multiple places.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-duplicates.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/no-duplicates.md"
       },
       "fixable": "code",
       "name": "import/no-duplicates",
@@ -10915,7 +10937,7 @@
       "docs": {
         "category": "Style guide",
         "description": "Ensure all imports appear before other statements.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/first.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/first.md"
       },
       "fixable": "code",
       "name": "import/first",
@@ -10926,7 +10948,7 @@
       "docs": {
         "category": "Style guide",
         "description": "Enforce the maximum number of dependencies a module can have.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/max-dependencies.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/max-dependencies.md"
       },
       "name": "import/max-dependencies",
       "plugin": "import"
@@ -10936,7 +10958,7 @@
       "docs": {
         "category": "Helpful warnings",
         "description": "Forbid the use of extraneous packages.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-extraneous-dependencies.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/no-extraneous-dependencies.md"
       },
       "name": "import/no-extraneous-dependencies",
       "plugin": "import"
@@ -10946,7 +10968,7 @@
       "docs": {
         "category": "Static analysis",
         "description": "Forbid import of modules using absolute paths.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-absolute-path.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/no-absolute-path.md"
       },
       "fixable": "code",
       "name": "import/no-absolute-path",
@@ -10957,7 +10979,7 @@
       "docs": {
         "category": "Module systems",
         "description": "Forbid Node.js builtin modules.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-nodejs-modules.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/no-nodejs-modules.md"
       },
       "name": "import/no-nodejs-modules",
       "plugin": "import"
@@ -10967,7 +10989,7 @@
       "docs": {
         "category": "Static analysis",
         "description": "Forbid webpack loader syntax in imports.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-webpack-loader-syntax.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/no-webpack-loader-syntax.md"
       },
       "name": "import/no-webpack-loader-syntax",
       "plugin": "import"
@@ -10977,7 +10999,7 @@
       "docs": {
         "category": "Style guide",
         "description": "Enforce a convention in module import order.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/order.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/order.md"
       },
       "fixable": "code",
       "name": "import/order",
@@ -10988,7 +11010,7 @@
       "docs": {
         "category": "Style guide",
         "description": "Enforce a newline after import statements.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/newline-after-import.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/newline-after-import.md"
       },
       "fixable": "whitespace",
       "name": "import/newline-after-import",
@@ -10999,7 +11021,7 @@
       "docs": {
         "category": "Style guide",
         "description": "Prefer a default export if module exports a single name or multiple names.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/prefer-default-export.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/prefer-default-export.md"
       },
       "name": "import/prefer-default-export",
       "plugin": "import"
@@ -11009,7 +11031,7 @@
       "docs": {
         "category": "Style guide",
         "description": "Forbid default exports.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-default-export.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/no-default-export.md"
       },
       "name": "import/no-default-export",
       "plugin": "import"
@@ -11019,7 +11041,7 @@
       "docs": {
         "category": "Style guide",
         "description": "Forbid named exports.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-named-export.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/no-named-export.md"
       },
       "name": "import/no-named-export",
       "plugin": "import"
@@ -11029,7 +11051,7 @@
       "docs": {
         "category": "Static analysis",
         "description": "Forbid `require()` calls with expressions.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-dynamic-require.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/no-dynamic-require.md"
       },
       "name": "import/no-dynamic-require",
       "plugin": "import"
@@ -11039,7 +11061,7 @@
       "docs": {
         "category": "Module systems",
         "description": "Forbid potentially ambiguous parse goal (`script` vs. `module`).",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/unambiguous.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/unambiguous.md"
       },
       "name": "import/unambiguous",
       "plugin": "import"
@@ -11049,7 +11071,7 @@
       "docs": {
         "category": "Style guide",
         "description": "Forbid unassigned imports.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-unassigned-import.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/no-unassigned-import.md"
       },
       "name": "import/no-unassigned-import",
       "plugin": "import"
@@ -11059,7 +11081,7 @@
       "docs": {
         "category": "Static analysis",
         "description": "Forbid unnecessary path segments in import and require statements.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-useless-path-segments.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/no-useless-path-segments.md"
       },
       "fixable": "code",
       "name": "import/no-useless-path-segments",
@@ -11070,7 +11092,7 @@
       "docs": {
         "category": "Style guide",
         "description": "Enforce a leading comment with the webpackChunkName for dynamic imports.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/dynamic-import-chunkname.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/dynamic-import-chunkname.md"
       },
       "hasSuggestions": true,
       "name": "import/dynamic-import-chunkname",
@@ -11082,7 +11104,7 @@
         "category": "Module systems",
         "description": "Forbid import statements with CommonJS module.exports.",
         "recommended": true,
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-import-module-exports.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/no-import-module-exports.md"
       },
       "fixable": "code",
       "name": "import/no-import-module-exports",
@@ -11093,7 +11115,7 @@
       "docs": {
         "category": "Helpful warnings",
         "description": "Forbid empty named import blocks.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-empty-named-blocks.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/no-empty-named-blocks.md"
       },
       "fixable": "code",
       "hasSuggestions": true,
@@ -11105,7 +11127,7 @@
       "docs": {
         "category": "Style guide",
         "description": "Ensure all exports appear after other statements.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/exports-last.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/exports-last.md"
       },
       "name": "import/exports-last",
       "plugin": "import"
@@ -11115,7 +11137,7 @@
       "docs": {
         "category": "Helpful warnings",
         "description": "Forbid imported names marked with `@deprecated` documentation tag.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/no-deprecated.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/no-deprecated.md"
       },
       "name": "import/no-deprecated",
       "plugin": "import"
@@ -11125,7 +11147,7 @@
       "docs": {
         "category": "Style guide",
         "description": "Replaced by `import-x/first`.",
-        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.6.1/docs/rules/imports-first.md"
+        "url": "https://github.com/un-ts/eslint-plugin-import-x/blob/v4.9.1/docs/rules/imports-first.md"
       },
       "fixable": "code",
       "deprecated": true,
@@ -13331,7 +13353,18 @@
     },
     "ts/no-empty-interface": {
       "type": "suggestion",
-      "deprecated": true,
+      "deprecated": {
+        "deprecatedSince": "8.0.0",
+        "replacedBy": [
+          {
+            "rule": {
+              "name": "@typescript-eslint/no-empty-object-type",
+              "url": "https://typescript-eslint.io/rules/no-empty-object-type"
+            }
+          }
+        ],
+        "url": "https://github.com/typescript-eslint/typescript-eslint/pull/8977"
+      },
       "docs": {
         "description": "Disallow the declaration of empty interfaces",
         "url": "https://typescript-eslint.io/rules/no-empty-interface"
@@ -13481,7 +13514,18 @@
     },
     "ts/no-loss-of-precision": {
       "type": "problem",
-      "deprecated": true,
+      "deprecated": {
+        "deprecatedSince": "8.0.0",
+        "replacedBy": [
+          {
+            "rule": {
+              "name": "no-loss-of-precision",
+              "url": "https://eslint.org/docs/latest/rules/no-loss-of-precision"
+            }
+          }
+        ],
+        "url": "https://github.com/typescript-eslint/typescript-eslint/pull/8832"
+      },
       "docs": {
         "description": "Disallow literal numbers that lose precision",
         "extendsBaseRule": true,
@@ -13674,7 +13718,18 @@
     },
     "ts/no-type-alias": {
       "type": "suggestion",
-      "deprecated": true,
+      "deprecated": {
+        "deprecatedSince": "6.0.0",
+        "replacedBy": [
+          {
+            "rule": {
+              "name": "@typescript-eslint/consistent-type-definitions",
+              "url": "https://typescript-eslint.io/rules/consistent-type-definitions"
+            }
+          }
+        ],
+        "url": "https://github.com/typescript-eslint/typescript-eslint/pull/6229"
+      },
       "docs": {
         "description": "Disallow type aliases",
         "url": "https://typescript-eslint.io/rules/no-type-alias"
@@ -13848,7 +13903,6 @@
         "recommended": "recommended",
         "url": "https://typescript-eslint.io/rules/no-unsafe-function-type"
       },
-      "fixable": "code",
       "name": "ts/no-unsafe-function-type",
       "plugin": "ts"
     },
@@ -13959,7 +14013,18 @@
     },
     "ts/no-var-requires": {
       "type": "problem",
-      "deprecated": true,
+      "deprecated": {
+        "deprecatedSince": "8.0.0",
+        "replacedBy": [
+          {
+            "rule": {
+              "name": "@typescript-eslint/no-require-imports",
+              "url": "https://typescript-eslint.io/rules/no-require-imports"
+            }
+          }
+        ],
+        "url": "https://github.com/typescript-eslint/typescript-eslint/pull/8334"
+      },
       "docs": {
         "description": "Disallow `require` statements except in import statements",
         "url": "https://typescript-eslint.io/rules/no-var-requires"
@@ -14223,7 +14288,18 @@
     },
     "ts/prefer-ts-expect-error": {
       "type": "problem",
-      "deprecated": true,
+      "deprecated": {
+        "deprecatedSince": "7.11.0",
+        "replacedBy": [
+          {
+            "rule": {
+              "name": "@typescript-eslint/ban-ts-comment",
+              "url": "https://typescript-eslint.io/rules/ban-ts-comment"
+            }
+          }
+        ],
+        "url": "https://github.com/typescript-eslint/typescript-eslint/pull/9081"
+      },
       "docs": {
         "description": "Enforce using `@ts-expect-error` over `@ts-ignore`",
         "url": "https://typescript-eslint.io/rules/prefer-ts-expect-error"
@@ -14344,7 +14420,32 @@
     },
     "ts/sort-type-constituents": {
       "type": "suggestion",
-      "deprecated": true,
+      "deprecated": {
+        "deprecatedSince": "7.13.0",
+        "replacedBy": [
+          {
+            "plugin": {
+              "name": "eslint-plugin-perfectionist",
+              "url": "https://perfectionist.dev"
+            },
+            "rule": {
+              "name": "perfectionist/sort-intersection-types",
+              "url": "https://perfectionist.dev/rules/sort-intersection-types"
+            }
+          },
+          {
+            "plugin": {
+              "name": "eslint-plugin-perfectionist",
+              "url": "https://perfectionist.dev"
+            },
+            "rule": {
+              "name": "perfectionist/sort-union-types",
+              "url": "https://perfectionist.dev/rules/sort-union-types"
+            }
+          }
+        ],
+        "url": "https://github.com/typescript-eslint/typescript-eslint/pull/9253"
+      },
       "docs": {
         "description": "Enforce constituents of a type union/intersection to be sorted alphabetically",
         "url": "https://typescript-eslint.io/rules/sort-type-constituents"
@@ -20608,7 +20709,7 @@
     "react/avoid-shorthand-boolean": {
       "type": "problem",
       "docs": {
-        "description": "disallow using shorthand boolean attributes",
+        "description": "Enforces explicit boolean values for boolean attributes.",
         "url": "https://eslint-react.xyz/docs/rules/avoid-shorthand-boolean"
       },
       "fixable": "code",
@@ -20618,7 +20719,7 @@
     "react/avoid-shorthand-fragment": {
       "type": "problem",
       "docs": {
-        "description": "disallow using shorthand fragment syntax",
+        "description": "Enforces explicit `<Fragment>` components instead of the shorthand `<>` or `</>` syntax.",
         "url": "https://eslint-react.xyz/docs/rules/avoid-shorthand-fragment"
       },
       "name": "react/avoid-shorthand-fragment",
@@ -20627,7 +20728,7 @@
     "react/no-access-state-in-setstate": {
       "type": "problem",
       "docs": {
-        "description": "disallow accessing 'this.state' within 'setState'",
+        "description": "Disallow accessing `this.state` inside `setState` calls.",
         "url": "https://eslint-react.xyz/docs/rules/no-access-state-in-setstate"
       },
       "name": "react/no-access-state-in-setstate",
@@ -20636,7 +20737,7 @@
     "react/no-array-index-key": {
       "type": "problem",
       "docs": {
-        "description": "disallow using an item's index in the array as its key",
+        "description": "Disallow an item's index in the array as its key.",
         "url": "https://eslint-react.xyz/docs/rules/no-array-index-key"
       },
       "name": "react/no-array-index-key",
@@ -20645,7 +20746,7 @@
     "react/no-children-count": {
       "type": "problem",
       "docs": {
-        "description": "disallow using 'Children.count'",
+        "description": "Disallow `Children.count`.",
         "url": "https://eslint-react.xyz/docs/rules/no-children-count"
       },
       "name": "react/no-children-count",
@@ -20654,7 +20755,7 @@
     "react/no-children-for-each": {
       "type": "problem",
       "docs": {
-        "description": "disallow using 'Children.forEach'",
+        "description": "Disallow 'Children.forEach'.",
         "url": "https://eslint-react.xyz/docs/rules/no-children-for-each"
       },
       "name": "react/no-children-for-each",
@@ -20663,7 +20764,7 @@
     "react/no-children-map": {
       "type": "problem",
       "docs": {
-        "description": "disallow using 'Children.map'",
+        "description": "Disallow `Children.map`.",
         "url": "https://eslint-react.xyz/docs/rules/no-children-map"
       },
       "name": "react/no-children-map",
@@ -20672,7 +20773,7 @@
     "react/no-children-only": {
       "type": "problem",
       "docs": {
-        "description": "disallow using 'Children.only'",
+        "description": "Disallow `Children.only`.",
         "url": "https://eslint-react.xyz/docs/rules/no-children-only"
       },
       "name": "react/no-children-only",
@@ -20681,7 +20782,7 @@
     "react/no-children-prop": {
       "type": "problem",
       "docs": {
-        "description": "disallow passing 'children' as props",
+        "description": "Disallow passing `children` as a prop.",
         "url": "https://eslint-react.xyz/docs/rules/no-children-prop"
       },
       "name": "react/no-children-prop",
@@ -20690,7 +20791,7 @@
     "react/no-children-to-array": {
       "type": "problem",
       "docs": {
-        "description": "disallow using 'Children.toArray'",
+        "description": "Disallow `Children.toArray`.",
         "url": "https://eslint-react.xyz/docs/rules/no-children-to-array"
       },
       "name": "react/no-children-to-array",
@@ -20699,7 +20800,7 @@
     "react/no-class-component": {
       "type": "problem",
       "docs": {
-        "description": "disallow using class components",
+        "description": "Disallow class components.",
         "url": "https://eslint-react.xyz/docs/rules/no-class-component"
       },
       "name": "react/no-class-component",
@@ -20708,7 +20809,7 @@
     "react/no-clone-element": {
       "type": "problem",
       "docs": {
-        "description": "disallow using 'cloneElement'",
+        "description": "Disallow `cloneElement`.",
         "url": "https://eslint-react.xyz/docs/rules/no-clone-element"
       },
       "name": "react/no-clone-element",
@@ -20717,7 +20818,7 @@
     "react/no-comment-textnodes": {
       "type": "problem",
       "docs": {
-        "description": "disallow comments from being inserted as text nodes",
+        "description": "Prevents comments from being inserted as text nodes.",
         "url": "https://eslint-react.xyz/docs/rules/no-comment-textnodes"
       },
       "name": "react/no-comment-textnodes",
@@ -20726,7 +20827,7 @@
     "react/no-complex-conditional-rendering": {
       "type": "problem",
       "docs": {
-        "description": "disallow complex conditional rendering",
+        "description": "Disallow complex conditional rendering in JSX expressions.",
         "url": "https://eslint-react.xyz/docs/rules/no-complex-conditional-rendering"
       },
       "name": "react/no-complex-conditional-rendering",
@@ -20735,7 +20836,7 @@
     "react/no-component-will-mount": {
       "type": "problem",
       "docs": {
-        "description": "replace usages of 'componentWillMount' with 'UNSAFE_componentWillMount'",
+        "description": "Replace usages of `componentWillMount` with `UNSAFE_componentWillMount`.",
         "url": "https://eslint-react.xyz/docs/rules/no-component-will-mount"
       },
       "fixable": "code",
@@ -20745,7 +20846,7 @@
     "react/no-component-will-receive-props": {
       "type": "problem",
       "docs": {
-        "description": "replace usages of 'componentWillReceiveProps' with 'UNSAFE_componentWillReceiveProps'",
+        "description": "Replace usages of `componentWillReceiveProps` with `UNSAFE_componentWillReceiveProps`.",
         "url": "https://eslint-react.xyz/docs/rules/no-component-will-receive-props"
       },
       "fixable": "code",
@@ -20755,7 +20856,7 @@
     "react/no-component-will-update": {
       "type": "problem",
       "docs": {
-        "description": "replace usages of 'componentWillUpdate' with 'UNSAFE_componentWillUpdate'",
+        "description": "Replace usages of `componentWillUpdate` with `UNSAFE_componentWillUpdate`.",
         "url": "https://eslint-react.xyz/docs/rules/no-component-will-update"
       },
       "fixable": "code",
@@ -20765,7 +20866,7 @@
     "react/no-context-provider": {
       "type": "problem",
       "docs": {
-        "description": "replace usages of '<Context.Provider>' with '<Context>'",
+        "description": "Replace usages of `<Context.Provider>` with `<Context>`.",
         "url": "https://eslint-react.xyz/docs/rules/no-context-provider"
       },
       "fixable": "code",
@@ -20775,7 +20876,7 @@
     "react/no-create-ref": {
       "type": "problem",
       "docs": {
-        "description": "disallow using 'createRef' in function components",
+        "description": "Disallow `createRef` in function components.",
         "url": "https://eslint-react.xyz/docs/rules/no-create-ref"
       },
       "name": "react/no-create-ref",
@@ -20784,7 +20885,7 @@
     "react/no-default-props": {
       "type": "problem",
       "docs": {
-        "description": "disallow using 'defaultProps' property in components",
+        "description": "Disallow `defaultProps` property in favor of ES6 default parameters.",
         "url": "https://eslint-react.xyz/docs/rules/no-default-props"
       },
       "name": "react/no-default-props",
@@ -20793,25 +20894,16 @@
     "react/no-direct-mutation-state": {
       "type": "problem",
       "docs": {
-        "description": "disallow direct mutation of state",
+        "description": "Disallow direct mutation of `this.state`.",
         "url": "https://eslint-react.xyz/docs/rules/no-direct-mutation-state"
       },
       "name": "react/no-direct-mutation-state",
       "plugin": "react"
     },
-    "react/no-duplicate-jsx-props": {
-      "type": "problem",
-      "docs": {
-        "description": "disallow duplicate props",
-        "url": "https://eslint-react.xyz/docs/rules/no-duplicate-jsx-props"
-      },
-      "name": "react/no-duplicate-jsx-props",
-      "plugin": "react"
-    },
     "react/no-duplicate-key": {
       "type": "problem",
       "docs": {
-        "description": "disallow duplicate keys when rendering list",
+        "description": "Disallow duplicate `key` on elements in the same array or a list of `children`.",
         "url": "https://eslint-react.xyz/docs/rules/no-duplicate-key"
       },
       "name": "react/no-duplicate-key",
@@ -20820,7 +20912,7 @@
     "react/no-forward-ref": {
       "type": "problem",
       "docs": {
-        "description": "replace usages of 'forwardRef' with passing 'ref' as a prop",
+        "description": "Replaces usages of `forwardRef` with passing `ref` as a prop.",
         "url": "https://eslint-react.xyz/docs/rules/no-forward-ref"
       },
       "fixable": "code",
@@ -20830,7 +20922,7 @@
     "react/no-implicit-key": {
       "type": "problem",
       "docs": {
-        "description": "disallow implicit 'key' props",
+        "description": "Prevents `key` from not being explicitly specified (e.g. spreading `key` from objects).",
         "url": "https://eslint-react.xyz/docs/rules/no-implicit-key"
       },
       "name": "react/no-implicit-key",
@@ -20839,7 +20931,7 @@
     "react/no-leaked-conditional-rendering": {
       "type": "problem",
       "docs": {
-        "description": "disallow problematic leaked values from being rendered",
+        "description": "Prevents problematic leaked values from being rendered.",
         "url": "https://eslint-react.xyz/docs/rules/no-leaked-conditional-rendering"
       },
       "name": "react/no-leaked-conditional-rendering",
@@ -20848,7 +20940,7 @@
     "react/no-missing-component-display-name": {
       "type": "problem",
       "docs": {
-        "description": "require 'displayName' for 'memo' and 'forwardRef' components",
+        "description": "Enforces that all components have a `displayName` which can be used in devtools.",
         "url": "https://eslint-react.xyz/docs/rules/no-missing-component-display-name"
       },
       "name": "react/no-missing-component-display-name",
@@ -20857,7 +20949,7 @@
     "react/no-missing-context-display-name": {
       "type": "problem",
       "docs": {
-        "description": "require 'displayName' for contexts.",
+        "description": "Enforces that all contexts have a `displayName` which can be used in devtools.",
         "url": "https://eslint-react.xyz/docs/rules/no-missing-context-display-name"
       },
       "name": "react/no-missing-context-display-name",
@@ -20866,25 +20958,25 @@
     "react/no-missing-key": {
       "type": "problem",
       "docs": {
-        "description": "require 'key' when rendering list",
+        "description": "Disallow missing `key` on items in list rendering.",
         "url": "https://eslint-react.xyz/docs/rules/no-missing-key"
       },
       "name": "react/no-missing-key",
       "plugin": "react"
     },
-    "react/no-nested-components": {
+    "react/no-nested-component-definitions": {
       "type": "problem",
       "docs": {
-        "description": "disallow using unstable nested components",
-        "url": "https://eslint-react.xyz/docs/rules/no-nested-components"
+        "description": "Disallow nesting component definitions inside other components.",
+        "url": "https://eslint-react.xyz/docs/rules/no-nested-component-definitions"
       },
-      "name": "react/no-nested-components",
+      "name": "react/no-nested-component-definitions",
       "plugin": "react"
     },
     "react/no-prop-types": {
       "type": "problem",
       "docs": {
-        "description": "disallow using 'propTypes' property in components",
+        "description": "Disallow `propTypes` in favor of TypeScript or another type-checking solution.",
         "url": "https://eslint-react.xyz/docs/rules/no-prop-types"
       },
       "name": "react/no-prop-types",
@@ -20893,7 +20985,7 @@
     "react/no-redundant-should-component-update": {
       "type": "problem",
       "docs": {
-        "description": "disallow using 'shouldComponentUpdate' in class component extends 'React.PureComponent'",
+        "description": "Disallow `shouldComponentUpdate` when extending `React.PureComponent`.",
         "url": "https://eslint-react.xyz/docs/rules/no-redundant-should-component-update"
       },
       "name": "react/no-redundant-should-component-update",
@@ -20902,7 +20994,7 @@
     "react/no-set-state-in-component-did-mount": {
       "type": "problem",
       "docs": {
-        "description": "disallow using 'setState' in 'componentDidMount'",
+        "description": "Disallow calling `this.setState` in `componentDidMount` outside of functions, such as callbacks.",
         "url": "https://eslint-react.xyz/docs/rules/no-set-state-in-component-did-mount"
       },
       "name": "react/no-set-state-in-component-did-mount",
@@ -20911,7 +21003,7 @@
     "react/no-set-state-in-component-did-update": {
       "type": "problem",
       "docs": {
-        "description": "disallow using 'setState' in 'componentDidUpdate'",
+        "description": "Disallows calling `this.setState` in `componentDidUpdate` outside of functions, such as callbacks.",
         "url": "https://eslint-react.xyz/docs/rules/no-set-state-in-component-did-update"
       },
       "name": "react/no-set-state-in-component-did-update",
@@ -20920,7 +21012,7 @@
     "react/no-set-state-in-component-will-update": {
       "type": "problem",
       "docs": {
-        "description": "disallow using 'setState' in 'componentWillUpdate'",
+        "description": "Disallows calling `this.setState` in `componentWillUpdate` outside of functions, such as callbacks.",
         "url": "https://eslint-react.xyz/docs/rules/no-set-state-in-component-will-update"
       },
       "name": "react/no-set-state-in-component-will-update",
@@ -20929,7 +21021,7 @@
     "react/no-string-refs": {
       "type": "problem",
       "docs": {
-        "description": "disallow using deprecated string refs",
+        "description": "Disallow deprecated string `refs`.",
         "url": "https://eslint-react.xyz/docs/rules/no-string-refs"
       },
       "name": "react/no-string-refs",
@@ -20938,7 +21030,7 @@
     "react/no-unsafe-component-will-mount": {
       "type": "problem",
       "docs": {
-        "description": "disallow using 'UNSAFE_componentWillMount'",
+        "description": "Warns the usage of `UNSAFE_componentWillMount` in class components.",
         "url": "https://eslint-react.xyz/docs/rules/no-unsafe-component-will-mount"
       },
       "name": "react/no-unsafe-component-will-mount",
@@ -20947,7 +21039,7 @@
     "react/no-unsafe-component-will-receive-props": {
       "type": "problem",
       "docs": {
-        "description": "disallow using 'UNSAFE_componentWillReceiveProps'",
+        "description": "Warns the usage of `UNSAFE_componentWillReceiveProps` in class components.",
         "url": "https://eslint-react.xyz/docs/rules/no-unsafe-component-will-receive-props"
       },
       "name": "react/no-unsafe-component-will-receive-props",
@@ -20956,7 +21048,7 @@
     "react/no-unsafe-component-will-update": {
       "type": "problem",
       "docs": {
-        "description": "disallow using 'UNSAFE_componentWillUpdate'",
+        "description": "Warns the usage of `UNSAFE_componentWillUpdate` in class components.",
         "url": "https://eslint-react.xyz/docs/rules/no-unsafe-component-will-update"
       },
       "name": "react/no-unsafe-component-will-update",
@@ -20965,7 +21057,7 @@
     "react/no-unstable-context-value": {
       "type": "problem",
       "docs": {
-        "description": "disallow passing constructed values to context providers",
+        "description": "Prevents non-stable values (i.e. object literals) from being used as a value for `Context.Provider`.",
         "url": "https://eslint-react.xyz/docs/rules/no-unstable-context-value"
       },
       "name": "react/no-unstable-context-value",
@@ -20974,7 +21066,7 @@
     "react/no-unstable-default-props": {
       "type": "problem",
       "docs": {
-        "description": "disallow using unstable value as default param in function component",
+        "description": "Prevents using referential-type values as default props in object destructuring.",
         "url": "https://eslint-react.xyz/docs/rules/no-unstable-default-props"
       },
       "name": "react/no-unstable-default-props",
@@ -20983,7 +21075,7 @@
     "react/no-unused-class-component-members": {
       "type": "problem",
       "docs": {
-        "description": "disallow unused class component members",
+        "description": "Warns unused class component methods and properties.",
         "url": "https://eslint-react.xyz/docs/rules/no-unused-class-component-members"
       },
       "name": "react/no-unused-class-component-members",
@@ -20992,7 +21084,7 @@
     "react/no-unused-state": {
       "type": "problem",
       "docs": {
-        "description": "disallow unused state of class component",
+        "description": "Warns unused class component state.",
         "url": "https://eslint-react.xyz/docs/rules/no-unused-state"
       },
       "name": "react/no-unused-state",
@@ -21001,7 +21093,7 @@
     "react/no-use-context": {
       "type": "problem",
       "docs": {
-        "description": "replace usages of 'useContext' with 'use'",
+        "description": "Replaces usages of `useContext` with `use`.",
         "url": "https://eslint-react.xyz/docs/rules/no-use-context"
       },
       "fixable": "code",
@@ -21011,7 +21103,7 @@
     "react/no-useless-forward-ref": {
       "type": "problem",
       "docs": {
-        "description": "require a 'ref' parameter to be set when using 'forwardRef'",
+        "description": "Disallow useless `forwardRef` calls on components that don't use `ref`s.",
         "url": "https://eslint-react.xyz/docs/rules/no-useless-forward-ref"
       },
       "name": "react/no-useless-forward-ref",
@@ -21025,7 +21117,7 @@
         }
       ],
       "docs": {
-        "description": "disallow useless fragments",
+        "description": "Disallow useless fragment elements.",
         "url": "https://eslint-react.xyz/docs/rules/no-useless-fragment"
       },
       "fixable": "code",
@@ -21035,7 +21127,7 @@
     "react/prefer-destructuring-assignment": {
       "type": "problem",
       "docs": {
-        "description": "enforce using destructuring assignment in component props and context",
+        "description": "Enforces destructuring assignment for component props and context.",
         "url": "https://eslint-react.xyz/docs/rules/prefer-destructuring-assignment"
       },
       "name": "react/prefer-destructuring-assignment",
@@ -21044,7 +21136,7 @@
     "react/prefer-react-namespace-import": {
       "type": "problem",
       "docs": {
-        "description": "enforce React is imported via a namespace import",
+        "description": "Enforces React is imported via a namespace import.",
         "url": "https://eslint-react.xyz/docs/rules/prefer-react-namespace-import"
       },
       "fixable": "code",
@@ -21054,7 +21146,7 @@
     "react/prefer-read-only-props": {
       "type": "problem",
       "docs": {
-        "description": "enforce read-only props in components",
+        "description": "Enforces read-only props in components.",
         "url": "https://eslint-react.xyz/docs/rules/prefer-read-only-props"
       },
       "name": "react/prefer-read-only-props",
@@ -21063,7 +21155,7 @@
     "react/prefer-shorthand-boolean": {
       "type": "problem",
       "docs": {
-        "description": "enforce the use of shorthand syntax for boolean attributes",
+        "description": "Enforces shorthand syntax for boolean attributes.",
         "url": "https://eslint-react.xyz/docs/rules/prefer-shorthand-boolean"
       },
       "fixable": "code",
@@ -21073,62 +21165,89 @@
     "react/prefer-shorthand-fragment": {
       "type": "problem",
       "docs": {
-        "description": "enforce the use of shorthand syntax for fragments",
+        "description": "Enforces shorthand syntax for fragments.",
         "url": "https://eslint-react.xyz/docs/rules/prefer-shorthand-fragment"
       },
       "fixable": "code",
       "name": "react/prefer-shorthand-fragment",
       "plugin": "react"
     },
-    "react/use-jsx-vars": {
-      "type": "problem",
-      "docs": {
-        "description": "marks variables used in JSX as used",
-        "url": "https://eslint-react.xyz/docs/rules/use-jsx-vars"
-      },
-      "name": "react/use-jsx-vars",
-      "plugin": "react"
-    },
-    "react/ensure-forward-ref-using-ref": {
-      "type": "problem",
-      "docs": {
-        "description": "require a 'ref' parameter to be set when using 'forwardRef'",
-        "url": "https://eslint-react.xyz/docs/rules/no-useless-forward-ref"
-      },
-      "name": "react/ensure-forward-ref-using-ref",
-      "plugin": "react"
-    },
     "react/jsx-no-duplicate-props": {
       "type": "problem",
       "docs": {
-        "description": "disallow duplicate props",
-        "url": "https://eslint-react.xyz/docs/rules/no-duplicate-jsx-props"
+        "description": "Disallow duplicate props in JSX elements.",
+        "url": "https://eslint-react.xyz/docs/rules/jsx-no-duplicate-props"
       },
       "name": "react/jsx-no-duplicate-props",
+      "plugin": "react"
+    },
+    "react/jsx-no-undef": {
+      "type": "problem",
+      "docs": {
+        "description": "Disallow undefined variables in JSX.",
+        "url": "https://eslint-react.xyz/docs/rules/jsx-no-undef"
+      },
+      "name": "react/jsx-no-undef",
       "plugin": "react"
     },
     "react/jsx-uses-vars": {
       "type": "problem",
       "docs": {
-        "description": "marks variables used in JSX as used",
-        "url": "https://eslint-react.xyz/docs/rules/use-jsx-vars"
+        "description": "Marks variables used in JSX elements as used.",
+        "url": "https://eslint-react.xyz/docs/rules/jsx-uses-vars"
       },
       "name": "react/jsx-uses-vars",
+      "plugin": "react"
+    },
+    "react/ensure-forward-ref-using-ref": {
+      "type": "problem",
+      "docs": {
+        "description": "Disallow useless `forwardRef` calls on components that don't use `ref`s.",
+        "url": "https://eslint-react.xyz/docs/rules/no-useless-forward-ref"
+      },
+      "name": "react/ensure-forward-ref-using-ref",
       "plugin": "react"
     },
     "react/no-complicated-conditional-rendering": {
       "type": "problem",
       "docs": {
-        "description": "disallow complex conditional rendering",
+        "description": "Disallow complex conditional rendering in JSX expressions.",
         "url": "https://eslint-react.xyz/docs/rules/no-complex-conditional-rendering"
       },
       "name": "react/no-complicated-conditional-rendering",
       "plugin": "react"
     },
+    "react/no-duplicate-jsx-props": {
+      "type": "problem",
+      "docs": {
+        "description": "Disallow duplicate props in JSX elements.",
+        "url": "https://eslint-react.xyz/docs/rules/jsx-no-duplicate-props"
+      },
+      "name": "react/no-duplicate-jsx-props",
+      "plugin": "react"
+    },
+    "react/no-nested-components": {
+      "type": "problem",
+      "docs": {
+        "description": "Disallow nesting component definitions inside other components.",
+        "url": "https://eslint-react.xyz/docs/rules/no-nested-component-definitions"
+      },
+      "name": "react/no-nested-components",
+      "plugin": "react"
+    },
+    "react/use-jsx-vars": {
+      "type": "problem",
+      "docs": {
+        "description": "Marks variables used in JSX elements as used.",
+        "url": "https://eslint-react.xyz/docs/rules/jsx-uses-vars"
+      },
+      "name": "react/use-jsx-vars",
+      "plugin": "react"
+    },
     "react-dom/no-dangerously-set-innerhtml": {
       "type": "problem",
       "docs": {
-        "description": "disallow when a DOM component is using 'dangerouslySetInnerHTML'",
+        "description": "Disallow `dangerouslySetInnerHTML`.",
         "url": "https://eslint-react.xyz/docs/rules/dom-no-dangerously-set-innerhtml"
       },
       "name": "react-dom/no-dangerously-set-innerhtml",
@@ -21137,7 +21256,7 @@
     "react-dom/no-dangerously-set-innerhtml-with-children": {
       "type": "problem",
       "docs": {
-        "description": "disallow when a DOM component is using both 'children' and 'dangerouslySetInnerHTML'",
+        "description": "Disallow `dangerouslySetInnerHTML` and `children` at the same time.",
         "url": "https://eslint-react.xyz/docs/rules/dom-no-dangerously-set-innerhtml-with-children"
       },
       "name": "react-dom/no-dangerously-set-innerhtml-with-children",
@@ -21146,7 +21265,7 @@
     "react-dom/no-find-dom-node": {
       "type": "problem",
       "docs": {
-        "description": "disallow 'findDOMNode'",
+        "description": "Disallow `findDOMNode`.",
         "url": "https://eslint-react.xyz/docs/rules/dom-no-find-dom-node"
       },
       "name": "react-dom/no-find-dom-node",
@@ -21155,16 +21274,26 @@
     "react-dom/no-flush-sync": {
       "type": "problem",
       "docs": {
-        "description": "warns against using `flushSync`",
+        "description": "Disallow `flushSync`.",
         "url": "https://eslint-react.xyz/docs/rules/dom-no-flush-sync"
       },
       "name": "react-dom/no-flush-sync",
       "plugin": "react-dom"
     },
+    "react-dom/no-hydrate": {
+      "type": "problem",
+      "docs": {
+        "description": "Replaces usages of `ReactDom.hydrate()` with `hydrateRoot()`.",
+        "url": "https://eslint-react.xyz/docs/rules/dom-no-hydrate"
+      },
+      "fixable": "code",
+      "name": "react-dom/no-hydrate",
+      "plugin": "react-dom"
+    },
     "react-dom/no-missing-button-type": {
       "type": "problem",
       "docs": {
-        "description": "enforce that button component have an explicit 'type' attribute",
+        "description": "Enforces explicit `type` attribute for `button` elements.",
         "url": "https://eslint-react.xyz/docs/rules/dom-no-missing-button-type"
       },
       "name": "react-dom/no-missing-button-type",
@@ -21173,7 +21302,7 @@
     "react-dom/no-missing-iframe-sandbox": {
       "type": "problem",
       "docs": {
-        "description": "enforce that 'iframe' component have an explicit 'sandbox' attribute",
+        "description": "Enforces explicit `sandbox` attribute for `iframe` elements.",
         "url": "https://eslint-react.xyz/docs/rules/dom-no-missing-iframe-sandbox"
       },
       "name": "react-dom/no-missing-iframe-sandbox",
@@ -21182,16 +21311,26 @@
     "react-dom/no-namespace": {
       "type": "problem",
       "docs": {
-        "description": "enforce that namespaces are not used in React elements",
+        "description": "Enforces the absence of a `namespace` in React elements.",
         "url": "https://eslint-react.xyz/docs/rules/dom-no-namespace"
       },
       "name": "react-dom/no-namespace",
       "plugin": "react-dom"
     },
+    "react-dom/no-render": {
+      "type": "problem",
+      "docs": {
+        "description": "Replaces usages of `ReactDom.render()` with `createRoot(node).render()`.",
+        "url": "https://eslint-react.xyz/docs/rules/dom-no-render"
+      },
+      "fixable": "code",
+      "name": "react-dom/no-render",
+      "plugin": "react-dom"
+    },
     "react-dom/no-render-return-value": {
       "type": "problem",
       "docs": {
-        "description": "disallow usage of the return value of 'ReactDOM.render'",
+        "description": "Disallow the return value of `ReactDOM.render`.",
         "url": "https://eslint-react.xyz/docs/rules/dom-no-render-return-value"
       },
       "name": "react-dom/no-render-return-value",
@@ -21200,15 +21339,16 @@
     "react-dom/no-script-url": {
       "type": "problem",
       "docs": {
-        "description": "disallow 'javascript:' URLs as JSX event handler prop's value",
+        "description": "Disallow `javascript:` URLs as attribute values.",
         "url": "https://eslint-react.xyz/docs/rules/dom-no-script-url"
       },
       "name": "react-dom/no-script-url",
       "plugin": "react-dom"
     },
     "react-dom/no-unknown-property": {
+      "type": "problem",
       "docs": {
-        "description": "disallow usage of unknown DOM property",
+        "description": "Disallow unknown `DOM` property.",
         "url": "https://eslint-react.xyz/docs/rules/dom-no-unknown-property"
       },
       "fixable": "code",
@@ -21218,7 +21358,7 @@
     "react-dom/no-unsafe-iframe-sandbox": {
       "type": "problem",
       "docs": {
-        "description": "disallow unsafe iframe 'sandbox' attribute combinations",
+        "description": "Enforces `sandbox` attribute for `iframe` elements is not set to unsafe combinations.",
         "url": "https://eslint-react.xyz/docs/rules/dom-no-unsafe-iframe-sandbox"
       },
       "name": "react-dom/no-unsafe-iframe-sandbox",
@@ -21227,16 +21367,26 @@
     "react-dom/no-unsafe-target-blank": {
       "type": "problem",
       "docs": {
-        "description": "disallow 'target=\"_blank\"' on an external link without 'rel=\"noreferrer noopener\"'",
+        "description": "Disallow `target=\"_blank\"` without `rel=\"noreferrer noopener\"`.",
         "url": "https://eslint-react.xyz/docs/rules/dom-no-unsafe-target-blank"
       },
       "name": "react-dom/no-unsafe-target-blank",
       "plugin": "react-dom"
     },
+    "react-dom/no-use-form-state": {
+      "type": "problem",
+      "docs": {
+        "description": "Replaces usages of `useFormState` with `useActionState`.",
+        "url": "https://eslint-react.xyz/docs/rules/dom-no-use-form-state"
+      },
+      "fixable": "code",
+      "name": "react-dom/no-use-form-state",
+      "plugin": "react-dom"
+    },
     "react-dom/no-void-elements-with-children": {
       "type": "problem",
       "docs": {
-        "description": "disallow void elements (AKA self-closing elements) from having children",
+        "description": "Disallow `children` in void DOM elements.",
         "url": "https://eslint-react.xyz/docs/rules/dom-no-void-elements-with-children"
       },
       "name": "react-dom/no-void-elements-with-children",
@@ -21245,7 +21395,7 @@
     "react-dom/no-children-in-void-dom-elements": {
       "type": "problem",
       "docs": {
-        "description": "disallow void elements (AKA self-closing elements) from having children",
+        "description": "Disallow `children` in void DOM elements.",
         "url": "https://eslint-react.xyz/docs/rules/dom-no-void-elements-with-children"
       },
       "name": "react-dom/no-children-in-void-dom-elements",
@@ -21276,7 +21426,7 @@
     "react-hooks-extra/no-direct-set-state-in-use-effect": {
       "type": "problem",
       "docs": {
-        "description": "disallow direct calls to the 'set' function of 'useState' in 'useEffect'",
+        "description": "Disallow direct calls to the `set` function of `useState` in `useEffect`.",
         "url": "https://eslint-react.xyz/docs/rules/hooks-extra-no-direct-set-state-in-use-effect"
       },
       "name": "react-hooks-extra/no-direct-set-state-in-use-effect",
@@ -21285,7 +21435,7 @@
     "react-hooks-extra/no-direct-set-state-in-use-layout-effect": {
       "type": "problem",
       "docs": {
-        "description": "disallow direct calls to the 'set' function of 'useState' in 'useLayoutEffect'",
+        "description": "Disallow direct calls to the `set` function of `useState` in `useLayoutEffect`.",
         "url": "https://eslint-react.xyz/docs/rules/hooks-extra-no-direct-set-state-in-use-layout-effect"
       },
       "name": "react-hooks-extra/no-direct-set-state-in-use-layout-effect",
@@ -21294,7 +21444,7 @@
     "react-hooks-extra/no-unnecessary-use-callback": {
       "type": "problem",
       "docs": {
-        "description": "disallow unnecessary usage of 'useCallback'",
+        "description": "Disallow unnecessary usage of `useCallback`.",
         "url": "https://eslint-react.xyz/docs/rules/hooks-extra-no-unnecessary-use-callback"
       },
       "name": "react-hooks-extra/no-unnecessary-use-callback",
@@ -21303,25 +21453,25 @@
     "react-hooks-extra/no-unnecessary-use-memo": {
       "type": "problem",
       "docs": {
-        "description": "disallow unnecessary usage of 'useMemo'",
+        "description": "Disallow unnecessary usage of `useMemo`.",
         "url": "https://eslint-react.xyz/docs/rules/hooks-extra-no-unnecessary-use-memo"
       },
       "name": "react-hooks-extra/no-unnecessary-use-memo",
       "plugin": "react-hooks-extra"
     },
-    "react-hooks-extra/no-useless-custom-hooks": {
+    "react-hooks-extra/no-unnecessary-use-prefix": {
       "type": "problem",
       "docs": {
-        "description": "enforce custom Hooks to use at least one other hook inside",
-        "url": "https://eslint-react.xyz/docs/rules/hooks-extra-no-useless-custom-hooks"
+        "description": "Enforces that a function with the `use` prefix should use at least one Hook inside of it.",
+        "url": "https://eslint-react.xyz/docs/rules/hooks-extra-no-unnecessary-use-prefix"
       },
-      "name": "react-hooks-extra/no-useless-custom-hooks",
+      "name": "react-hooks-extra/no-unnecessary-use-prefix",
       "plugin": "react-hooks-extra"
     },
     "react-hooks-extra/prefer-use-state-lazy-initialization": {
       "type": "problem",
       "docs": {
-        "description": "disallow function calls in 'useState' that aren't wrapped in an initializer function",
+        "description": "Enforces function calls made inside `useState` to be wrapped in an `initializer function`.",
         "url": "https://eslint-react.xyz/docs/rules/hooks-extra-prefer-use-state-lazy-initialization"
       },
       "name": "react-hooks-extra/prefer-use-state-lazy-initialization",
@@ -21330,8 +21480,8 @@
     "react-hooks-extra/ensure-custom-hooks-using-other-hooks": {
       "type": "problem",
       "docs": {
-        "description": "enforce custom Hooks to use at least one other hook inside",
-        "url": "https://eslint-react.xyz/docs/rules/hooks-extra-no-useless-custom-hooks"
+        "description": "Enforces that a function with the `use` prefix should use at least one Hook inside of it.",
+        "url": "https://eslint-react.xyz/docs/rules/hooks-extra-no-unnecessary-use-prefix"
       },
       "name": "react-hooks-extra/ensure-custom-hooks-using-other-hooks",
       "plugin": "react-hooks-extra"
@@ -21339,7 +21489,7 @@
     "react-hooks-extra/ensure-use-callback-has-non-empty-deps": {
       "type": "problem",
       "docs": {
-        "description": "disallow unnecessary usage of 'useCallback'",
+        "description": "Disallow unnecessary usage of `useCallback`.",
         "url": "https://eslint-react.xyz/docs/rules/hooks-extra-no-unnecessary-use-callback"
       },
       "name": "react-hooks-extra/ensure-use-callback-has-non-empty-deps",
@@ -21348,7 +21498,7 @@
     "react-hooks-extra/ensure-use-memo-has-non-empty-deps": {
       "type": "problem",
       "docs": {
-        "description": "disallow unnecessary usage of 'useMemo'",
+        "description": "Disallow unnecessary usage of `useMemo`.",
         "url": "https://eslint-react.xyz/docs/rules/hooks-extra-no-unnecessary-use-memo"
       },
       "name": "react-hooks-extra/ensure-use-memo-has-non-empty-deps",
@@ -21357,10 +21507,19 @@
     "react-hooks-extra/no-redundant-custom-hook": {
       "type": "problem",
       "docs": {
-        "description": "enforce custom Hooks to use at least one other hook inside",
-        "url": "https://eslint-react.xyz/docs/rules/hooks-extra-no-useless-custom-hooks"
+        "description": "Enforces that a function with the `use` prefix should use at least one Hook inside of it.",
+        "url": "https://eslint-react.xyz/docs/rules/hooks-extra-no-unnecessary-use-prefix"
       },
       "name": "react-hooks-extra/no-redundant-custom-hook",
+      "plugin": "react-hooks-extra"
+    },
+    "react-hooks-extra/no-useless-custom-hooks": {
+      "type": "problem",
+      "docs": {
+        "description": "Enforces that a function with the `use` prefix should use at least one Hook inside of it.",
+        "url": "https://eslint-react.xyz/docs/rules/hooks-extra-no-unnecessary-use-prefix"
+      },
+      "name": "react-hooks-extra/no-useless-custom-hooks",
       "plugin": "react-hooks-extra"
     },
     "react-naming-convention/component-name": {
@@ -21373,7 +21532,7 @@
         }
       ],
       "docs": {
-        "description": "enforce naming convention for components",
+        "description": "Enforces naming conventions for components.",
         "url": "https://eslint-react.xyz/docs/rules/naming-convention-component-name"
       },
       "name": "react-naming-convention/component-name",
@@ -21382,7 +21541,7 @@
     "react-naming-convention/context-name": {
       "type": "problem",
       "docs": {
-        "description": "enforce context name to be a valid component name with the suffix 'Context'",
+        "description": "Enforces context name to be a valid component name with the suffix `Context`.",
         "url": "https://eslint-react.xyz/docs/rules/naming-convention-context-name"
       },
       "name": "react-naming-convention/context-name",
@@ -21405,7 +21564,7 @@
         }
       ],
       "docs": {
-        "description": "enforce naming convention for JSX filenames",
+        "description": "Enforces consistent file naming conventions.",
         "url": "https://eslint-react.xyz/docs/rules/naming-convention-filename"
       },
       "name": "react-naming-convention/filename",
@@ -21424,7 +21583,7 @@
         }
       ],
       "docs": {
-        "description": "enforce naming convention for JSX file extensions",
+        "description": "Enforces consistent file naming conventions.",
         "url": "https://eslint-react.xyz/docs/rules/naming-convention-filename-extension"
       },
       "name": "react-naming-convention/filename-extension",
@@ -21433,7 +21592,7 @@
     "react-naming-convention/use-state": {
       "type": "problem",
       "docs": {
-        "description": "enforce destructuring and symmetric naming of 'useState' hook value and setter",
+        "description": "Enforces destructuring and symmetric naming of `useState` hook value and setter.",
         "url": "https://eslint-react.xyz/docs/rules/naming-convention-use-state"
       },
       "name": "react-naming-convention/use-state",
@@ -21447,7 +21606,7 @@
     "react-web-api/no-leaked-event-listener": {
       "type": "problem",
       "docs": {
-        "description": "enforce that every 'addEventListener' in a component or custom Hook has a corresponding 'removeEventListener'.",
+        "description": "Prevents leaked `addEventListener` in a component or custom Hook.",
         "url": "https://eslint-react.xyz/docs/rules/web-api-no-leaked-event-listener"
       },
       "name": "react-web-api/no-leaked-event-listener",
@@ -21456,7 +21615,7 @@
     "react-web-api/no-leaked-interval": {
       "type": "problem",
       "docs": {
-        "description": "enforce that every 'setInterval' in a component or custom Hook has a corresponding 'clearInterval'.",
+        "description": "Prevents leaked `setInterval` in a component or custom Hook.",
         "url": "https://eslint-react.xyz/docs/rules/web-api-no-leaked-interval"
       },
       "name": "react-web-api/no-leaked-interval",
@@ -21465,7 +21624,7 @@
     "react-web-api/no-leaked-resize-observer": {
       "type": "problem",
       "docs": {
-        "description": "enforce cleanup of 'ResizeObserver' instances in components and custom Hooks.",
+        "description": "Prevents leaked `ResizeObserver` in a component or custom Hook.",
         "url": "https://eslint-react.xyz/docs/rules/web-api-no-leaked-resize-observer"
       },
       "name": "react-web-api/no-leaked-resize-observer",
@@ -21474,7 +21633,7 @@
     "react-web-api/no-leaked-timeout": {
       "type": "problem",
       "docs": {
-        "description": "enforce that every 'setTimeout' in a component or custom Hook has a corresponding 'clearTimeout'.",
+        "description": "Prevents leaked `setTimeout` in a component or custom Hook.",
         "url": "https://eslint-react.xyz/docs/rules/web-api-no-leaked-timeout"
       },
       "name": "react-web-api/no-leaked-timeout",
@@ -22444,6 +22603,31 @@
       "name": "svelte/no-unknown-style-directive-property",
       "plugin": "svelte"
     },
+    "svelte/no-unnecessary-state-wrap": {
+      "docs": {
+        "description": "Disallow unnecessary $state wrapping of reactive classes",
+        "category": "Best Practices",
+        "recommended": true,
+        "url": "https://sveltejs.github.io/eslint-plugin-svelte/rules/no-unnecessary-state-wrap/",
+        "ruleId": "svelte/no-unnecessary-state-wrap",
+        "ruleName": "no-unnecessary-state-wrap"
+      },
+      "type": "suggestion",
+      "hasSuggestions": true,
+      "conditions": [
+        {
+          "svelteVersions": [
+            "5"
+          ],
+          "runes": [
+            true,
+            "undetermined"
+          ]
+        }
+      ],
+      "name": "svelte/no-unnecessary-state-wrap",
+      "plugin": "svelte"
+    },
     "svelte/no-unused-class-name": {
       "docs": {
         "description": "disallow the use of a class in the template without a corresponding style",
@@ -22455,6 +22639,30 @@
       },
       "type": "suggestion",
       "name": "svelte/no-unused-class-name",
+      "plugin": "svelte"
+    },
+    "svelte/no-unused-props": {
+      "docs": {
+        "description": "Warns about defined Props properties that are unused",
+        "category": "Best Practices",
+        "recommended": true,
+        "url": "https://sveltejs.github.io/eslint-plugin-svelte/rules/no-unused-props/",
+        "ruleId": "svelte/no-unused-props",
+        "ruleName": "no-unused-props"
+      },
+      "type": "suggestion",
+      "conditions": [
+        {
+          "svelteVersions": [
+            "5"
+          ],
+          "runes": [
+            true,
+            "undetermined"
+          ]
+        }
+      ],
+      "name": "svelte/no-unused-props",
       "plugin": "svelte"
     },
     "svelte/no-unused-svelte-ignore": {
@@ -25479,6 +25687,20 @@
       ]
     },
     {
+      "filepath": "scripts/versiongen.ts",
+      "globs": [
+        "**/*.?([cm])ts",
+        "**/*.?([cm])[jt]s?(x)",
+        "**/scripts/**/*.?([cm])[jt]s?(x)"
+      ],
+      "configs": [
+        17,
+        18,
+        26,
+        59
+      ]
+    },
+    {
       "filepath": "src/cli.ts",
       "globs": [
         "**/*.?([cm])ts",
@@ -26143,22 +26365,6 @@
       ]
     },
     {
-      "filepath": "src/stub.d.ts",
-      "globs": [
-        "**/*.?([cm])ts",
-        "**/*.?([cm])[jt]s?(x)",
-        "**/*.d.?([cm])ts",
-        "src/**/*.ts"
-      ],
-      "configs": [
-        17,
-        18,
-        26,
-        62,
-        66
-      ]
-    },
-    {
       "filepath": "src/types.ts",
       "globs": [
         "**/*.?([cm])ts",
@@ -26281,7 +26487,7 @@
     }
   ],
   "meta": {
-    "lastUpdate": 1742266945481,
+    "lastUpdate": 1744078081438,
     "basePath": "",
     "configPath": ""
   }
