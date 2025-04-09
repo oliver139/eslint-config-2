@@ -127,7 +127,7 @@ export async function vue(
         'vue/block-order': ['error', {
           order: ['template', 'script', 'style'],
         }],
-        'vue/component-api-style ': ['error', ['script-setup', 'composition']],
+        'vue/component-api-style': ['error', ['script-setup', 'composition']],
         'vue/component-name-in-template-casing': ['error', 'PascalCase'],
         'vue/component-options-name-casing': ['error', 'PascalCase'],
         // this is deprecated
