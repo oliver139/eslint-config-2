@@ -18,15 +18,15 @@ export interface CliRunOptions {
   /**
    * Skip prompts and use default values
    */
-  yes?: boolean,
+  yes?: boolean
   /**
    * Use the framework template for optimal customization: vue / react / svelte / astro
    */
-  frameworks?: string[],
+  frameworks?: string[]
   /**
    * Use the extra utils: formatter / perfectionist / unocss
    */
-  extra?: string[],
+  extra?: string[]
 }
 
 export async function run(options: CliRunOptions = {}): Promise<void> {

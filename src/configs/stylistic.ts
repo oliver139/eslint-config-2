@@ -12,7 +12,7 @@ export const StylisticConfigDefaults: StylisticConfig = {
 }
 
 export interface StylisticOptions extends StylisticConfig, OptionsOverrides {
-  lessOpinionated?: boolean,
+  lessOpinionated?: boolean
 }
 
 export async function stylistic(
@@ -70,13 +70,20 @@ export async function stylistic(
         'style/generator-star-spacing': ['error', { after: true, before: false }],
         'style/member-delimiter-style': ['error', {
           multiline: {
-            delimiter: 'comma',
-            requireLast: true,
+            delimiter: 'none',
+            requireLast: false,
           },
           multilineDetection: 'brackets',
+          overrides: {
+            interface: {
+              multiline: {
+                delimiter: 'none',
+                requireLast: false,
+              },
+            },
+          },
           singleline: {
             delimiter: 'comma',
-            requireLast: false,
           },
         }],
         'style/yield-star-spacing': ['error', { after: true, before: false }],
