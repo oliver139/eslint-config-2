@@ -74,6 +74,7 @@ export async function markdown(
         'style/comma-dangle': 'off',
 
         'style/eol-last': 'off',
+        'style/no-trailing-spaces': 'off',
         'ts/consistent-type-imports': 'off',
         'ts/explicit-function-return-type': 'off',
         'ts/no-namespace': 'off',
