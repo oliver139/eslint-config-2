@@ -74,7 +74,6 @@ export async function markdown(
         'style/comma-dangle': 'off',
 
         'style/eol-last': 'off',
-        'style/no-trailing-spaces': 'off',
         'ts/consistent-type-imports': 'off',
         'ts/explicit-function-return-type': 'off',
         'ts/no-namespace': 'off',
@@ -89,6 +88,20 @@ export async function markdown(
         'unused-imports/no-unused-vars': 'off',
 
         ...overrides,
+      },
+    },
+    {
+      files,
+      languageOptions: {
+        parserOptions: {
+          ecmaFeatures: {
+            impliedStrict: true,
+          },
+        },
+      },
+      name: 'antfu/markdown/disables-2',
+      rules: {
+        'style/no-trailing-spaces': 'off',
       },
     },
   ]
