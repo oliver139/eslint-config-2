@@ -205,7 +205,7 @@ export async function vue(
               'vue/object-property-newline': ['error', { allowMultiplePropertiesPerLine: true }],
               'vue/operator-linebreak': ['error', 'before'],
               'vue/padding-line-between-blocks': ['error', 'always'],
-              'vue/quote-props': ['error', 'consistent-as-needed'],
+              'vue/quote-props': ['error', 'as-needed'],
               'vue/space-in-parens': ['error', 'never'],
               'vue/template-curly-spacing': 'error',
             }

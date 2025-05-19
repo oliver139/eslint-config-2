@@ -62,7 +62,7 @@ export async function stylistic(
               'antfu/curly': 'off',
               'antfu/if-newline': 'error',
               'antfu/top-level-function': 'error',
-              'curly': ['error', 'multi-line', 'consistent'],
+              curly: ['error', 'multi-line', 'consistent'],
             }
         ),
 
@@ -86,6 +86,7 @@ export async function stylistic(
             delimiter: 'comma',
           },
         }],
+        'style/quote-props': ['error', 'as-needed'],
         'style/yield-star-spacing': ['error', { after: true, before: false }],
 
         ...overrides,
