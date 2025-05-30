@@ -1,7 +1,7 @@
 {
   "name": "@oliver139/eslint-config",
   "type": "module",
-  "version": "2.7.0",
+  "version": "2.8.0",
   "packageManager": "pnpm@10.11.0",
   "description": " Oliver's ESLint config preset powered by @antfu/eslint-config",
   "author": "Oliver Mak <oliver139.working@gmail.com> (https://github.com/oliver139)",
