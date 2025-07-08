@@ -73,7 +73,7 @@ export async function react(
     {
       name: 'antfu/react/setup',
       plugins: {
-        'react': plugins['@eslint-react'],
+        react: plugins['@eslint-react'],
         'react-dom': plugins['@eslint-react/dom'],
         'react-hooks': pluginReactHooks,
         'react-hooks-extra': plugins['@eslint-react/hooks-extra'],
@@ -196,6 +196,10 @@ export async function react(
                     'headers',
                     'loader',
                     'action',
+                    'clientLoader',
+                    'clientAction',
+                    'handle',
+                    'shouldRevalidate',
                   ]
                 : []),
             ],
