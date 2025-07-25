@@ -28,7 +28,7 @@ export async function nextjs(
     {
       name: 'antfu/nextjs/setup',
       plugins: {
-        '@next/next': pluginNextJS,
+        next: pluginNextJS,
       },
     },
     {
@@ -41,6 +41,7 @@ export async function nextjs(
         },
         sourceType: 'module',
       },
+      name: 'antfu/nextjs/rules',
       rules: {
         ...normalizeRules(pluginNextJS.configs.recommended.rules),
         ...normalizeRules(pluginNextJS.configs['core-web-vitals'].rules),
