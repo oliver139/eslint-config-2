@@ -15,7 +15,7 @@ export async function javascript(
   return [
     {
       languageOptions: {
-        ecmaVersion: 2022,
+        ecmaVersion: 'latest',
         globals: {
           ...globals.browser,
           ...globals.es2021,
@@ -28,7 +28,7 @@ export async function javascript(
           ecmaFeatures: {
             jsx: true,
           },
-          ecmaVersion: 2022,
+          ecmaVersion: 'latest',
           sourceType: 'module',
         },
         sourceType: 'module',
@@ -41,7 +41,7 @@ export async function javascript(
     {
       name: 'antfu/javascript/rules',
       plugins: {
-        'antfu': pluginAntfu,
+        antfu: pluginAntfu,
         'unused-imports': pluginUnusedImports,
       },
       rules: {
@@ -54,7 +54,7 @@ export async function javascript(
         'constructor-super': 'error',
         'default-case-last': 'error',
         'dot-notation': ['error', { allowKeywords: true }],
-        'eqeqeq': ['error', 'smart'],
+        eqeqeq: ['error', 'smart'],
         'max-nested-callbacks': ['warn', { max: 4 }],
         'new-cap': ['error', { capIsNew: false, newIsCap: true, properties: true }],
         'no-alert': 'off',
@@ -205,7 +205,7 @@ export async function javascript(
         'use-isnan': ['error', { enforceForIndexOf: true, enforceForSwitchCase: true }],
         'valid-typeof': ['error', { requireStringLiterals: true }],
         'vars-on-top': 'error',
-        'yoda': ['error', 'never', { exceptRange: true }],
+        yoda: ['error', 'never', { exceptRange: true }],
 
         ...overrides,
       },
