@@ -1577,7 +1577,7 @@
         "no-useless-computed-key": "error",
         "no-useless-constructor": "error",
         "no-useless-rename": "error",
-        "no-useless-return": "error",
+        "no-useless-return": "warn",
         "no-var": "error",
         "no-with": "error",
         "object-shorthand": [
@@ -2232,6 +2232,19 @@
       "index": 19
     },
     {
+      "name": "antfu/typescript/erasable-syntax-only",
+      "plugins": {
+        "erasable-syntax-only": {}
+      },
+      "rules": {
+        "erasable-syntax-only/enums": "error",
+        "erasable-syntax-only/import-aliases": "error",
+        "erasable-syntax-only/namespaces": "error",
+        "erasable-syntax-only/parameter-properties": "error"
+      },
+      "index": 20
+    },
+    {
       "name": "antfu/stylistic/rules",
       "plugins": {
         "antfu": {},
@@ -2621,7 +2634,7 @@
           "consistent"
         ]
       },
-      "index": 20
+      "index": 21
     },
     {
       "rules": {
@@ -2697,14 +2710,14 @@
         "regexp": {}
       },
       "name": "antfu/regexp/rules",
-      "index": 21
+      "index": 22
     },
     {
       "name": "antfu/test/setup",
       "plugins": {
         "test": {}
       },
-      "index": 22
+      "index": 23
     },
     {
       "files": [
@@ -2733,7 +2746,7 @@
         "node/prefer-global/process": "off",
         "ts/explicit-function-return-type": "off"
       },
-      "index": 23
+      "index": 24
     },
     {
       "languageOptions": {
@@ -2759,7 +2772,7 @@
         "vue": {},
         "vue-a11y": {}
       },
-      "index": 24
+      "index": 25
     },
     {
       "files": [
@@ -2775,10 +2788,10 @@
             ".vue"
           ],
           "parser": {
-            "version": "8.45.0",
+            "version": "8.46.1",
             "meta": {
               "name": "typescript-eslint/parser",
-              "version": "8.45.0"
+              "version": "8.46.1"
             }
           },
           "sourceType": "module"
@@ -3138,7 +3151,7 @@
         "vue-a11y/role-has-required-aria-props": "error",
         "vue-a11y/tabindex-no-positive": "warn"
       },
-      "index": 25
+      "index": 26
     },
     {
       "name": "antfu/react/setup",
@@ -3151,7 +3164,7 @@
         "react-refresh": {},
         "react-web-api": {}
       },
-      "index": 26
+      "index": 27
     },
     {
       "files": [
@@ -3222,8 +3235,23 @@
         "react-dom/no-unsafe-target-blank": "warn",
         "react-dom/no-use-form-state": "error",
         "react-dom/no-void-elements-with-children": "error",
-        "react-hooks/exhaustive-deps": "warn",
         "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+        "react-hooks/static-components": "error",
+        "react-hooks/use-memo": "error",
+        "react-hooks/component-hook-factories": "error",
+        "react-hooks/preserve-manual-memoization": "error",
+        "react-hooks/incompatible-library": "warn",
+        "react-hooks/immutability": "error",
+        "react-hooks/globals": "error",
+        "react-hooks/refs": "error",
+        "react-hooks/set-state-in-effect": "error",
+        "react-hooks/error-boundaries": "error",
+        "react-hooks/purity": "error",
+        "react-hooks/set-state-in-render": "error",
+        "react-hooks/unsupported-syntax": "warn",
+        "react-hooks/config": "error",
+        "react-hooks/gating": "error",
         "react-hooks-extra/no-direct-set-state-in-use-effect": "warn",
         "react-web-api/no-leaked-event-listener": "warn",
         "react-web-api/no-leaked-interval": "warn",
@@ -3237,14 +3265,14 @@
           }
         ]
       },
-      "index": 27
+      "index": 28
     },
     {
       "name": "antfu/nextjs/setup",
       "plugins": {
         "next": {}
       },
-      "index": 28
+      "index": 29
     },
     {
       "files": [
@@ -3329,14 +3357,14 @@
           "version": "detect"
         }
       },
-      "index": 29
+      "index": 30
     },
     {
       "name": "antfu/solid/setup",
       "plugins": {
         "solid": {}
       },
-      "index": 30
+      "index": 31
     },
     {
       "files": [
@@ -3395,14 +3423,14 @@
           }
         ]
       },
-      "index": 31
+      "index": 32
     },
     {
       "name": "antfu/svelte/setup",
       "plugins": {
         "svelte": {}
       },
-      "index": 32
+      "index": 33
     },
     {
       "files": [
@@ -3415,10 +3443,10 @@
             ".svelte"
           ],
           "parser": {
-            "version": "8.45.0",
+            "version": "8.46.1",
             "meta": {
               "name": "typescript-eslint/parser",
-              "version": "8.45.0"
+              "version": "8.46.1"
             }
           }
         }
@@ -3487,14 +3515,14 @@
         "svelte/no-trailing-spaces": "error",
         "svelte/spaced-html-comment": "error"
       },
-      "index": 33
+      "index": 34
     },
     {
       "name": "antfu/astro/setup",
       "plugins": {
         "astro": {}
       },
-      "index": 34
+      "index": 35
     },
     {
       "files": [
@@ -3511,10 +3539,10 @@
             ".astro"
           ],
           "parser": {
-            "version": "8.45.0",
+            "version": "8.46.1",
             "meta": {
               "name": "typescript-eslint/parser",
-              "version": "8.45.0"
+              "version": "8.46.1"
             }
           }
         },
@@ -3538,14 +3566,14 @@
         "style/jsx-one-expression-per-line": "off",
         "style/no-multiple-empty-lines": "off"
       },
-      "index": 35
+      "index": 36
     },
     {
       "name": "antfu/jsonc/setup",
       "plugins": {
         "jsonc": {}
       },
-      "index": 36
+      "index": 37
     },
     {
       "files": [
@@ -3627,7 +3655,7 @@
         "jsonc/quote-props": "error",
         "jsonc/quotes": "error"
       },
-      "index": 37
+      "index": 38
     },
     {
       "files": [
@@ -3746,7 +3774,7 @@
           }
         ]
       },
-      "index": 38
+      "index": 39
     },
     {
       "files": [
@@ -3866,7 +3894,7 @@
           }
         ]
       },
-      "index": 39
+      "index": 40
     },
     {
       "files": [
@@ -3885,7 +3913,7 @@
         "pnpm/json-prefer-workspace-settings": "error",
         "pnpm/json-valid-catalog": "error"
       },
-      "index": 40
+      "index": 41
     },
     {
       "files": [
@@ -3902,14 +3930,14 @@
         "pnpm/yaml-no-duplicate-catalog-item": "error",
         "pnpm/yaml-no-unused-catalog-item": "error"
       },
-      "index": 41
+      "index": 42
     },
     {
       "name": "antfu/yaml/setup",
       "plugins": {
         "yaml": {}
       },
-      "index": 42
+      "index": 43
     },
     {
       "files": [
@@ -3949,7 +3977,7 @@
         ],
         "yaml/spaced-comment": "error"
       },
-      "index": 43
+      "index": 44
     },
     {
       "files": [
@@ -3989,14 +4017,14 @@
           }
         ]
       },
-      "index": 44
+      "index": 45
     },
     {
       "name": "antfu/toml/setup",
       "plugins": {
         "toml": {}
       },
-      "index": 45
+      "index": 46
     },
     {
       "files": [
@@ -4031,14 +4059,14 @@
         "toml/spaced-comment": "error",
         "toml/table-bracket-spacing": "error"
       },
-      "index": 46
+      "index": 47
     },
     {
       "name": "antfu/markdown/setup",
       "plugins": {
         "markdown": {}
       },
-      "index": 47
+      "index": 48
     },
     {
       "files": [
@@ -4049,7 +4077,7 @@
       ],
       "name": "antfu/markdown/processor",
       "processor": "merged-processor:@eslint/markdown/markdown+pass-through",
-      "index": 48
+      "index": 49
     },
     {
       "files": [
@@ -4059,7 +4087,7 @@
         "parser": "parser-plain"
       },
       "name": "antfu/markdown/parser",
-      "index": 49
+      "index": 50
     },
     {
       "files": [
@@ -4101,7 +4129,7 @@
         "unused-imports/no-unused-imports": "off",
         "unused-imports/no-unused-vars": "off"
       },
-      "index": 50
+      "index": 51
     },
     {
       "files": [
@@ -4118,14 +4146,14 @@
       "rules": {
         "style/no-trailing-spaces": "off"
       },
-      "index": 51
+      "index": 52
     },
     {
       "name": "antfu/formatter/setup",
       "plugins": {
         "format": {}
       },
-      "index": 52
+      "index": 53
     },
     {
       "files": [
@@ -4152,7 +4180,7 @@
           }
         ]
       },
-      "index": 53
+      "index": 54
     },
     {
       "files": [
@@ -4178,7 +4206,7 @@
           }
         ]
       },
-      "index": 54
+      "index": 55
     },
     {
       "files": [
@@ -4204,7 +4232,7 @@
           }
         ]
       },
-      "index": 55
+      "index": 56
     },
     {
       "files": [
@@ -4230,7 +4258,7 @@
           }
         ]
       },
-      "index": 56
+      "index": 57
     },
     {
       "files": [
@@ -4262,7 +4290,7 @@
           }
         ]
       },
-      "index": 57
+      "index": 58
     },
     {
       "files": [
@@ -4294,7 +4322,7 @@
           }
         ]
       },
-      "index": 58
+      "index": 59
     },
     {
       "files": [
@@ -4322,7 +4350,7 @@
           }
         ]
       },
-      "index": 59
+      "index": 60
     },
     {
       "files": [
@@ -4350,7 +4378,7 @@
           }
         ]
       },
-      "index": 60
+      "index": 61
     },
     {
       "files": [
@@ -4367,7 +4395,7 @@
         "style/quotes": "off",
         "style/semi": "off"
       },
-      "index": 61
+      "index": 62
     },
     {
       "files": [
@@ -4393,7 +4421,7 @@
           }
         ]
       },
-      "index": 62
+      "index": 63
     },
     {
       "files": [
@@ -4405,7 +4433,7 @@
         "no-console": "off",
         "ts/explicit-function-return-type": "off"
       },
-      "index": 63
+      "index": 64
     },
     {
       "files": [
@@ -4417,7 +4445,7 @@
         "antfu/no-top-level-await": "off",
         "no-console": "off"
       },
-      "index": 64
+      "index": 65
     },
     {
       "files": [
@@ -4429,7 +4457,7 @@
         "antfu/no-import-dist": "off",
         "antfu/no-import-node-modules-by-path": "off"
       },
-      "index": 65
+      "index": 66
     },
     {
       "files": [
@@ -4441,7 +4469,7 @@
         "no-restricted-syntax": "off",
         "unused-imports/no-unused-vars": "off"
       },
-      "index": 66
+      "index": 67
     },
     {
       "files": [
@@ -4452,7 +4480,7 @@
       "rules": {
         "ts/no-require-imports": "off"
       },
-      "index": 67
+      "index": 68
     },
     {
       "files": [
@@ -4465,7 +4493,7 @@
         "no-console": "off",
         "ts/explicit-function-return-type": "off"
       },
-      "index": 68
+      "index": 69
     },
     {
       "ignores": [
@@ -4473,7 +4501,7 @@
         "_fixtures",
         "**/constants-generated.ts"
       ],
-      "index": 69
+      "index": 70
     },
     {
       "files": [
@@ -4482,7 +4510,7 @@
       "rules": {
         "perfectionist/sort-objects": "error"
       },
-      "index": 70
+      "index": 71
     }
   ],
   "rules": {
@@ -15265,6 +15293,43 @@
       "name": "ts/use-unknown-in-catch-callback-variable",
       "plugin": "ts"
     },
+    "erasable-syntax-only/enums": {
+      "docs": {
+        "description": "Avoid using TypeScript's enums.",
+        "url": "https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/blob/main/docs/rules/enums.md"
+      },
+      "type": "problem",
+      "name": "erasable-syntax-only/enums",
+      "plugin": "erasable-syntax-only"
+    },
+    "erasable-syntax-only/import-aliases": {
+      "docs": {
+        "description": "Avoid using TypeScript's import aliases.",
+        "url": "https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/blob/main/docs/rules/import-aliases.md"
+      },
+      "hasSuggestions": true,
+      "type": "problem",
+      "name": "erasable-syntax-only/import-aliases",
+      "plugin": "erasable-syntax-only"
+    },
+    "erasable-syntax-only/namespaces": {
+      "docs": {
+        "description": "Avoid using TypeScript's namespaces.",
+        "url": "https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/blob/main/docs/rules/namespaces.md"
+      },
+      "type": "problem",
+      "name": "erasable-syntax-only/namespaces",
+      "plugin": "erasable-syntax-only"
+    },
+    "erasable-syntax-only/parameter-properties": {
+      "docs": {
+        "description": "Avoid using TypeScript's class parameter properties.",
+        "url": "https://github.com/JoshuaKGoldberg/eslint-plugin-erasable-syntax-only/blob/main/docs/rules/parameter-properties.md"
+      },
+      "type": "problem",
+      "name": "erasable-syntax-only/parameter-properties",
+      "plugin": "erasable-syntax-only"
+    },
     "style/array-bracket-newline": {
       "type": "layout",
       "docs": {
@@ -17507,7 +17572,7 @@
       "docs": {
         "recommended": false,
         "requiresTypeChecking": false,
-        "description": "require .spec test file pattern",
+        "description": "require test file pattern",
         "url": "https://github.com/vitest-dev/eslint-plugin-vitest/blob/main/docs/rules/consistent-test-filename.md"
       },
       "name": "test/consistent-test-filename",
@@ -22373,16 +22438,6 @@
       "name": "react-dom/prefer-namespace-import",
       "plugin": "react-dom"
     },
-    "react-hooks/rules-of-hooks": {
-      "type": "problem",
-      "docs": {
-        "description": "enforces the Rules of Hooks",
-        "recommended": true,
-        "url": "https://reactjs.org/docs/hooks-rules.html"
-      },
-      "name": "react-hooks/rules-of-hooks",
-      "plugin": "react-hooks"
-    },
     "react-hooks/exhaustive-deps": {
       "type": "suggestion",
       "docs": {
@@ -22393,6 +22448,313 @@
       "fixable": "code",
       "hasSuggestions": true,
       "name": "react-hooks/exhaustive-deps",
+      "plugin": "react-hooks"
+    },
+    "react-hooks/rules-of-hooks": {
+      "type": "problem",
+      "docs": {
+        "description": "enforces the Rules of Hooks",
+        "recommended": true,
+        "url": "https://react.dev/reference/rules/rules-of-hooks"
+      },
+      "name": "react-hooks/rules-of-hooks",
+      "plugin": "react-hooks"
+    },
+    "react-hooks/hooks": {
+      "type": "problem",
+      "docs": {
+        "description": "Validates the rules of hooks",
+        "recommended": false
+      },
+      "fixable": "code",
+      "hasSuggestions": true,
+      "name": "react-hooks/hooks",
+      "plugin": "react-hooks"
+    },
+    "react-hooks/capitalized-calls": {
+      "type": "problem",
+      "docs": {
+        "description": "Validates against calling capitalized functions/methods instead of using JSX",
+        "recommended": false
+      },
+      "fixable": "code",
+      "hasSuggestions": true,
+      "name": "react-hooks/capitalized-calls",
+      "plugin": "react-hooks"
+    },
+    "react-hooks/static-components": {
+      "type": "problem",
+      "docs": {
+        "description": "Validates that components are static, not recreated every render. Components that are recreated dynamically can reset state and trigger excessive re-rendering",
+        "recommended": true
+      },
+      "fixable": "code",
+      "hasSuggestions": true,
+      "name": "react-hooks/static-components",
+      "plugin": "react-hooks"
+    },
+    "react-hooks/use-memo": {
+      "type": "problem",
+      "docs": {
+        "description": "Validates usage of the useMemo() hook against common mistakes. See [`useMemo()` docs](https://react.dev/reference/react/useMemo) for more information.",
+        "recommended": true
+      },
+      "fixable": "code",
+      "hasSuggestions": true,
+      "name": "react-hooks/use-memo",
+      "plugin": "react-hooks"
+    },
+    "react-hooks/void-use-memo": {
+      "type": "problem",
+      "docs": {
+        "description": "Validates that useMemos always return a value. See [`useMemo()` docs](https://react.dev/reference/react/useMemo) for more information.",
+        "recommended": false
+      },
+      "fixable": "code",
+      "hasSuggestions": true,
+      "name": "react-hooks/void-use-memo",
+      "plugin": "react-hooks"
+    },
+    "react-hooks/component-hook-factories": {
+      "type": "problem",
+      "docs": {
+        "description": "Validates against higher order functions defining nested components or hooks. Components and hooks should be defined at the module level",
+        "recommended": true
+      },
+      "fixable": "code",
+      "hasSuggestions": true,
+      "name": "react-hooks/component-hook-factories",
+      "plugin": "react-hooks"
+    },
+    "react-hooks/preserve-manual-memoization": {
+      "type": "problem",
+      "docs": {
+        "description": "Validates that existing manual memoized is preserved by the compiler. React Compiler will only compile components and hooks if its inference [matches or exceeds the existing manual memoization](https://react.dev/learn/react-compiler/introduction#what-should-i-do-about-usememo-usecallback-and-reactmemo)",
+        "recommended": true
+      },
+      "fixable": "code",
+      "hasSuggestions": true,
+      "name": "react-hooks/preserve-manual-memoization",
+      "plugin": "react-hooks"
+    },
+    "react-hooks/incompatible-library": {
+      "type": "problem",
+      "docs": {
+        "description": "Validates against usage of libraries which are incompatible with memoization (manual or automatic)",
+        "recommended": true
+      },
+      "fixable": "code",
+      "hasSuggestions": true,
+      "name": "react-hooks/incompatible-library",
+      "plugin": "react-hooks"
+    },
+    "react-hooks/immutability": {
+      "type": "problem",
+      "docs": {
+        "description": "Validates against mutating props, state, and other values that [are immutable](https://react.dev/reference/rules/components-and-hooks-must-be-pure#props-and-state-are-immutable)",
+        "recommended": true
+      },
+      "fixable": "code",
+      "hasSuggestions": true,
+      "name": "react-hooks/immutability",
+      "plugin": "react-hooks"
+    },
+    "react-hooks/globals": {
+      "type": "problem",
+      "docs": {
+        "description": "Validates against assignment/mutation of globals during render, part of ensuring that [side effects must render outside of render](https://react.dev/reference/rules/components-and-hooks-must-be-pure#side-effects-must-run-outside-of-render)",
+        "recommended": true
+      },
+      "fixable": "code",
+      "hasSuggestions": true,
+      "name": "react-hooks/globals",
+      "plugin": "react-hooks"
+    },
+    "react-hooks/refs": {
+      "type": "problem",
+      "docs": {
+        "description": "Validates correct usage of refs, not reading/writing during render. See the \"pitfalls\" section in [`useRef()` usage](https://react.dev/reference/react/useRef#usage)",
+        "recommended": true
+      },
+      "fixable": "code",
+      "hasSuggestions": true,
+      "name": "react-hooks/refs",
+      "plugin": "react-hooks"
+    },
+    "react-hooks/memoized-effect-dependencies": {
+      "type": "problem",
+      "docs": {
+        "description": "Validates that effect dependencies are memoized",
+        "recommended": false
+      },
+      "fixable": "code",
+      "hasSuggestions": true,
+      "name": "react-hooks/memoized-effect-dependencies",
+      "plugin": "react-hooks"
+    },
+    "react-hooks/set-state-in-effect": {
+      "type": "problem",
+      "docs": {
+        "description": "Validates against calling setState synchronously in an effect, which can lead to re-renders that degrade performance",
+        "recommended": true
+      },
+      "fixable": "code",
+      "hasSuggestions": true,
+      "name": "react-hooks/set-state-in-effect",
+      "plugin": "react-hooks"
+    },
+    "react-hooks/no-deriving-state-in-effects": {
+      "type": "problem",
+      "docs": {
+        "description": "Validates against deriving values from state in an effect",
+        "recommended": false
+      },
+      "fixable": "code",
+      "hasSuggestions": true,
+      "name": "react-hooks/no-deriving-state-in-effects",
+      "plugin": "react-hooks"
+    },
+    "react-hooks/error-boundaries": {
+      "type": "problem",
+      "docs": {
+        "description": "Validates usage of error boundaries instead of try/catch for errors in child components",
+        "recommended": true
+      },
+      "fixable": "code",
+      "hasSuggestions": true,
+      "name": "react-hooks/error-boundaries",
+      "plugin": "react-hooks"
+    },
+    "react-hooks/purity": {
+      "type": "problem",
+      "docs": {
+        "description": "Validates that [components/hooks are pure](https://react.dev/reference/rules/components-and-hooks-must-be-pure) by checking that they do not call known-impure functions",
+        "recommended": true
+      },
+      "fixable": "code",
+      "hasSuggestions": true,
+      "name": "react-hooks/purity",
+      "plugin": "react-hooks"
+    },
+    "react-hooks/set-state-in-render": {
+      "type": "problem",
+      "docs": {
+        "description": "Validates against setting state during render, which can trigger additional renders and potential infinite render loops",
+        "recommended": true
+      },
+      "fixable": "code",
+      "hasSuggestions": true,
+      "name": "react-hooks/set-state-in-render",
+      "plugin": "react-hooks"
+    },
+    "react-hooks/invariant": {
+      "type": "problem",
+      "docs": {
+        "description": "Internal invariants",
+        "recommended": false
+      },
+      "fixable": "code",
+      "hasSuggestions": true,
+      "name": "react-hooks/invariant",
+      "plugin": "react-hooks"
+    },
+    "react-hooks/todo": {
+      "type": "problem",
+      "docs": {
+        "description": "Unimplemented features",
+        "recommended": false
+      },
+      "fixable": "code",
+      "hasSuggestions": true,
+      "name": "react-hooks/todo",
+      "plugin": "react-hooks"
+    },
+    "react-hooks/syntax": {
+      "type": "problem",
+      "docs": {
+        "description": "Validates against invalid syntax",
+        "recommended": false
+      },
+      "fixable": "code",
+      "hasSuggestions": true,
+      "name": "react-hooks/syntax",
+      "plugin": "react-hooks"
+    },
+    "react-hooks/unsupported-syntax": {
+      "type": "problem",
+      "docs": {
+        "description": "Validates against syntax that we do not plan to support in React Compiler",
+        "recommended": true
+      },
+      "fixable": "code",
+      "hasSuggestions": true,
+      "name": "react-hooks/unsupported-syntax",
+      "plugin": "react-hooks"
+    },
+    "react-hooks/config": {
+      "type": "problem",
+      "docs": {
+        "description": "Validates the compiler configuration options",
+        "recommended": true
+      },
+      "fixable": "code",
+      "hasSuggestions": true,
+      "name": "react-hooks/config",
+      "plugin": "react-hooks"
+    },
+    "react-hooks/gating": {
+      "type": "problem",
+      "docs": {
+        "description": "Validates configuration of [gating mode](https://react.dev/reference/react-compiler/gating)",
+        "recommended": true
+      },
+      "fixable": "code",
+      "hasSuggestions": true,
+      "name": "react-hooks/gating",
+      "plugin": "react-hooks"
+    },
+    "react-hooks/rule-suppression": {
+      "type": "problem",
+      "docs": {
+        "description": "Validates against suppression of other rules",
+        "recommended": false
+      },
+      "fixable": "code",
+      "hasSuggestions": true,
+      "name": "react-hooks/rule-suppression",
+      "plugin": "react-hooks"
+    },
+    "react-hooks/automatic-effect-dependencies": {
+      "type": "problem",
+      "docs": {
+        "description": "Verifies that automatic effect dependencies are compiled if opted-in",
+        "recommended": false
+      },
+      "fixable": "code",
+      "hasSuggestions": true,
+      "name": "react-hooks/automatic-effect-dependencies",
+      "plugin": "react-hooks"
+    },
+    "react-hooks/fire": {
+      "type": "problem",
+      "docs": {
+        "description": "Validates usage of `fire`",
+        "recommended": false
+      },
+      "fixable": "code",
+      "hasSuggestions": true,
+      "name": "react-hooks/fire",
+      "plugin": "react-hooks"
+    },
+    "react-hooks/fbt": {
+      "type": "problem",
+      "docs": {
+        "description": "Validates usage of fbt",
+        "recommended": false
+      },
+      "fixable": "code",
+      "hasSuggestions": true,
+      "name": "react-hooks/fbt",
       "plugin": "react-hooks"
     },
     "react-hooks-extra/no-direct-set-state-in-use-effect": {
@@ -27103,7 +27465,7 @@
         "**/*.y?(a)ml"
       ],
       "configs": [
-        43
+        44
       ]
     },
     {
@@ -27112,7 +27474,7 @@
         "**/*.json"
       ],
       "configs": [
-        37
+        38
       ]
     },
     {
@@ -27121,10 +27483,10 @@
         "**/*.md"
       ],
       "configs": [
-        48,
         49,
-        51,
-        59
+        50,
+        52,
+        60
       ]
     },
     {
@@ -27137,9 +27499,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        68
+        28,
+        30,
+        69
       ]
     },
     {
@@ -27148,7 +27510,7 @@
         "**/*.toml"
       ],
       "configs": [
-        46
+        47
       ]
     },
     {
@@ -27159,9 +27521,9 @@
         "package.json"
       ],
       "configs": [
-        37,
         38,
-        40
+        39,
+        41
       ]
     },
     {
@@ -27171,9 +27533,9 @@
         "**/*.y?(a)ml"
       ],
       "configs": [
-        41,
-        43,
-        44
+        42,
+        44,
+        45
       ]
     },
     {
@@ -27186,9 +27548,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        63
+        28,
+        30,
+        64
       ]
     },
     {
@@ -27201,9 +27563,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        63
+        28,
+        30,
+        64
       ]
     },
     {
@@ -27217,10 +27579,10 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        64,
-        70
+        28,
+        30,
+        65,
+        71
       ]
     },
     {
@@ -27234,10 +27596,10 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        64,
-        70
+        28,
+        30,
+        65,
+        71
       ]
     },
     {
@@ -27251,10 +27613,10 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        64,
-        70
+        28,
+        30,
+        65,
+        71
       ]
     },
     {
@@ -27268,10 +27630,10 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        64,
-        70
+        28,
+        30,
+        65,
+        71
       ]
     },
     {
@@ -27285,10 +27647,10 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        64,
-        70
+        28,
+        30,
+        65,
+        71
       ]
     },
     {
@@ -27302,10 +27664,10 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        64,
-        70
+        28,
+        30,
+        65,
+        71
       ]
     },
     {
@@ -27319,10 +27681,10 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        64,
-        70
+        28,
+        30,
+        65,
+        71
       ]
     },
     {
@@ -27336,10 +27698,10 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        64,
-        70
+        28,
+        30,
+        65,
+        71
       ]
     },
     {
@@ -27353,10 +27715,10 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        64,
-        70
+        28,
+        30,
+        65,
+        71
       ]
     },
     {
@@ -27369,9 +27731,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        70
+        28,
+        30,
+        71
       ]
     },
     {
@@ -27384,9 +27746,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        70
+        28,
+        30,
+        71
       ]
     },
     {
@@ -27399,9 +27761,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        70
+        28,
+        30,
+        71
       ]
     },
     {
@@ -27414,9 +27776,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        70
+        28,
+        30,
+        71
       ]
     },
     {
@@ -27429,9 +27791,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        70
+        28,
+        30,
+        71
       ]
     },
     {
@@ -27444,9 +27806,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        70
+        28,
+        30,
+        71
       ]
     },
     {
@@ -27459,9 +27821,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        70
+        28,
+        30,
+        71
       ]
     },
     {
@@ -27474,9 +27836,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        70
+        28,
+        30,
+        71
       ]
     },
     {
@@ -27489,9 +27851,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        70
+        28,
+        30,
+        71
       ]
     },
     {
@@ -27504,9 +27866,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        70
+        28,
+        30,
+        71
       ]
     },
     {
@@ -27519,9 +27881,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        70
+        28,
+        30,
+        71
       ]
     },
     {
@@ -27534,9 +27896,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        70
+        28,
+        30,
+        71
       ]
     },
     {
@@ -27549,9 +27911,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        70
+        28,
+        30,
+        71
       ]
     },
     {
@@ -27564,9 +27926,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        70
+        28,
+        30,
+        71
       ]
     },
     {
@@ -27579,9 +27941,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        70
+        28,
+        30,
+        71
       ]
     },
     {
@@ -27594,9 +27956,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        70
+        28,
+        30,
+        71
       ]
     },
     {
@@ -27609,9 +27971,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        70
+        28,
+        30,
+        71
       ]
     },
     {
@@ -27624,9 +27986,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        70
+        28,
+        30,
+        71
       ]
     },
     {
@@ -27639,9 +28001,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        70
+        28,
+        30,
+        71
       ]
     },
     {
@@ -27654,9 +28016,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        70
+        28,
+        30,
+        71
       ]
     },
     {
@@ -27669,9 +28031,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        70
+        28,
+        30,
+        71
       ]
     },
     {
@@ -27684,9 +28046,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        70
+        28,
+        30,
+        71
       ]
     },
     {
@@ -27699,9 +28061,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        70
+        28,
+        30,
+        71
       ]
     },
     {
@@ -27714,9 +28076,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        70
+        28,
+        30,
+        71
       ]
     },
     {
@@ -27729,9 +28091,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        70
+        28,
+        30,
+        71
       ]
     },
     {
@@ -27744,9 +28106,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        70
+        28,
+        30,
+        71
       ]
     },
     {
@@ -27759,9 +28121,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        70
+        28,
+        30,
+        71
       ]
     },
     {
@@ -27774,9 +28136,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        70
+        28,
+        30,
+        71
       ]
     },
     {
@@ -27789,9 +28151,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        70
+        28,
+        30,
+        71
       ]
     },
     {
@@ -27804,9 +28166,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        70
+        28,
+        30,
+        71
       ]
     },
     {
@@ -27819,9 +28181,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        70
+        28,
+        30,
+        71
       ]
     },
     {
@@ -27834,9 +28196,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        70
+        28,
+        30,
+        71
       ]
     },
     {
@@ -27849,9 +28211,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        70
+        28,
+        30,
+        71
       ]
     },
     {
@@ -27864,9 +28226,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        70
+        28,
+        30,
+        71
       ]
     },
     {
@@ -27879,9 +28241,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        70
+        28,
+        30,
+        71
       ]
     },
     {
@@ -27894,9 +28256,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        70
+        28,
+        30,
+        71
       ]
     },
     {
@@ -27909,9 +28271,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        70
+        28,
+        30,
+        71
       ]
     },
     {
@@ -27924,9 +28286,9 @@
       "configs": [
         18,
         19,
-        23,
-        27,
-        29
+        24,
+        28,
+        30
       ]
     },
     {
@@ -27939,9 +28301,9 @@
       "configs": [
         18,
         19,
-        23,
-        27,
-        29
+        24,
+        28,
+        30
       ]
     },
     {
@@ -27954,9 +28316,9 @@
       "configs": [
         18,
         19,
-        23,
-        27,
-        29
+        24,
+        28,
+        30
       ]
     },
     {
@@ -27968,8 +28330,8 @@
       "configs": [
         18,
         19,
-        27,
-        29
+        28,
+        30
       ]
     },
     {
@@ -27979,8 +28341,8 @@
         "**/[jt]sconfig.json"
       ],
       "configs": [
-        37,
-        39
+        38,
+        40
       ]
     },
     {
@@ -27993,9 +28355,9 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        68
+        28,
+        30,
+        69
       ]
     },
     {
@@ -28008,14 +28370,14 @@
       "configs": [
         18,
         19,
-        27,
-        29,
-        68
+        28,
+        30,
+        69
       ]
     }
   ],
   "meta": {
-    "lastUpdate": 1759570360649,
+    "lastUpdate": 1760513876697,
     "basePath": "",
     "configPath": ""
   }
