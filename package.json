@@ -2,7 +2,7 @@
   "name": "@oliver139/eslint-config",
   "type": "module",
   "version": "4.0.0",
-  "packageManager": "pnpm@10.18.3",
+  "packageManager": "pnpm@10.20.0",
   "description": " Oliver's ESLint config preset powered by @antfu/eslint-config",
   "author": "Oliver Mak <oliver139.working@gmail.com> (https://github.com/oliver139)",
   "license": "MIT",
@@ -44,7 +44,7 @@
   },
   "peerDependencies": {
     "@eslint-react/eslint-plugin": "^2.0.1",
-    "@next/eslint-plugin-next": "^15.4.0-canary.115",
+    "@next/eslint-plugin-next": ">=15.0.0",
     "@prettier/plugin-xml": "^3.4.1",
     "@unocss/eslint-plugin": ">=0.50.0",
     "astro-eslint-parser": "^1.0.2",
