@@ -69,41 +69,5 @@ export async function yaml(
         ...overrides,
       },
     },
-    {
-      files: ['pnpm-workspace.yaml'],
-      name: 'antfu/yaml/pnpm-workspace',
-      rules: {
-        'yaml/sort-keys': [
-          'error',
-          {
-            order: [
-              'packages',
-              'overrides',
-              'patchedDependencies',
-              'hoistPattern',
-              'catalog',
-              'catalogs',
-
-              'allowedDeprecatedVersions',
-              'allowNonAppliedPatches',
-              'configDependencies',
-              'ignoredBuiltDependencies',
-              'ignoredOptionalDependencies',
-              'neverBuiltDependencies',
-              'onlyBuiltDependencies',
-              'onlyBuiltDependenciesFile',
-              'packageExtensions',
-              'peerDependencyRules',
-              'supportedArchitectures',
-            ],
-            pathPattern: '^$',
-          },
-          {
-            order: { type: 'asc' },
-            pathPattern: '.*',
-          },
-        ],
-      },
-    },
   ]
 }

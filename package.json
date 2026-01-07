@@ -2,7 +2,7 @@
   "name": "@oliver139/eslint-config",
   "type": "module",
   "version": "4.1.0",
-  "packageManager": "pnpm@10.20.0",
+  "packageManager": "pnpm@10.27.0",
   "description": " Oliver's ESLint config preset powered by @antfu/eslint-config",
   "author": "Oliver Mak <oliver139.working@gmail.com> (https://github.com/oliver139)",
   "license": "MIT",
@@ -18,11 +18,14 @@
     "eslint-config"
   ],
   "exports": {
-    ".": "./dist/index.js"
+    ".": "./dist/index.mjs",
+    "./cli": "./dist/cli.mjs",
+    "./package.json": "./package.json"
   },
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "bin": "./bin/index.js",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "bin": "./bin/index.mjs",
   "files": [
     "bin",
     "dist"
@@ -173,6 +176,7 @@
     "eslint-plugin-vuejs-accessibility": "catalog:peer",
     "eslint-typegen": "catalog:dev",
     "execa": "catalog:dev",
+    "find-up-simple": "catalog:inline",
     "jiti": "catalog:dev",
     "lint-staged": "catalog:dev",
     "pnpm-workspace-yaml": "catalog:dev",
@@ -189,7 +193,12 @@
     "vue": "catalog:peer"
   },
   "resolutions": {
-    "eslint": "catalog:peer"
+    "@eslint-community/eslint-utils": "catalog:peer",
+    "@typescript-eslint/types": "catalog:peer",
+    "@typescript-eslint/utils": "catalog:peer",
+    "chokidar": "catalog:dev",
+    "eslint": "catalog:peer",
+    "tsx": "catalog:dev"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
