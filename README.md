@@ -1,8 +1,10 @@
 # @oliver139/eslint-config
 
-[![npm](https://img.shields.io/npm/v/@oliver139/eslint-config?color=9d87e0&label=Oliver's+Code+Style)](https://npmjs.com/package/@oliver139/eslint-config)
+[![npm](https://img.shields.io/npm/v/@oliver139/eslint-config?color=010101&style=for-the-badge)](https://npmjs.com/package/@oliver139/eslint-config)
 
-[![npm](https://img.shields.io/badge/Anthony's_Code_Style-v4.12.0-444)](https://npmjs.com/package/@oliver139/eslint-config)
+> [!NOTE]
+> Based on [Anthony's code style v7.4.3](https://github.com/antfu/eslint-config)  
+> Content below keeps nearly unchanged
 
 <!-- [![code style](https://antfu.me/badge-code-style.svg)](https://github.com/antfu/eslint-config) -->
 
@@ -949,4 +951,4 @@ Sure, you can configure and override rules locally in your project to fit your n
 
 ## License
 
-[MIT](./LICENSE) License &copy; 2019-PRESENT [Anthony Fu](https://github.com/antfu)
+[MIT](./LICENSE) License © 2019-PRESENT [Anthony Fu](https://github.com/antfu). Fork maintained by [Oliver Mak](https://github.com/oliver139).

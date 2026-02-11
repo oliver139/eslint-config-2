@@ -3,7 +3,7 @@
   "type": "module",
   "version": "4.2.1",
   "packageManager": "pnpm@10.29.2",
-  "description": " Oliver's ESLint config preset powered by @antfu/eslint-config",
+  "description": " Oliver's ESLint config preset powered by @antfu/eslint-config v7.4.2",
   "author": "Oliver Mak <oliver139.working@gmail.com> (https://github.com/oliver139)",
   "license": "MIT",
   "homepage": "https://github.com/oliver139/eslint-config-new",
@@ -12,7 +12,7 @@
     "url": "git+https://github.com/oliver139/eslint-config-new.git"
   },
   "bugs": {
-    "url": "https://github.com/antfu/eslint-config/issues"
+    "url": "https://github.com/oliver139/eslint-config-new/issues"
   },
   "keywords": [
     "eslint-config"
