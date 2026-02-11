@@ -289,7 +289,7 @@ export default eslintConfig({
   gitignore: true,
 
   // Enable stylistic formatting rules
-  stylistic: true,
+  // stylistic: true,
 
   // Or customize the stylistic rules
   stylistic: {
@@ -741,6 +741,25 @@ Running `npx eslint` should prompt you to install the required dependencies, oth
 
 ```bash
 npm i -D @unocss/eslint-plugin
+```
+
+#### Angular
+
+To enable Angular support, you need to explicitly turn it on:
+
+```js
+// eslint.config.js
+import antfu from '@antfu/eslint-config'
+
+export default antfu({
+  angular: true,
+})
+```
+
+Running `npx eslint` should prompt you to install the required dependencies, otherwise, you can install them manually:
+
+```bash
+npm i -D @angular-eslint/eslint-plugin @angular-eslint/eslint-plugin-template @angular-eslint/template-parser
 ```
 
 ### Optional Rules
