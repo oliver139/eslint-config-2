@@ -19,7 +19,7 @@ catalogs:
       specifier: ^6.10.1
       version: 6.10.1
     '@types/node':
-      specifier: ^25.2.2
+      specifier: ^25.2.3
       version: 25.2.3
     baseline-browser-mapping:
       specifier: ^2.9.19
@@ -72,7 +72,7 @@ catalogs:
       specifier: ^21.2.0
       version: 21.2.0
     '@eslint-react/eslint-plugin':
-      specifier: ^2.12.2
+      specifier: ^2.12.4
       version: 2.12.4
     '@next/eslint-plugin-next':
       specifier: ^16.1.6
@@ -108,7 +108,7 @@ catalogs:
       specifier: ^0.14.5
       version: 0.14.5
     eslint-plugin-svelte:
-      specifier: ^3.14.0
+      specifier: ^3.15.0
       version: 3.15.0
     eslint-plugin-vuejs-accessibility:
       specifier: ^2.4.1
@@ -169,8 +169,8 @@ catalogs:
       specifier: ^2.0.0
       version: 2.0.0
     eslint-plugin-antfu:
-      specifier: ^3.2.0
-      version: 3.2.0
+      specifier: ^3.2.1
+      version: 3.2.1
     eslint-plugin-command:
       specifier: ^3.4.0
       version: 3.4.0
@@ -202,8 +202,8 @@ catalogs:
       specifier: ^1.0.4
       version: 1.0.4
     eslint-plugin-unicorn:
-      specifier: ^62.0.0
-      version: 62.0.0
+      specifier: ^63.0.0
+      version: 63.0.0
     eslint-plugin-unused-imports:
       specifier: ^4.4.1
       version: 4.4.1
@@ -293,7 +293,7 @@ importers:
         version: 2.0.0(eslint@9.39.2(jiti@2.6.1))
       eslint-plugin-antfu:
         specifier: catalog:prod
-        version: 3.2.0(eslint@9.39.2(jiti@2.6.1))
+        version: 3.2.1(eslint@9.39.2(jiti@2.6.1))
       eslint-plugin-command:
         specifier: catalog:prod
         version: 3.4.0(eslint@9.39.2(jiti@2.6.1))
@@ -326,7 +326,7 @@ importers:
         version: 1.0.4(eslint@9.39.2(jiti@2.6.1))
       eslint-plugin-unicorn:
         specifier: catalog:prod
-        version: 62.0.0(eslint@9.39.2(jiti@2.6.1))
+        version: 63.0.0(eslint@9.39.2(jiti@2.6.1))
       eslint-plugin-unused-imports:
         specifier: catalog:prod
         version: 4.4.1(@typescript-eslint/eslint-plugin@8.55.0(@typescript-eslint/parser@8.55.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1))
@@ -2020,8 +2020,8 @@ packages:
   eslint-parser-plain@0.1.1:
     resolution: {integrity: sha512-KRgd6wuxH4U8kczqPp+Oyk4irThIhHWxgFgLDtpgjUGVIS3wGrJntvZW/p6hHq1T4FOwnOtCNkvAI4Kr+mQ/Hw==}
 
-  eslint-plugin-antfu@3.2.0:
-    resolution: {integrity: sha512-JTvBcA+gc2hf1wz418dLYtt0GCE3ltrZuriA4KhP/nPbL8W6vZtcDlWUlUfghUTAAFpHh7gp+qN8BbK+jNifgg==}
+  eslint-plugin-antfu@3.2.1:
+    resolution: {integrity: sha512-QVSpLoUnUfKE9FjFG4FQ5/zu/O+u8ejk1bIA0sir3KF+tHfaHJ/8o/Mg/rWy2vRPj7TEZG/zvib6lHEU4aSJ4A==}
     peerDependencies:
       eslint: ^9.39.2
 
@@ -2182,8 +2182,8 @@ packages:
     peerDependencies:
       eslint: ^9.39.2
 
-  eslint-plugin-unicorn@62.0.0:
-    resolution: {integrity: sha512-HIlIkGLkvf29YEiS/ImuDZQbP12gWyx5i3C6XrRxMvVdqMroCI9qoVYCoIl17ChN+U89pn9sVwLxhIWj5nEc7g==}
+  eslint-plugin-unicorn@63.0.0:
+    resolution: {integrity: sha512-Iqecl9118uQEXYh7adylgEmGfkn5es3/mlQTLLkd4pXkIk9CTGrAbeUux+YljSa2ohXCBmQQ0+Ej1kZaFgcfkA==}
     engines: {node: ^20.10.0 || >=21.0.0}
     peerDependencies:
       eslint: ^9.39.2
@@ -5373,7 +5373,7 @@ snapshots:
 
   eslint-parser-plain@0.1.1: {}
 
-  eslint-plugin-antfu@3.2.0(eslint@9.39.2(jiti@2.6.1)):
+  eslint-plugin-antfu@3.2.1(eslint@9.39.2(jiti@2.6.1)):
     dependencies:
       eslint: 9.39.2(jiti@2.6.1)
 
@@ -5690,17 +5690,15 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-unicorn@62.0.0(eslint@9.39.2(jiti@2.6.1)):
+  eslint-plugin-unicorn@63.0.0(eslint@9.39.2(jiti@2.6.1)):
     dependencies:
       '@babel/helper-validator-identifier': 7.28.5
       '@eslint-community/eslint-utils': 4.9.1(eslint@9.39.2(jiti@2.6.1))
-      '@eslint/plugin-kit': 0.4.1
       change-case: 5.4.4
       ci-info: 4.4.0
       clean-regexp: 1.0.0
       core-js-compat: 3.48.0
       eslint: 9.39.2(jiti@2.6.1)
-      esquery: 1.7.0
       find-up-simple: 1.0.1
       globals: 16.5.0
       indent-string: 5.0.0
