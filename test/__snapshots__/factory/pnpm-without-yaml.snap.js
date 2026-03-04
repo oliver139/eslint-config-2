@@ -153,13 +153,16 @@
     ],
   },
   {
+    "name": "antfu/node/setup",
+    "plugins": [
+      "node",
+    ],
+  },
+  {
     "files": [
       "**/*.?([cm])[jt]s?(x)",
     ],
     "name": "antfu/node/rules",
-    "plugins": [
-      "node",
-    ],
     "rules": [
       "node/handle-callback-err",
       "node/no-deprecated-api",
@@ -172,13 +175,16 @@
     ],
   },
   {
+    "name": "antfu/jsdoc/setup",
+    "plugins": [
+      "jsdoc",
+    ],
+  },
+  {
     "files": [
       "**/*.?([cm])[jt]s?(x)",
     ],
     "name": "antfu/jsdoc/rules",
-    "plugins": [
-      "jsdoc",
-    ],
     "rules": [
       "jsdoc/check-access",
       "jsdoc/check-param-names",
@@ -737,9 +743,7 @@
       "**/*.json5",
       "**/*.jsonc",
     ],
-    "languageOptions": {
-      "parser": "jsonc-eslint-parser",
-    },
+    "language": "jsonc/x",
     "name": "antfu/jsonc/rules",
     "rules": [
       "jsonc/no-bigint-literals",
@@ -805,9 +809,7 @@
       "package.json",
       "**/package.json",
     ],
-    "languageOptions": {
-      "parser": "jsonc-eslint-parser",
-    },
+    "language": "jsonc/x",
     "name": "antfu/pnpm/package-json",
     "plugins": [
       "pnpm",
@@ -875,10 +877,50 @@
     "files": [
       "**/*.md",
     ],
-    "languageOptions": {
-      "parser": "parser-plain",
-    },
+    "language": "markdown/gfm",
     "name": "antfu/markdown/parser",
+  },
+  {
+    "files": [
+      "**/*.md",
+    ],
+    "name": "antfu/markdown/rules",
+    "rules": [
+      "markdown/fenced-code-language",
+      "markdown/heading-increment",
+      "markdown/no-duplicate-definitions",
+      "markdown/no-empty-definitions",
+      "markdown/no-empty-images",
+      "markdown/no-empty-links",
+      "markdown/no-invalid-label-refs",
+      "markdown/no-missing-atx-heading-space",
+      "- markdown/no-missing-label-refs",
+      "markdown/no-missing-link-fragments",
+      "markdown/no-multiple-h1",
+      "markdown/no-reference-like-urls",
+      "markdown/no-reversed-media-syntax",
+      "markdown/no-space-in-emphasis",
+      "markdown/no-unused-definitions",
+      "markdown/require-alt-text",
+      "markdown/table-column-count",
+    ],
+  },
+  {
+    "files": [
+      "**/*.md",
+    ],
+    "name": "antfu/markdown/disables/markdown",
+    "rules": [
+      "- command/command",
+      "- no-irregular-whitespace",
+      "- perfectionist/sort-exports",
+      "- perfectionist/sort-imports",
+      "- regexp/no-legacy-features",
+      "- regexp/no-missing-g-flag",
+      "- regexp/no-useless-dollar-replacements",
+      "- regexp/no-useless-flag",
+      "- style/indent",
+    ],
   },
   {
     "files": [
@@ -892,7 +934,7 @@
         },
       },
     },
-    "name": "antfu/markdown/disables",
+    "name": "antfu/markdown/disables/code",
     "rules": [
       "- antfu/no-top-level-await",
       "- no-alert",
