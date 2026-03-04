@@ -32,6 +32,8 @@ export async function perfectionist(): Promise<TypedFlatConfigItem[]> {
           newlinesBetween: 'ignore',
           newlinesInside: 'ignore',
           order: 'asc',
+          partitionByComment: true,
+          partitionByNewLine: true,
           type: 'natural',
         }],
         'perfectionist/sort-named-exports': ['error', { order: 'asc', type: 'natural' }],
