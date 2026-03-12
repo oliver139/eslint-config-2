@@ -47,6 +47,7 @@ export async function markdown(
       name: 'antfu/markdown/rules',
       rules: {
         ...markdown.configs.recommended.at(0)?.rules,
+        'markdown/fenced-code-language': 'off',
         // https://github.com/eslint/markdown/issues/294
         'markdown/no-missing-label-refs': 'off',
         ...overridesMarkdown,
@@ -84,6 +85,8 @@ export async function markdown(
       rules: {
         'antfu/no-top-level-await': 'off',
 
+        'e18e/prefer-static-regex': 'off',
+
         'no-alert': 'off',
         'no-console': 'off',
         'no-labels': 'off',
@@ -92,6 +95,7 @@ export async function markdown(
         'no-undef': 'off',
         'no-unused-expressions': 'off',
         'no-unused-labels': 'off',
+
         'no-unused-vars': 'off',
 
         'node/prefer-global/process': 'off',
