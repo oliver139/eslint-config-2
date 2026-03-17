@@ -234,6 +234,8 @@
           "CookieStore": false,
           "CookieStoreManager": false,
           "CountQueuingStrategy": false,
+          "crashReport": false,
+          "CrashReportContext": false,
           "createImageBitmap": false,
           "CreateMonitor": false,
           "Credential": false,
@@ -822,6 +824,7 @@
           "Option": false,
           "OrientationSensor": false,
           "origin": false,
+          "Origin": false,
           "originAgentCluster": false,
           "OscillatorNode": false,
           "OTPCredential": false,
@@ -861,6 +864,7 @@
           "PerformanceScriptTiming": false,
           "PerformanceServerTiming": false,
           "PerformanceTiming": false,
+          "PerformanceTimingConfidence": false,
           "PeriodicSyncManager": false,
           "PeriodicWave": false,
           "Permissions": false,
@@ -1723,6 +1727,8 @@
             "newlinesBetween": "ignore",
             "newlinesInside": "ignore",
             "order": "asc",
+            "partitionByComment": true,
+            "partitionByNewLine": true,
             "type": "natural"
           }
         ],
@@ -1744,13 +1750,17 @@
       "index": 10
     },
     {
+      "name": "antfu/node/setup",
+      "plugins": {
+        "node": {}
+      },
+      "index": 11
+    },
+    {
       "files": [
         "**/*.?([cm])[jt]s?(x)"
       ],
       "name": "antfu/node/rules",
-      "plugins": {
-        "node": {}
-      },
       "rules": {
         "node/handle-callback-err": [
           "error",
@@ -1770,16 +1780,20 @@
         ],
         "node/process-exit-as-throw": "error"
       },
-      "index": 11
+      "index": 12
+    },
+    {
+      "name": "antfu/jsdoc/setup",
+      "plugins": {
+        "jsdoc": {}
+      },
+      "index": 13
     },
     {
       "files": [
         "**/*.?([cm])[jt]s?(x)"
       ],
       "name": "antfu/jsdoc/rules",
-      "plugins": {
-        "jsdoc": {}
-      },
       "rules": {
         "jsdoc/check-access": "warn",
         "jsdoc/check-param-names": "warn",
@@ -1799,7 +1813,7 @@
         "jsdoc/check-alignment": "warn",
         "jsdoc/multiline-blocks": "warn"
       },
-      "index": 12
+      "index": 14
     },
     {
       "name": "antfu/imports/rules",
@@ -1826,7 +1840,32 @@
           }
         ]
       },
-      "index": 13
+      "index": 15
+    },
+    {
+      "name": "antfu/e18e/rules",
+      "plugins": {
+        "e18e": {}
+      },
+      "rules": {
+        "e18e/prefer-array-at": "error",
+        "e18e/prefer-array-fill": "error",
+        "e18e/prefer-includes": "error",
+        "e18e/prefer-array-to-reversed": "error",
+        "e18e/prefer-array-to-sorted": "error",
+        "e18e/prefer-array-to-spliced": "error",
+        "e18e/prefer-nullish-coalescing": "error",
+        "e18e/prefer-object-has-own": "error",
+        "e18e/prefer-spread-syntax": "error",
+        "e18e/prefer-url-canparse": "error",
+        "e18e/prefer-array-from-map": "error",
+        "e18e/prefer-timer-args": "error",
+        "e18e/prefer-date-now": "error",
+        "e18e/prefer-regex-test": "error",
+        "e18e/prefer-array-some": "error",
+        "e18e/prefer-static-regex": "error"
+      },
+      "index": 16
     },
     {
       "name": "antfu/unicorn/rules",
@@ -1850,7 +1889,7 @@
         "unicorn/prefer-type-error": "error",
         "unicorn/throw-new-error": "error"
       },
-      "index": 14
+      "index": 17
     },
     {
       "files": [
@@ -2056,7 +2095,7 @@
         "jsx-a11y/scope": "error",
         "jsx-a11y/tabindex-no-positive": "error"
       },
-      "index": 15
+      "index": 18
     },
     {
       "name": "antfu/typescript/setup",
@@ -2064,7 +2103,7 @@
         "antfu": {},
         "ts": {}
       },
-      "index": 16
+      "index": 19
     },
     {
       "files": [
@@ -2082,7 +2121,7 @@
         }
       },
       "name": "antfu/typescript/parser",
-      "index": 17
+      "index": 20
     },
     {
       "files": [
@@ -2207,7 +2246,7 @@
           }
         ]
       },
-      "index": 18
+      "index": 21
     },
     {
       "name": "antfu/typescript/erasable-syntax-only",
@@ -2220,7 +2259,7 @@
         "erasable-syntax-only/namespaces": "error",
         "erasable-syntax-only/parameter-properties": "error"
       },
-      "index": 19
+      "index": 22
     },
     {
       "name": "antfu/stylistic/rules",
@@ -2612,7 +2651,7 @@
           "consistent"
         ]
       },
-      "index": 20
+      "index": 23
     },
     {
       "plugins": {
@@ -2688,14 +2727,14 @@
         "regexp/use-ignore-case": "error"
       },
       "name": "antfu/regexp/rules",
-      "index": 21
+      "index": 24
     },
     {
       "name": "antfu/test/setup",
       "plugins": {
         "test": {}
       },
-      "index": 22
+      "index": 25
     },
     {
       "files": [
@@ -2720,11 +2759,12 @@
         "test/prefer-hooks-in-order": "error",
         "test/prefer-lowercase-title": "error",
         "antfu/no-top-level-await": "off",
+        "e18e/prefer-static-regex": "off",
         "no-unused-expressions": "off",
         "node/prefer-global/process": "off",
         "ts/explicit-function-return-type": "off"
       },
-      "index": 23
+      "index": 26
     },
     {
       "languageOptions": {
@@ -2750,7 +2790,7 @@
         "vue": {},
         "vue-a11y": {}
       },
-      "index": 24
+      "index": 27
     },
     {
       "files": [
@@ -2766,10 +2806,10 @@
             ".vue"
           ],
           "parser": {
-            "version": "8.55.0",
+            "version": "8.57.0",
             "meta": {
               "name": "typescript-eslint/parser",
-              "version": "8.55.0"
+              "version": "8.57.0"
             }
           },
           "sourceType": "module"
@@ -3129,7 +3169,7 @@
         "vue-a11y/role-has-required-aria-props": "error",
         "vue-a11y/tabindex-no-positive": "warn"
       },
-      "index": 25
+      "index": 28
     },
     {
       "name": "antfu/react/setup",
@@ -3143,7 +3183,7 @@
         "react-rsc": {},
         "react-web-api": {}
       },
-      "index": 26
+      "index": 29
     },
     {
       "files": [
@@ -3229,7 +3269,7 @@
           }
         ]
       },
-      "index": 27
+      "index": 30
     },
     {
       "files": [
@@ -3245,14 +3285,14 @@
         "react/jsx-uses-react": "off",
         "react/jsx-uses-vars": "off"
       },
-      "index": 28
+      "index": 31
     },
     {
       "name": "antfu/solid/setup",
       "plugins": {
         "solid": {}
       },
-      "index": 29
+      "index": 32
     },
     {
       "files": [
@@ -3311,14 +3351,14 @@
           }
         ]
       },
-      "index": 30
+      "index": 33
     },
     {
       "name": "antfu/svelte/setup",
       "plugins": {
         "svelte": {}
       },
-      "index": 31
+      "index": 34
     },
     {
       "files": [
@@ -3331,10 +3371,10 @@
             ".svelte"
           ],
           "parser": {
-            "version": "8.55.0",
+            "version": "8.57.0",
             "meta": {
               "name": "typescript-eslint/parser",
-              "version": "8.55.0"
+              "version": "8.57.0"
             }
           }
         }
@@ -3403,14 +3443,14 @@
         "svelte/no-trailing-spaces": "error",
         "svelte/spaced-html-comment": "error"
       },
-      "index": 32
+      "index": 35
     },
     {
       "name": "antfu/astro/setup",
       "plugins": {
         "astro": {}
       },
-      "index": 33
+      "index": 36
     },
     {
       "files": [
@@ -3427,10 +3467,10 @@
             ".astro"
           ],
           "parser": {
-            "version": "8.55.0",
+            "version": "8.57.0",
             "meta": {
               "name": "typescript-eslint/parser",
-              "version": "8.55.0"
+              "version": "8.57.0"
             }
           }
         },
@@ -3454,14 +3494,14 @@
         "style/jsx-one-expression-per-line": "off",
         "style/no-multiple-empty-lines": "off"
       },
-      "index": 34
+      "index": 37
     },
     {
       "name": "antfu/jsonc/setup",
       "plugins": {
         "jsonc": {}
       },
-      "index": 35
+      "index": 38
     },
     {
       "files": [
@@ -3469,9 +3509,7 @@
         "**/*.json5",
         "**/*.jsonc"
       ],
-      "languageOptions": {
-        "parser": "jsonc-eslint-parser"
-      },
+      "language": "jsonc/x",
       "name": "antfu/jsonc/rules",
       "rules": {
         "jsonc/no-bigint-literals": "error",
@@ -3543,7 +3581,7 @@
         "jsonc/quote-props": "error",
         "jsonc/quotes": "error"
       },
-      "index": 36
+      "index": 39
     },
     {
       "files": [
@@ -3662,7 +3700,7 @@
           }
         ]
       },
-      "index": 37
+      "index": 40
     },
     {
       "files": [
@@ -3782,16 +3820,14 @@
           }
         ]
       },
-      "index": 38
+      "index": 41
     },
     {
       "files": [
         "package.json",
         "**/package.json"
       ],
-      "languageOptions": {
-        "parser": "jsonc-eslint-parser"
-      },
+      "language": "jsonc/x",
       "name": "antfu/pnpm/package-json",
       "plugins": {
         "pnpm": {}
@@ -3819,7 +3855,7 @@
           }
         ]
       },
-      "index": 39
+      "index": 42
     },
     {
       "files": [
@@ -3845,7 +3881,7 @@
         "pnpm/yaml-no-duplicate-catalog-item": "error",
         "pnpm/yaml-no-unused-catalog-item": "error"
       },
-      "index": 40
+      "index": 43
     },
     {
       "files": [
@@ -3930,14 +3966,14 @@
           }
         ]
       },
-      "index": 41
+      "index": 44
     },
     {
       "name": "antfu/yaml/setup",
       "plugins": {
         "yaml": {}
       },
-      "index": 42
+      "index": 45
     },
     {
       "files": [
@@ -3977,14 +4013,14 @@
         ],
         "yaml/spaced-comment": "error"
       },
-      "index": 43
+      "index": 46
     },
     {
       "name": "antfu/toml/setup",
       "plugins": {
         "toml": {}
       },
-      "index": 44
+      "index": 47
     },
     {
       "files": [
@@ -4019,14 +4055,14 @@
         "toml/spaced-comment": "error",
         "toml/table-bracket-spacing": "error"
       },
-      "index": 45
+      "index": 48
     },
     {
       "name": "antfu/markdown/setup",
       "plugins": {
         "markdown": {}
       },
-      "index": 46
+      "index": 49
     },
     {
       "files": [
@@ -4037,17 +4073,59 @@
       ],
       "name": "antfu/markdown/processor",
       "processor": "merged-processor:@eslint/markdown/markdown+pass-through",
-      "index": 47
+      "index": 50
     },
     {
       "files": [
         "**/*.md"
       ],
-      "languageOptions": {
-        "parser": "parser-plain"
-      },
+      "language": "markdown/gfm",
       "name": "antfu/markdown/parser",
-      "index": 48
+      "index": 51
+    },
+    {
+      "files": [
+        "**/*.md"
+      ],
+      "name": "antfu/markdown/rules",
+      "rules": {
+        "markdown/fenced-code-language": "off",
+        "markdown/heading-increment": "error",
+        "markdown/no-duplicate-definitions": "error",
+        "markdown/no-empty-definitions": "error",
+        "markdown/no-empty-images": "error",
+        "markdown/no-empty-links": "error",
+        "markdown/no-invalid-label-refs": "error",
+        "markdown/no-missing-atx-heading-space": "error",
+        "markdown/no-missing-label-refs": "off",
+        "markdown/no-missing-link-fragments": "error",
+        "markdown/no-multiple-h1": "error",
+        "markdown/no-reference-like-urls": "error",
+        "markdown/no-reversed-media-syntax": "error",
+        "markdown/no-space-in-emphasis": "error",
+        "markdown/no-unused-definitions": "error",
+        "markdown/require-alt-text": "error",
+        "markdown/table-column-count": "error"
+      },
+      "index": 52
+    },
+    {
+      "files": [
+        "**/*.md"
+      ],
+      "name": "antfu/markdown/disables/markdown",
+      "rules": {
+        "command/command": "off",
+        "no-irregular-whitespace": "off",
+        "perfectionist/sort-exports": "off",
+        "perfectionist/sort-imports": "off",
+        "regexp/no-legacy-features": "off",
+        "regexp/no-missing-g-flag": "off",
+        "regexp/no-useless-dollar-replacements": "off",
+        "regexp/no-useless-flag": "off",
+        "style/indent": "off"
+      },
+      "index": 53
     },
     {
       "files": [
@@ -4061,9 +4139,10 @@
           }
         }
       },
-      "name": "antfu/markdown/disables",
+      "name": "antfu/markdown/disables/code",
       "rules": {
         "antfu/no-top-level-await": "off",
+        "e18e/prefer-static-regex": "off",
         "no-alert": "off",
         "no-console": "off",
         "no-labels": "off",
@@ -4090,7 +4169,7 @@
         "unused-imports/no-unused-vars": "off",
         "no-dupe-keys": "off"
       },
-      "index": 49
+      "index": 54
     },
     {
       "files": [
@@ -4107,14 +4186,14 @@
       "rules": {
         "style/no-trailing-spaces": "off"
       },
-      "index": 50
+      "index": 55
     },
     {
       "name": "antfu/formatter/setup",
       "plugins": {
         "format": {}
       },
-      "index": 51
+      "index": 56
     },
     {
       "files": [
@@ -4141,7 +4220,7 @@
           }
         ]
       },
-      "index": 52
+      "index": 57
     },
     {
       "files": [
@@ -4167,7 +4246,7 @@
           }
         ]
       },
-      "index": 53
+      "index": 58
     },
     {
       "files": [
@@ -4193,7 +4272,7 @@
           }
         ]
       },
-      "index": 54
+      "index": 59
     },
     {
       "files": [
@@ -4219,7 +4298,7 @@
           }
         ]
       },
-      "index": 55
+      "index": 60
     },
     {
       "files": [
@@ -4251,7 +4330,7 @@
           }
         ]
       },
-      "index": 56
+      "index": 61
     },
     {
       "files": [
@@ -4283,7 +4362,7 @@
           }
         ]
       },
-      "index": 57
+      "index": 62
     },
     {
       "files": [
@@ -4311,7 +4390,7 @@
           }
         ]
       },
-      "index": 58
+      "index": 63
     },
     {
       "files": [
@@ -4339,7 +4418,7 @@
           }
         ]
       },
-      "index": 59
+      "index": 64
     },
     {
       "files": [
@@ -4356,7 +4435,7 @@
         "style/quotes": "off",
         "style/semi": "off"
       },
-      "index": 60
+      "index": 65
     },
     {
       "files": [
@@ -4382,7 +4461,7 @@
           }
         ]
       },
-      "index": 61
+      "index": 66
     },
     {
       "files": [
@@ -4394,7 +4473,7 @@
         "no-console": "off",
         "ts/explicit-function-return-type": "off"
       },
-      "index": 62
+      "index": 67
     },
     {
       "files": [
@@ -4406,7 +4485,7 @@
         "antfu/no-top-level-await": "off",
         "no-console": "off"
       },
-      "index": 63
+      "index": 68
     },
     {
       "files": [
@@ -4418,7 +4497,7 @@
         "antfu/no-import-dist": "off",
         "antfu/no-import-node-modules-by-path": "off"
       },
-      "index": 64
+      "index": 69
     },
     {
       "files": [
@@ -4430,7 +4509,7 @@
         "no-restricted-syntax": "off",
         "unused-imports/no-unused-vars": "off"
       },
-      "index": 65
+      "index": 70
     },
     {
       "files": [
@@ -4441,7 +4520,7 @@
       "rules": {
         "ts/no-require-imports": "off"
       },
-      "index": 66
+      "index": 71
     },
     {
       "files": [
@@ -4454,7 +4533,7 @@
         "no-console": "off",
         "ts/explicit-function-return-type": "off"
       },
-      "index": 67
+      "index": 72
     },
     {
       "ignores": [
@@ -4462,7 +4541,7 @@
         "_fixtures",
         "**/constants-generated.ts"
       ],
-      "index": 68
+      "index": 73
     },
     {
       "files": [
@@ -4471,7 +4550,7 @@
       "rules": {
         "perfectionist/sort-objects": "error"
       },
-      "index": 69
+      "index": 74
     }
   ],
   "rules": {
@@ -8005,7 +8084,7 @@
       "type": "suggestion",
       "defaultOptions": [
         {
-          "reportGlobalThis": false
+          "reportGlobalThis": true
         }
       ],
       "docs": {
@@ -8197,7 +8276,7 @@
       "language": "javascript",
       "docs": {
         "description": "Disallow `let` or `var` variables that are read but never assigned",
-        "recommended": false,
+        "recommended": true,
         "url": "https://eslint.org/docs/latest/rules/no-unassigned-vars"
       },
       "name": "no-unassigned-vars",
@@ -8456,7 +8535,7 @@
       "type": "problem",
       "docs": {
         "description": "Disallow variable assignments when the value is not used",
-        "recommended": false,
+        "recommended": true,
         "url": "https://eslint.org/docs/latest/rules/no-useless-assignment"
       },
       "name": "no-useless-assignment",
@@ -9163,7 +9242,7 @@
       ],
       "docs": {
         "description": "Disallow losing originally caught error when re-throwing custom errors",
-        "recommended": false,
+        "recommended": true,
         "url": "https://eslint.org/docs/latest/rules/preserve-caught-error"
       },
       "hasSuggestions": true,
@@ -9234,11 +9313,8 @@
     },
     "radix": {
       "type": "suggestion",
-      "defaultOptions": [
-        "always"
-      ],
       "docs": {
-        "description": "Enforce the consistent use of the radix argument when using `parseInt()`",
+        "description": "Enforce the use of the radix argument when using `parseInt()`",
         "recommended": false,
         "url": "https://eslint.org/docs/latest/rules/radix"
       },
@@ -10152,6 +10228,17 @@
       "plugin": "eslint-comments"
     },
     "eslint-comments/no-unused-disable": {
+      "deprecated": {
+        "availableUntil": "5.0.0",
+        "deprecatedSince": "4.7.0",
+        "message": "ESLint now has built-in functionality to report unused `eslint-disable` comments",
+        "replacedBy": [
+          {
+            "message": "You can now use ESLint's built-in `linterOptions.reportUnusedDisabledDirectives` to report unused `eslint-disable` comments",
+            "url": "https://eslint.org/docs/latest/use/configure/configuration-files#reporting-unused-disable-directives"
+          }
+        ]
+      },
       "docs": {
         "description": "disallow unused `eslint-disable` comments",
         "category": "Best Practices",
@@ -10770,6 +10857,17 @@
       "name": "node/prefer-global/console",
       "plugin": "node"
     },
+    "node/prefer-global/crypto": {
+      "docs": {
+        "description": "enforce either `crypto` or `require(\"crypto\").webcrypto`",
+        "recommended": false,
+        "url": "https://github.com/eslint-community/eslint-plugin-n/blob/HEAD/docs/rules/prefer-global/crypto.md"
+      },
+      "type": "suggestion",
+      "fixable": null,
+      "name": "node/prefer-global/crypto",
+      "plugin": "node"
+    },
     "node/prefer-global/process": {
       "docs": {
         "description": "enforce either `process` or `require(\"process\")`",
@@ -10823,6 +10921,17 @@
       "type": "suggestion",
       "fixable": null,
       "name": "node/prefer-global/url",
+      "plugin": "node"
+    },
+    "node/prefer-global/timers": {
+      "docs": {
+        "description": "enforce either global timer functions or `require(\"timers\")`",
+        "recommended": false,
+        "url": "https://github.com/eslint-community/eslint-plugin-n/blob/HEAD/docs/rules/prefer-global/timers.md"
+      },
+      "type": "suggestion",
+      "fixable": null,
+      "name": "node/prefer-global/timers",
       "plugin": "node"
     },
     "node/prefer-node-protocol": {
@@ -11293,7 +11402,6 @@
     },
     "jsdoc/require-jsdoc": {
       "docs": {
-        "category": "Stylistic Issues",
         "description": "Checks for presence of JSDoc comments, on functions and potentially other contexts (optionally limited to exports).",
         "recommended": true,
         "url": "https://github.com/gajus/eslint-plugin-jsdoc/blob/main/docs/rules/require-jsdoc.md#repos-sticky-header"
@@ -11706,6 +11814,202 @@
       },
       "name": "import/prefer-default-export",
       "plugin": "import"
+    },
+    "e18e/prefer-array-at": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Prefer Array.prototype.at() over length-based indexing"
+      },
+      "fixable": "code",
+      "name": "e18e/prefer-array-at",
+      "plugin": "e18e"
+    },
+    "e18e/prefer-array-fill": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Prefer Array.prototype.fill() over Array.from or map with constant values",
+        "recommended": true
+      },
+      "fixable": "code",
+      "name": "e18e/prefer-array-fill",
+      "plugin": "e18e"
+    },
+    "e18e/prefer-array-from-map": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Prefer Array.from(iterable, mapper) over [...iterable].map(mapper) to avoid intermediate array allocation",
+        "recommended": true
+      },
+      "fixable": "code",
+      "name": "e18e/prefer-array-from-map",
+      "plugin": "e18e"
+    },
+    "e18e/prefer-includes": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Prefer .includes() over indexOf() comparisons for arrays and strings",
+        "recommended": true
+      },
+      "fixable": "code",
+      "name": "e18e/prefer-includes",
+      "plugin": "e18e"
+    },
+    "e18e/prefer-array-to-reversed": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Prefer Array.prototype.toReversed() over copying and reversing arrays",
+        "recommended": true
+      },
+      "fixable": "code",
+      "name": "e18e/prefer-array-to-reversed",
+      "plugin": "e18e"
+    },
+    "e18e/prefer-array-to-sorted": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Prefer Array.prototype.toSorted() over copying and sorting arrays"
+      },
+      "fixable": "code",
+      "name": "e18e/prefer-array-to-sorted",
+      "plugin": "e18e"
+    },
+    "e18e/prefer-array-to-spliced": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Prefer Array.prototype.toSpliced() over copying and splicing arrays",
+        "recommended": true
+      },
+      "fixable": "code",
+      "name": "e18e/prefer-array-to-spliced",
+      "plugin": "e18e"
+    },
+    "e18e/prefer-exponentiation-operator": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Prefer the exponentiation operator ** over Math.pow()",
+        "recommended": true
+      },
+      "fixable": "code",
+      "name": "e18e/prefer-exponentiation-operator",
+      "plugin": "e18e"
+    },
+    "e18e/prefer-nullish-coalescing": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Prefer nullish coalescing operator (?? and ??=) over verbose null checks",
+        "recommended": true
+      },
+      "fixable": "code",
+      "name": "e18e/prefer-nullish-coalescing",
+      "plugin": "e18e"
+    },
+    "e18e/prefer-object-has-own": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Prefer Object.hasOwn() over Object.prototype.hasOwnProperty.call() and obj.hasOwnProperty()",
+        "recommended": true
+      },
+      "fixable": "code",
+      "name": "e18e/prefer-object-has-own",
+      "plugin": "e18e"
+    },
+    "e18e/prefer-spread-syntax": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Prefer spread syntax over Array.concat(), Array.from(), Object.assign({}, ...), and Function.apply()",
+        "recommended": true
+      },
+      "fixable": "code",
+      "name": "e18e/prefer-spread-syntax",
+      "plugin": "e18e"
+    },
+    "e18e/prefer-url-canparse": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Prefer URL.canParse() over try-catch blocks for URL validation",
+        "recommended": true
+      },
+      "hasSuggestions": true,
+      "name": "e18e/prefer-url-canparse",
+      "plugin": "e18e"
+    },
+    "e18e/no-indexof-equality": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Prefer optimized alternatives to `indexOf()` equality checks"
+      },
+      "fixable": "code",
+      "name": "e18e/no-indexof-equality",
+      "plugin": "e18e"
+    },
+    "e18e/prefer-timer-args": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Prefer passing function and arguments directly to setTimeout/setInterval instead of wrapping in an arrow function or using bind",
+        "recommended": true
+      },
+      "fixable": "code",
+      "name": "e18e/prefer-timer-args",
+      "plugin": "e18e"
+    },
+    "e18e/prefer-date-now": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Prefer Date.now() over new Date().getTime() and +new Date()",
+        "recommended": true
+      },
+      "fixable": "code",
+      "name": "e18e/prefer-date-now",
+      "plugin": "e18e"
+    },
+    "e18e/prefer-regex-test": {
+      "type": "suggestion",
+      "docs": {
+        "description": "prefer `RegExp.test()` over `String.match()` and `RegExp.exec()` when only checking for match existence"
+      },
+      "fixable": "code",
+      "name": "e18e/prefer-regex-test",
+      "plugin": "e18e"
+    },
+    "e18e/prefer-array-some": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Prefer Array.some() over Array.find() when checking for element existence",
+        "recommended": true
+      },
+      "fixable": "code",
+      "name": "e18e/prefer-array-some",
+      "plugin": "e18e"
+    },
+    "e18e/prefer-static-regex": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Prefer defining regular expressions at module scope to avoid re-compilation on every function call",
+        "recommended": true
+      },
+      "name": "e18e/prefer-static-regex",
+      "plugin": "e18e"
+    },
+    "e18e/prefer-inline-equality": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Prefer inline equality checks over temporary object creation for simple comparisons"
+      },
+      "fixable": "code",
+      "name": "e18e/prefer-inline-equality",
+      "plugin": "e18e"
+    },
+    "e18e/ban-dependencies": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Bans a list of dependencies from being used",
+        "url": "https://github.com/es-tooling/eslint-plugin-depend/blob/main/docs/rules/ban-dependencies.md"
+      },
+      "defaultOptions": [
+        {}
+      ],
+      "name": "e18e/ban-dependencies",
+      "plugin": "e18e"
     },
     "unicorn/better-regex": {
       "type": "suggestion",
@@ -22623,7 +22927,7 @@
     "react/jsx-dollar": {
       "type": "problem",
       "docs": {
-        "description": "Prevents unnecessary '$' symbols before JSX expressions.",
+        "description": "Prevents unintentional '$' sign before expression.",
         "url": "https://eslint-react.xyz/docs/rules/jsx-dollar"
       },
       "fixable": "code",
@@ -23754,7 +24058,7 @@
       "plugin": "react-naming-convention"
     },
     "react-naming-convention/context-name": {
-      "type": "problem",
+      "type": "suggestion",
       "docs": {
         "description": "Enforces the context name to be a valid component name with the suffix 'Context'.",
         "url": "https://eslint-react.xyz/docs/rules/naming-convention-context-name"
@@ -23762,8 +24066,35 @@
       "name": "react-naming-convention/context-name",
       "plugin": "react-naming-convention"
     },
+    "react-naming-convention/id-name": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Enforces identifier names assigned from 'useId' calls to be either 'id' or end with 'Id'.",
+        "url": "https://eslint-react.xyz/docs/rules/naming-convention-id-name"
+      },
+      "name": "react-naming-convention/id-name",
+      "plugin": "react-naming-convention"
+    },
+    "react-naming-convention/ref-name": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Enforces identifier names assigned from 'useRef' calls to be either 'ref' or end with 'Ref'.",
+        "url": "https://eslint-react.xyz/docs/rules/naming-convention-ref-name"
+      },
+      "name": "react-naming-convention/ref-name",
+      "plugin": "react-naming-convention"
+    },
+    "react-naming-convention/use-state": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Enforces destructuring and symmetric naming of the 'useState' hook value and setter.",
+        "url": "https://eslint-react.xyz/docs/rules/naming-convention-use-state"
+      },
+      "name": "react-naming-convention/use-state",
+      "plugin": "react-naming-convention"
+    },
     "react-naming-convention/filename": {
-      "type": "problem",
+      "type": "suggestion",
       "defaultOptions": [
         {
           "excepts": [
@@ -23784,7 +24115,7 @@
       "plugin": "react-naming-convention"
     },
     "react-naming-convention/filename-extension": {
-      "type": "problem",
+      "type": "suggestion",
       "defaultOptions": [
         {
           "allow": "as-needed",
@@ -23800,24 +24131,6 @@
         "url": "https://eslint-react.xyz/docs/rules/naming-convention-filename-extension"
       },
       "name": "react-naming-convention/filename-extension",
-      "plugin": "react-naming-convention"
-    },
-    "react-naming-convention/ref-name": {
-      "type": "suggestion",
-      "docs": {
-        "description": "Enforces identifier names assigned from 'useRef' calls to be either 'ref' or end with 'Ref'.",
-        "url": "https://eslint-react.xyz/docs/rules/naming-convention-ref-name"
-      },
-      "name": "react-naming-convention/ref-name",
-      "plugin": "react-naming-convention"
-    },
-    "react-naming-convention/use-state": {
-      "type": "problem",
-      "docs": {
-        "description": "Enforces destructuring and symmetric naming of the 'useState' hook value and setter.",
-        "url": "https://eslint-react.xyz/docs/rules/naming-convention-use-state"
-      },
-      "name": "react-naming-convention/use-state",
       "plugin": "react-naming-convention"
     },
     "react-refresh/only-export-components": {
@@ -26617,7 +26930,11 @@
       ],
       "docs": {
         "description": "disallow irregular whitespace",
-        "recommended": null,
+        "recommended": [
+          "json",
+          "jsonc",
+          "json5"
+        ],
         "extensionRule": true,
         "layout": false,
         "url": "https://ota-meshi.github.io/eslint-plugin-jsonc/rules/no-irregular-whitespace.html",
@@ -27694,6 +28011,22 @@
       "name": "toml/indent",
       "plugin": "toml"
     },
+    "toml/inline-table-curly-newline": {
+      "docs": {
+        "description": "enforce linebreaks after opening and before closing braces",
+        "categories": [
+          "standard"
+        ],
+        "extensionRule": "object-curly-newline",
+        "url": "https://ota-meshi.github.io/eslint-plugin-toml/rules/inline-table-curly-newline.html",
+        "ruleId": "toml/inline-table-curly-newline",
+        "ruleName": "inline-table-curly-newline"
+      },
+      "type": "layout",
+      "fixable": "whitespace",
+      "name": "toml/inline-table-curly-newline",
+      "plugin": "toml"
+    },
     "toml/inline-table-curly-spacing": {
       "docs": {
         "description": "enforce consistent spacing inside braces",
@@ -27708,6 +28041,23 @@
       "type": "layout",
       "fixable": "whitespace",
       "name": "toml/inline-table-curly-spacing",
+      "plugin": "toml"
+    },
+    "toml/inline-table-key-value-newline": {
+      "docs": {
+        "description": "enforce placing inline table key-value pairs on separate lines",
+        "categories": [
+          "standard"
+        ],
+        "extensionRule": "object-property-newline",
+        "url": "https://ota-meshi.github.io/eslint-plugin-toml/rules/inline-table-key-value-newline.html",
+        "ruleId": "toml/inline-table-key-value-newline",
+        "ruleName": "inline-table-key-value-newline"
+      },
+      "fixable": "whitespace",
+      "hasSuggestions": false,
+      "type": "layout",
+      "name": "toml/inline-table-key-value-newline",
       "plugin": "toml"
     },
     "toml/key-spacing": {
@@ -28247,8 +28597,7 @@
     "format/prettier": {
       "type": "layout",
       "docs": {
-        "description": "Use Prettier to format code",
-        "category": "Stylistic"
+        "description": "Use Prettier to format code"
       },
       "fixable": "whitespace",
       "name": "format/prettier",
@@ -28257,11 +28606,19 @@
     "format/dprint": {
       "type": "layout",
       "docs": {
-        "description": "Use dprint to format code",
-        "category": "Stylistic"
+        "description": "Use dprint to format code"
       },
       "fixable": "whitespace",
       "name": "format/dprint",
+      "plugin": "format"
+    },
+    "format/oxfmt": {
+      "type": "layout",
+      "docs": {
+        "description": "Use oxfmt to format code"
+      },
+      "fixable": "whitespace",
+      "name": "format/oxfmt",
       "plugin": "format"
     }
   },
@@ -28272,7 +28629,7 @@
         "**/*.y?(a)ml"
       ],
       "configs": [
-        43
+        46
       ]
     },
     {
@@ -28281,7 +28638,7 @@
         "**/*.json"
       ],
       "configs": [
-        36
+        39
       ]
     },
     {
@@ -28290,10 +28647,12 @@
         "**/*.md"
       ],
       "configs": [
-        47,
-        48,
         50,
-        58
+        51,
+        52,
+        53,
+        55,
+        63
       ]
     },
     {
@@ -28304,13 +28663,13 @@
         "**/*.config.?([cm])[jt]s?(x)"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        67
+        14,
+        20,
+        21,
+        30,
+        31,
+        72
       ]
     },
     {
@@ -28319,7 +28678,7 @@
         "**/*.toml"
       ],
       "configs": [
-        45
+        48
       ]
     },
     {
@@ -28330,9 +28689,9 @@
         "package.json"
       ],
       "configs": [
-        36,
-        37,
-        39
+        39,
+        40,
+        42
       ]
     },
     {
@@ -28342,9 +28701,9 @@
         "**/*.y?(a)ml"
       ],
       "configs": [
-        40,
-        41,
-        43
+        43,
+        44,
+        46
       ]
     },
     {
@@ -28355,13 +28714,13 @@
         "**/scripts/**/*.?([cm])[jt]s?(x)"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        62
+        14,
+        20,
+        21,
+        30,
+        31,
+        67
       ]
     },
     {
@@ -28372,13 +28731,13 @@
         "**/scripts/**/*.?([cm])[jt]s?(x)"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        62
+        14,
+        20,
+        21,
+        30,
+        31,
+        67
       ]
     },
     {
@@ -28390,14 +28749,14 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        63,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        68,
+        74
       ]
     },
     {
@@ -28409,14 +28768,14 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        63,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        68,
+        74
       ]
     },
     {
@@ -28428,14 +28787,14 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        63,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        68,
+        74
       ]
     },
     {
@@ -28447,14 +28806,14 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        63,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        68,
+        74
       ]
     },
     {
@@ -28466,14 +28825,14 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        63,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        68,
+        74
       ]
     },
     {
@@ -28485,14 +28844,14 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        63,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        68,
+        74
       ]
     },
     {
@@ -28504,14 +28863,14 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        63,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        68,
+        74
       ]
     },
     {
@@ -28523,14 +28882,14 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        63,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        68,
+        74
       ]
     },
     {
@@ -28542,14 +28901,14 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        63,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        68,
+        74
       ]
     },
     {
@@ -28560,13 +28919,13 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -28577,13 +28936,13 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -28594,13 +28953,13 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -28611,13 +28970,13 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -28628,13 +28987,13 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -28645,13 +29004,30 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
+      ]
+    },
+    {
+      "filepath": "src/configs/e18e.ts",
+      "globs": [
+        "**/*.?([cm])[jt]s?(x)",
+        "**/*.?([cm])ts",
+        "src/**/*.ts"
+      ],
+      "configs": [
+        12,
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -28662,13 +29038,13 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -28679,13 +29055,13 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -28696,13 +29072,13 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -28713,13 +29089,13 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -28730,13 +29106,13 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -28747,13 +29123,13 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -28764,13 +29140,13 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -28781,13 +29157,13 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -28798,13 +29174,13 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -28815,13 +29191,13 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -28832,13 +29208,13 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -28849,13 +29225,13 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -28866,13 +29242,13 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -28883,13 +29259,13 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -28900,13 +29276,13 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -28917,13 +29293,13 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -28934,13 +29310,13 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -28951,13 +29327,13 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -28968,13 +29344,13 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -28985,13 +29361,13 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -29002,13 +29378,13 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -29019,13 +29395,13 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -29036,13 +29412,13 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -29053,13 +29429,13 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -29070,13 +29446,13 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -29087,13 +29463,13 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -29104,13 +29480,13 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -29121,13 +29497,13 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -29138,13 +29514,13 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -29155,13 +29531,13 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -29172,13 +29548,13 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -29189,13 +29565,13 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -29206,13 +29582,13 @@
         "src/**/*.ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        69
+        14,
+        20,
+        21,
+        30,
+        31,
+        74
       ]
     },
     {
@@ -29223,13 +29599,13 @@
         "**/*.test.?([cm])[jt]s?(x)"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        23,
-        27,
-        28
+        14,
+        20,
+        21,
+        26,
+        30,
+        31
       ]
     },
     {
@@ -29240,13 +29616,13 @@
         "**/*.test.?([cm])[jt]s?(x)"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        23,
-        27,
-        28
+        14,
+        20,
+        21,
+        26,
+        30,
+        31
       ]
     },
     {
@@ -29257,13 +29633,13 @@
         "**/*.test.?([cm])[jt]s?(x)"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        23,
-        27,
-        28
+        14,
+        20,
+        21,
+        26,
+        30,
+        31
       ]
     },
     {
@@ -29274,13 +29650,13 @@
         "**/*.test.?([cm])[jt]s?(x)"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        23,
-        27,
-        28
+        14,
+        20,
+        21,
+        26,
+        30,
+        31
       ]
     },
     {
@@ -29290,12 +29666,12 @@
         "**/*.?([cm])ts"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28
+        14,
+        20,
+        21,
+        30,
+        31
       ]
     },
     {
@@ -29305,8 +29681,8 @@
         "**/[jt]sconfig.json"
       ],
       "configs": [
-        36,
-        38
+        39,
+        41
       ]
     },
     {
@@ -29317,13 +29693,13 @@
         "**/*.config.?([cm])[jt]s?(x)"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        67
+        14,
+        20,
+        21,
+        30,
+        31,
+        72
       ]
     },
     {
@@ -29334,18 +29710,18 @@
         "**/*.config.?([cm])[jt]s?(x)"
       ],
       "configs": [
-        11,
         12,
-        17,
-        18,
-        27,
-        28,
-        67
+        14,
+        20,
+        21,
+        30,
+        31,
+        72
       ]
     }
   ],
   "meta": {
-    "lastUpdate": 1770779518788,
+    "lastUpdate": 1773736810780,
     "basePath": "",
     "configPath": ""
   }
