@@ -1,9 +1,9 @@
 {
   "name": "@oliver139/eslint-config",
   "type": "module",
-  "version": "5.2.0",
+  "version": "5.2.1",
   "packageManager": "pnpm@10.32.1",
-  "description": " Oliver's ESLint config preset powered by @antfu/eslint-config v7.7.1",
+  "description": " Oliver's ESLint config preset powered by @antfu/eslint-config v7.7.3",
   "author": "Oliver Mak <oliver139.working@gmail.com> (https://github.com/oliver139)",
   "license": "MIT",
   "homepage": "https://oliver139.github.io/eslint-config-2/",

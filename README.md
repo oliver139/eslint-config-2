@@ -3,7 +3,7 @@
 [![npm](https://img.shields.io/npm/v/@oliver139/eslint-config?color=010101&style=for-the-badge)](https://npmjs.com/package/@oliver139/eslint-config)
 
 > [!NOTE]
-> Based on [Anthony's code style v7.4.3](https://github.com/antfu/eslint-config)  
+> Based on [Anthony's code style v7.7.3](https://github.com/antfu/eslint-config)  
 > Content below keeps nearly unchanged
 
 <!-- [![code style](https://antfu.me/badge-code-style.svg)](https://github.com/antfu/eslint-config) -->
