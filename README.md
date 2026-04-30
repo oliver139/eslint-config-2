@@ -182,11 +182,11 @@ Add the following settings to your `.zed/settings.json`:
 
 ```jsonc
 {
-  "format_on_save": "on",
-  "formatter": [
-    // Use ESLint's --fix:
-    { "code_action": "source.fixAll.eslint" }
-  ],
+  // Use ESLint's --fix:
+  "code_actions_on_format": {
+    "source.fixAll.eslint": true
+  },
+  "formatter": [],
   // Enable eslint for all supported languages
   // Defaults only include https://github.com/search?q=repo%3Azed-industries%2Fzed%20eslint_languages&type=code
   "languages": {
@@ -194,6 +194,9 @@ Add the following settings to your `.zed/settings.json`:
       "language_servers": ["...", "eslint"]
     },
     "Markdown": {
+      "language_servers": ["...", "eslint"]
+    },
+    "Markdown-Inline": {
       "language_servers": ["...", "eslint"]
     },
     "JSON": {
@@ -213,10 +216,7 @@ Add the following settings to your `.zed/settings.json`:
   "lsp": {
     "eslint": {
       "settings": {
-        // Remove after https://github.com/zed-industries/zed/issues/49387
-        "experimental": {
-          "useFlatConfig": false
-        },
+        "workingDirectories": ["./"],
 
         // Silent the stylistic rules in your IDE, but still auto fix them
         "rulesCustomizations": [
@@ -713,7 +713,7 @@ export default eslintConfig({
 Running `npx eslint` should prompt you to install the required dependencies, otherwise, you can install them manually:
 
 ```bash
-npm i -D @eslint-react/eslint-plugin eslint-plugin-react-hooks eslint-plugin-react-refresh
+npm i -D @eslint-react/eslint-plugin eslint-plugin-react-refresh
 ```
 
 #### Next.js

@@ -1,9 +1,9 @@
 {
   "name": "@oliver139/eslint-config",
   "type": "module",
-  "version": "5.2.1",
-  "packageManager": "pnpm@10.32.1",
-  "description": " Oliver's ESLint config preset powered by @antfu/eslint-config v7.7.3",
+  "version": "6.0.0",
+  "packageManager": "pnpm@10.33.0",
+  "description": " Oliver's ESLint config preset powered by @antfu/eslint-config v8.2.0",
   "author": "Oliver Mak <oliver139.working@gmail.com> (https://github.com/oliver139)",
   "license": "MIT",
   "homepage": "https://oliver139.github.io/eslint-config-2/",
@@ -47,7 +47,7 @@
     "@angular-eslint/eslint-plugin": "^21.1.0",
     "@angular-eslint/eslint-plugin-template": "^21.1.0",
     "@angular-eslint/template-parser": "^21.1.0",
-    "@eslint-react/eslint-plugin": "^2.11.0",
+    "@eslint-react/eslint-plugin": "^3.0.0",
     "@next/eslint-plugin-next": ">=15.0.0",
     "@prettier/plugin-xml": "^3.4.1",
     "@unocss/eslint-plugin": ">=0.50.0",
@@ -56,7 +56,6 @@
     "eslint-plugin-astro": "^1.2.0",
     "eslint-plugin-format": ">=0.1.0",
     "eslint-plugin-jsx-a11y": ">=6.10.2",
-    "eslint-plugin-react-hooks": "^7.0.0",
     "eslint-plugin-react-refresh": "^0.5.0",
     "eslint-plugin-solid": "^0.14.3",
     "eslint-plugin-svelte": ">=2.35.1",
@@ -97,9 +96,6 @@
       "optional": true
     },
     "eslint-plugin-jsx-a11y": {
-      "optional": true
-    },
-    "eslint-plugin-react-hooks": {
       "optional": true
     },
     "eslint-plugin-react-refresh": {
@@ -184,7 +180,6 @@
     "eslint-plugin-erasable-syntax-only": "catalog:peer",
     "eslint-plugin-format": "catalog:peer",
     "eslint-plugin-jsx-a11y": "catalog:peer",
-    "eslint-plugin-react-hooks": "catalog:peer",
     "eslint-plugin-react-refresh": "catalog:peer",
     "eslint-plugin-solid": "catalog:peer",
     "eslint-plugin-svelte": "catalog:peer",
@@ -202,6 +197,7 @@
     "svelte-eslint-parser": "catalog:peer",
     "tinyglobby": "catalog:dev",
     "tsdown": "catalog:dev",
+    "tsnapi": "catalog:dev",
     "tsx": "catalog:dev",
     "typescript": "catalog:dev",
     "vitest": "catalog:dev",
@@ -224,17 +220,17 @@
     "*": "eslint --fix"
   },
   "inlinedDependencies": {
-    "find-up-simple": "1.0.1",
+    "@eslint-community/eslint-utils": "4.9.1",
+    "@typescript-eslint/scope-manager": "8.58.1",
+    "@typescript-eslint/types": "8.58.1",
+    "@typescript-eslint/utils": "8.58.1",
+    "@typescript-eslint/visitor-keys": "8.58.1",
+    "cached-factory": "0.1.0",
+    "eslint-plugin-erasable-syntax-only": "0.4.0",
     "eslint-visitor-keys": [
       "3.4.3",
       "5.0.1"
     ],
-    "@eslint-community/eslint-utils": "4.9.1",
-    "@typescript-eslint/utils": "8.57.0",
-    "@typescript-eslint/types": "8.57.0",
-    "@typescript-eslint/visitor-keys": "8.57.0",
-    "@typescript-eslint/scope-manager": "8.57.0",
-    "eslint-plugin-erasable-syntax-only": "0.4.0",
-    "cached-factory": "0.1.0"
+    "find-up-simple": "1.0.1"
   }
 }

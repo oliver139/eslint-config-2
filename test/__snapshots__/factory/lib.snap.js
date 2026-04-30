@@ -229,7 +229,7 @@
       "e18e",
     ],
     "rules": [
-      "e18e/prefer-array-at",
+      "- e18e/prefer-array-at",
       "e18e/prefer-array-fill",
       "e18e/prefer-includes",
       "- e18e/prefer-array-to-reversed",
@@ -239,12 +239,12 @@
       "e18e/prefer-object-has-own",
       "- e18e/prefer-spread-syntax",
       "e18e/prefer-url-canparse",
-      "e18e/prefer-array-from-map",
+      "- e18e/prefer-array-from-map",
       "e18e/prefer-timer-args",
       "e18e/prefer-date-now",
       "e18e/prefer-regex-test",
       "e18e/prefer-array-some",
-      "e18e/prefer-static-regex",
+      "- e18e/prefer-static-regex",
     ],
   },
   {
