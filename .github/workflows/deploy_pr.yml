@@ -16,16 +16,16 @@ jobs:
     steps:
       # Check out the repository
       - name: Checkout Main
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
 
       # Install PNPM
       - name: Install PNPM
-        uses: pnpm/action-setup@v6
+        uses: pnpm/action-setup@v4
         with:
           run_install: true
 
       - name: Set up Node.js 24
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@v4
         with:
           node-version: 24
           cache: pnpm
@@ -39,7 +39,7 @@ jobs:
         run: pnpm build
 
       - name: Try to build the ESLint config preview site
-        run: pnpm dlx --allow-build @eslint/config-inspector build --base "/eslint-config-2/"
+        run: pnpm dlx @eslint/config-inspector build --base "/eslint-config-2/"
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
