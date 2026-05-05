@@ -31,13 +31,15 @@ jobs:
           cache: pnpm
 
       - name: Install deps
-        run: pnpm install
+        run: |
+          pnpm config set only-built-dependencies esbuild
+          pnpm install
 
       - name: Build the project
         run: pnpm build
 
       - name: Try to build the ESLint config preview site
-        run: pnpm dlx @eslint/config-inspector build --base "/eslint-config-2/"
+        run: pnpm dlx --allow-builds @eslint/config-inspector build --base "/eslint-config-2/"
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
