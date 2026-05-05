@@ -111,13 +111,17 @@
         "**/.output",
         "**/.vite-inspect",
         "**/.yarn",
-        "**/vite.config.*.timestamp-*",
         "**/CHANGELOG*.md",
-        "**/*.min.*",
         "**/LICENSE*",
+        "**/*.min.*",
         "**/__snapshots__",
+        "**/vite.config.*.timestamp-*",
         "**/auto-import?(s).d.ts",
-        "**/components.d.ts"
+        "**/components.d.ts",
+        "**/.context",
+        "**/.claude",
+        "**/.agents",
+        "**/.*/skills"
       ],
       "name": "antfu/ignores",
       "index": 5
@@ -158,6 +162,7 @@
           "AudioNode": false,
           "AudioParam": false,
           "AudioParamMap": false,
+          "AudioPlaybackStats": false,
           "AudioProcessingEvent": false,
           "AudioScheduledSourceNode": false,
           "AudioSinkInfo": false,
@@ -949,6 +954,7 @@
           "RTCSessionDescription": false,
           "RTCStatsReport": false,
           "RTCTrackEvent": false,
+          "Sanitizer": false,
           "scheduler": false,
           "Scheduler": false,
           "Scheduling": false,
@@ -1150,6 +1156,9 @@
           "TextTrackList": false,
           "TextUpdateEvent": false,
           "TimeEvent": false,
+          "TimelineTrigger": false,
+          "TimelineTriggerRange": false,
+          "TimelineTriggerRangeList": false,
           "TimeRanges": false,
           "ToggleEvent": false,
           "toolbar": false,
@@ -1848,22 +1857,22 @@
         "e18e": {}
       },
       "rules": {
-        "e18e/prefer-array-at": "error",
+        "e18e/prefer-array-at": "off",
         "e18e/prefer-array-fill": "error",
         "e18e/prefer-includes": "error",
-        "e18e/prefer-array-to-reversed": "error",
-        "e18e/prefer-array-to-sorted": "error",
-        "e18e/prefer-array-to-spliced": "error",
+        "e18e/prefer-array-to-reversed": "off",
+        "e18e/prefer-array-to-sorted": "off",
+        "e18e/prefer-array-to-spliced": "off",
         "e18e/prefer-nullish-coalescing": "error",
         "e18e/prefer-object-has-own": "error",
-        "e18e/prefer-spread-syntax": "error",
+        "e18e/prefer-spread-syntax": "off",
         "e18e/prefer-url-canparse": "error",
-        "e18e/prefer-array-from-map": "error",
+        "e18e/prefer-array-from-map": "off",
         "e18e/prefer-timer-args": "error",
         "e18e/prefer-date-now": "error",
         "e18e/prefer-regex-test": "error",
         "e18e/prefer-array-some": "error",
-        "e18e/prefer-static-regex": "error"
+        "e18e/prefer-static-regex": "off"
       },
       "index": 16
     },
@@ -2806,10 +2815,10 @@
             ".vue"
           ],
           "parser": {
-            "version": "8.57.0",
+            "version": "8.59.1",
             "meta": {
               "name": "typescript-eslint/parser",
-              "version": "8.57.0"
+              "version": "8.59.1"
             }
           },
           "sourceType": "module"
@@ -3176,8 +3185,6 @@
       "plugins": {
         "react": {},
         "react-dom": {},
-        "react-hooks": {},
-        "react-hooks-extra": {},
         "react-naming-convention": {},
         "react-refresh": {},
         "react-rsc": {},
@@ -3199,11 +3206,11 @@
       },
       "name": "antfu/react/rules",
       "rules": {
+        "react/component-hook-factories": "error",
+        "react/error-boundaries": "error",
+        "react/exhaustive-deps": "warn",
         "react/jsx-key-before-spread": "warn",
         "react/jsx-no-comment-textnodes": "warn",
-        "react/jsx-no-duplicate-props": "warn",
-        "react/jsx-uses-react": "warn",
-        "react/jsx-uses-vars": "warn",
         "react/no-access-state-in-setstate": "error",
         "react/no-array-index-key": "warn",
         "react/no-children-count": "warn",
@@ -3217,27 +3224,28 @@
         "react/no-component-will-update": "error",
         "react/no-context-provider": "warn",
         "react/no-create-ref": "error",
-        "react/no-default-props": "error",
         "react/no-direct-mutation-state": "error",
         "react/no-forward-ref": "warn",
         "react/no-missing-key": "error",
         "react/no-nested-component-definitions": "error",
         "react/no-nested-lazy-component-declarations": "error",
-        "react/no-prop-types": "error",
         "react/no-redundant-should-component-update": "error",
         "react/no-set-state-in-component-did-mount": "warn",
         "react/no-set-state-in-component-did-update": "warn",
         "react/no-set-state-in-component-will-update": "warn",
-        "react/no-string-refs": "error",
         "react/no-unnecessary-use-prefix": "warn",
         "react/no-unsafe-component-will-mount": "warn",
         "react/no-unsafe-component-will-receive-props": "warn",
         "react/no-unsafe-component-will-update": "warn",
         "react/no-unused-class-component-members": "warn",
         "react/no-use-context": "warn",
-        "react/no-useless-forward-ref": "warn",
-        "react/prefer-use-state-lazy-initialization": "warn",
-        "react/prefer-namespace-import": "error",
+        "react/purity": "warn",
+        "react/rules-of-hooks": "error",
+        "react/set-state-in-effect": "warn",
+        "react/set-state-in-render": "error",
+        "react/unsupported-syntax": "error",
+        "react/use-memo": "error",
+        "react/use-state": "warn",
         "react-rsc/function-definition": "error",
         "react-dom/no-dangerously-set-innerhtml": "warn",
         "react-dom/no-dangerously-set-innerhtml-with-children": "error",
@@ -3251,16 +3259,14 @@
         "react-dom/no-unsafe-iframe-sandbox": "warn",
         "react-dom/no-use-form-state": "error",
         "react-dom/no-void-elements-with-children": "error",
-        "react-hooks-extra/no-direct-set-state-in-use-effect": "warn",
-        "react-naming-convention/context-name": "warn",
-        "react-naming-convention/ref-name": "warn",
-        "react-naming-convention/use-state": "warn",
         "react-web-api/no-leaked-event-listener": "warn",
         "react-web-api/no-leaked-interval": "warn",
         "react-web-api/no-leaked-resize-observer": "warn",
         "react-web-api/no-leaked-timeout": "warn",
-        "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": "warn",
+        "react-naming-convention/context-name": "warn",
+        "react-naming-convention/id-name": "warn",
+        "react-naming-convention/ref-name": "warn",
+        "react/prefer-namespace-import": "error",
         "react-refresh/only-export-components": [
           "error",
           {
@@ -3279,11 +3285,7 @@
       "name": "antfu/react/typescript",
       "rules": {
         "react-dom/no-string-style-prop": "off",
-        "react-dom/no-unknown-property": "off",
-        "react/jsx-no-duplicate-props": "off",
-        "react/jsx-no-undef": "off",
-        "react/jsx-uses-react": "off",
-        "react/jsx-uses-vars": "off"
+        "react-dom/no-unknown-property": "off"
       },
       "index": 31
     },
@@ -3371,10 +3373,10 @@
             ".svelte"
           ],
           "parser": {
-            "version": "8.57.0",
+            "version": "8.59.1",
             "meta": {
               "name": "typescript-eslint/parser",
-              "version": "8.57.0"
+              "version": "8.59.1"
             }
           }
         }
@@ -3393,25 +3395,45 @@
             "varsIgnorePattern": "^(\\$\\$Props$|\\$\\$Events$|\\$\\$Slots$)"
           }
         ],
+        "no-inner-declarations": "off",
+        "no-self-assign": "off",
         "svelte/comment-directive": "error",
+        "svelte/system": "error",
+        "svelte/infinite-reactive-loop": "error",
         "svelte/no-at-debug-tags": "warn",
         "svelte/no-at-html-tags": "error",
+        "svelte/no-dom-manipulating": "error",
         "svelte/no-dupe-else-if-blocks": "error",
+        "svelte/no-dupe-on-directives": "error",
         "svelte/no-dupe-style-properties": "error",
         "svelte/no-dupe-use-directives": "error",
         "svelte/no-export-load-in-svelte-module-in-kit-pages": "error",
+        "svelte/no-immutable-reactive-statements": "error",
         "svelte/no-inner-declarations": "error",
+        "svelte/no-inspect": "warn",
+        "svelte/no-navigation-without-resolve": "error",
         "svelte/no-not-function-handler": "error",
         "svelte/no-object-in-text-mustaches": "error",
+        "svelte/no-raw-special-elements": "error",
         "svelte/no-reactive-functions": "error",
         "svelte/no-reactive-literals": "error",
+        "svelte/no-reactive-reassign": "error",
         "svelte/no-shorthand-style-property-overrides": "error",
+        "svelte/no-store-async": "error",
+        "svelte/no-svelte-internal": "error",
         "svelte/no-unknown-style-directive-property": "error",
+        "svelte/no-unnecessary-state-wrap": "error",
+        "svelte/no-unused-props": "error",
         "svelte/no-unused-svelte-ignore": "error",
+        "svelte/no-useless-children-snippet": "error",
         "svelte/no-useless-mustaches": "error",
-        "svelte/require-store-callbacks-use-set-param": "error",
-        "svelte/system": "error",
+        "svelte/prefer-svelte-reactivity": "error",
+        "svelte/prefer-writable-derived": "error",
+        "svelte/require-each-key": "error",
+        "svelte/require-event-dispatcher-types": "error",
+        "svelte/require-store-reactive-access": "error",
         "svelte/valid-each-key": "error",
+        "svelte/valid-prop-names-in-kit-pages": "error",
         "unused-imports/no-unused-vars": [
           "error",
           {
@@ -3467,10 +3489,10 @@
             ".astro"
           ],
           "parser": {
-            "version": "8.57.0",
+            "version": "8.59.1",
             "meta": {
               "name": "typescript-eslint/parser",
-              "version": "8.57.0"
+              "version": "8.59.1"
             }
           }
         },
@@ -10538,6 +10560,17 @@
       "name": "perfectionist/sort-maps",
       "plugin": "perfectionist"
     },
+    "perfectionist/sort-arrays": {
+      "docs": {
+        "url": "https://perfectionist.dev/rules/sort-arrays",
+        "description": "Enforce sorted arrays.",
+        "recommended": false
+      },
+      "type": "suggestion",
+      "fixable": "code",
+      "name": "perfectionist/sort-arrays",
+      "plugin": "perfectionist"
+    },
     "node/callback-return": {
       "type": "suggestion",
       "docs": {
@@ -11857,8 +11890,7 @@
     "e18e/prefer-array-to-reversed": {
       "type": "suggestion",
       "docs": {
-        "description": "Prefer Array.prototype.toReversed() over copying and reversing arrays",
-        "recommended": true
+        "description": "Prefer Array.prototype.toReversed() over copying and reversing arrays"
       },
       "fixable": "code",
       "name": "e18e/prefer-array-to-reversed",
@@ -11916,8 +11948,7 @@
     "e18e/prefer-spread-syntax": {
       "type": "suggestion",
       "docs": {
-        "description": "Prefer spread syntax over Array.concat(), Array.from(), Object.assign({}, ...), and Function.apply()",
-        "recommended": true
+        "description": "Prefer spread syntax over Array.concat(), Array.from(), Object.assign({}, ...), and Function.apply()"
       },
       "fixable": "code",
       "name": "e18e/prefer-spread-syntax",
@@ -12016,7 +12047,7 @@
       "docs": {
         "description": "Improve regexes by making them shorter, consistent, and safer.",
         "recommended": false,
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/better-regex.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/better-regex.md"
       },
       "fixable": "code",
       "defaultOptions": [
@@ -12032,7 +12063,7 @@
       "docs": {
         "description": "Enforce a specific parameter name in catch clauses.",
         "recommended": true,
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/catch-error-name.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/catch-error-name.md"
       },
       "fixable": "code",
       "defaultOptions": [
@@ -12049,7 +12080,7 @@
       "docs": {
         "description": "Enforce consistent assertion style with `node:assert`.",
         "recommended": true,
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/consistent-assert.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/consistent-assert.md"
       },
       "fixable": "code",
       "name": "unicorn/consistent-assert",
@@ -12060,7 +12091,7 @@
       "docs": {
         "description": "Prefer passing `Date` directly to the constructor when cloning.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/consistent-date-clone.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/consistent-date-clone.md"
       },
       "fixable": "code",
       "name": "unicorn/consistent-date-clone",
@@ -12071,7 +12102,7 @@
       "docs": {
         "description": "Use destructured variables over properties.",
         "recommended": false,
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/consistent-destructuring.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/consistent-destructuring.md"
       },
       "hasSuggestions": true,
       "name": "unicorn/consistent-destructuring",
@@ -12082,7 +12113,7 @@
       "docs": {
         "description": "Prefer consistent types when spreading a ternary in an array literal.",
         "recommended": true,
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/consistent-empty-array-spread.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/consistent-empty-array-spread.md"
       },
       "fixable": "code",
       "name": "unicorn/consistent-empty-array-spread",
@@ -12093,7 +12124,7 @@
       "docs": {
         "description": "Enforce consistent style for element existence checks with `indexOf()`, `lastIndexOf()`, `findIndex()`, and `findLastIndex()`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/consistent-existence-index-check.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/consistent-existence-index-check.md"
       },
       "fixable": "code",
       "name": "unicorn/consistent-existence-index-check",
@@ -12104,7 +12135,7 @@
       "docs": {
         "description": "Move function definitions to the highest possible scope.",
         "recommended": true,
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/consistent-function-scoping.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/consistent-function-scoping.md"
       },
       "defaultOptions": [
         {
@@ -12114,12 +12145,23 @@
       "name": "unicorn/consistent-function-scoping",
       "plugin": "unicorn"
     },
+    "unicorn/consistent-template-literal-escape": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Enforce consistent style for escaping `${` in template literals.",
+        "recommended": true,
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/consistent-template-literal-escape.md"
+      },
+      "fixable": "code",
+      "name": "unicorn/consistent-template-literal-escape",
+      "plugin": "unicorn"
+    },
     "unicorn/custom-error-definition": {
       "type": "problem",
       "docs": {
         "description": "Enforce correct `Error` subclassing.",
         "recommended": false,
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/custom-error-definition.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/custom-error-definition.md"
       },
       "fixable": "code",
       "name": "unicorn/custom-error-definition",
@@ -12130,7 +12172,7 @@
       "docs": {
         "description": "Enforce no spaces between braces.",
         "recommended": true,
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/empty-brace-spaces.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/empty-brace-spaces.md"
       },
       "fixable": "whitespace",
       "name": "unicorn/empty-brace-spaces",
@@ -12141,7 +12183,7 @@
       "docs": {
         "description": "Enforce passing a `message` value when creating a built-in error.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/error-message.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/error-message.md"
       },
       "name": "unicorn/error-message",
       "plugin": "unicorn"
@@ -12151,7 +12193,7 @@
       "docs": {
         "description": "Require escape sequences to use uppercase or lowercase values.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/escape-case.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/escape-case.md"
       },
       "fixable": "code",
       "defaultOptions": [
@@ -12165,7 +12207,7 @@
       "docs": {
         "description": "Add expiration conditions to TODO comments.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/expiring-todo-comments.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/expiring-todo-comments.md"
       },
       "defaultOptions": [
         {
@@ -12175,6 +12217,7 @@
             "xxx"
           ],
           "ignore": [],
+          "ignoreDates": false,
           "ignoreDatesOnPullRequests": true,
           "allowWarningComments": true
         }
@@ -12187,7 +12230,7 @@
       "docs": {
         "description": "Enforce explicitly comparing the `length` or `size` property of a value.",
         "recommended": true,
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/explicit-length-check.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/explicit-length-check.md"
       },
       "fixable": "code",
       "defaultOptions": [
@@ -12204,7 +12247,7 @@
       "docs": {
         "description": "Enforce a case style for filenames.",
         "recommended": true,
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/filename-case.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/filename-case.md"
       },
       "defaultOptions": [],
       "name": "unicorn/filename-case",
@@ -12215,7 +12258,7 @@
       "docs": {
         "description": "Enforce specific import styles per module.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/import-style.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/import-style.md"
       },
       "defaultOptions": [
         {}
@@ -12228,7 +12271,7 @@
       "docs": {
         "description": "Prevent usage of variables from outside the scope of isolated functions.",
         "recommended": true,
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/isolated-functions.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/isolated-functions.md"
       },
       "defaultOptions": [
         {
@@ -12250,7 +12293,7 @@
       "docs": {
         "description": "Enforce the use of `new` for all builtins, except `String`, `Number`, `Boolean`, `Symbol` and `BigInt`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/new-for-builtins.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/new-for-builtins.md"
       },
       "fixable": "code",
       "hasSuggestions": true,
@@ -12262,7 +12305,7 @@
       "docs": {
         "description": "Enforce specifying rules to disable in `eslint-disable` comments.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-abusive-eslint-disable.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-abusive-eslint-disable.md"
       },
       "name": "unicorn/no-abusive-eslint-disable",
       "plugin": "unicorn"
@@ -12272,7 +12315,7 @@
       "docs": {
         "description": "Disallow recursive access to `this` within getters and setters.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-accessor-recursion.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-accessor-recursion.md"
       },
       "defaultOptions": [],
       "name": "unicorn/no-accessor-recursion",
@@ -12283,7 +12326,7 @@
       "docs": {
         "description": "Disallow anonymous functions and classes as the default export.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-anonymous-default-export.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-anonymous-default-export.md"
       },
       "hasSuggestions": true,
       "name": "unicorn/no-anonymous-default-export",
@@ -12294,7 +12337,7 @@
       "docs": {
         "description": "Prevent passing a function reference directly to iterator methods.",
         "recommended": true,
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-array-callback-reference.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-array-callback-reference.md"
       },
       "hasSuggestions": true,
       "name": "unicorn/no-array-callback-reference",
@@ -12305,7 +12348,7 @@
       "docs": {
         "description": "Prefer `for…of` over the `forEach` method.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-array-for-each.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-array-for-each.md"
       },
       "fixable": "code",
       "hasSuggestions": true,
@@ -12317,7 +12360,7 @@
       "docs": {
         "description": "Disallow using the `this` argument in array methods.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-array-method-this-argument.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-array-method-this-argument.md"
       },
       "fixable": "code",
       "hasSuggestions": true,
@@ -12329,7 +12372,7 @@
       "docs": {
         "description": "Disallow `Array#reduce()` and `Array#reduceRight()`.",
         "recommended": true,
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-array-reduce.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-array-reduce.md"
       },
       "defaultOptions": [
         {
@@ -12344,7 +12387,7 @@
       "docs": {
         "description": "Prefer `Array#toReversed()` over `Array#reverse()`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-array-reverse.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-array-reverse.md"
       },
       "hasSuggestions": true,
       "defaultOptions": [
@@ -12360,7 +12403,7 @@
       "docs": {
         "description": "Prefer `Array#toSorted()` over `Array#sort()`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-array-sort.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-array-sort.md"
       },
       "hasSuggestions": true,
       "defaultOptions": [
@@ -12376,7 +12419,7 @@
       "docs": {
         "description": "Disallow member access from await expression.",
         "recommended": true,
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-await-expression-member.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-await-expression-member.md"
       },
       "fixable": "code",
       "name": "unicorn/no-await-expression-member",
@@ -12387,7 +12430,7 @@
       "docs": {
         "description": "Disallow using `await` in `Promise` method parameters.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-await-in-promise-methods.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-await-in-promise-methods.md"
       },
       "hasSuggestions": true,
       "name": "unicorn/no-await-in-promise-methods",
@@ -12398,7 +12441,7 @@
       "docs": {
         "description": "Do not use leading/trailing space between `console.log` parameters.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-console-spaces.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-console-spaces.md"
       },
       "fixable": "code",
       "name": "unicorn/no-console-spaces",
@@ -12409,7 +12452,7 @@
       "docs": {
         "description": "Do not use `document.cookie` directly.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-document-cookie.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-document-cookie.md"
       },
       "name": "unicorn/no-document-cookie",
       "plugin": "unicorn"
@@ -12419,7 +12462,7 @@
       "docs": {
         "description": "Disallow empty files.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-empty-file.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-empty-file.md"
       },
       "name": "unicorn/no-empty-file",
       "plugin": "unicorn"
@@ -12429,7 +12472,7 @@
       "docs": {
         "description": "Do not use a `for` loop that can be replaced with a `for-of` loop.",
         "recommended": true,
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-for-loop.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-for-loop.md"
       },
       "fixable": "code",
       "hasSuggestions": true,
@@ -12441,7 +12484,7 @@
       "docs": {
         "description": "Enforce the use of Unicode escapes instead of hexadecimal escapes.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-hex-escape.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-hex-escape.md"
       },
       "fixable": "code",
       "name": "unicorn/no-hex-escape",
@@ -12452,7 +12495,7 @@
       "docs": {
         "description": "Disallow immediate mutation after variable assignment.",
         "recommended": true,
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-immediate-mutation.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-immediate-mutation.md"
       },
       "fixable": "code",
       "hasSuggestions": true,
@@ -12464,7 +12507,7 @@
       "docs": {
         "description": "Disallow `instanceof` with built-in objects",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-instanceof-builtins.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-instanceof-builtins.md"
       },
       "fixable": "code",
       "defaultOptions": [
@@ -12484,7 +12527,7 @@
       "docs": {
         "description": "Disallow invalid options in `fetch()` and `new Request()`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-invalid-fetch-options.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-invalid-fetch-options.md"
       },
       "name": "unicorn/no-invalid-fetch-options",
       "plugin": "unicorn"
@@ -12494,7 +12537,7 @@
       "docs": {
         "description": "Prevent calling `EventTarget#removeEventListener()` with the result of an expression.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-invalid-remove-event-listener.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-invalid-remove-event-listener.md"
       },
       "name": "unicorn/no-invalid-remove-event-listener",
       "plugin": "unicorn"
@@ -12504,7 +12547,7 @@
       "docs": {
         "description": "Disallow identifiers starting with `new` or `class`.",
         "recommended": false,
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-keyword-prefix.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-keyword-prefix.md"
       },
       "defaultOptions": [
         {}
@@ -12517,7 +12560,7 @@
       "docs": {
         "description": "Disallow `if` statements as the only statement in `if` blocks without `else`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-lonely-if.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-lonely-if.md"
       },
       "fixable": "code",
       "name": "unicorn/no-lonely-if",
@@ -12528,7 +12571,7 @@
       "docs": {
         "description": "Disallow a magic number as the `depth` argument in `Array#flat(…).`",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-magic-array-flat-depth.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-magic-array-flat-depth.md"
       },
       "name": "unicorn/no-magic-array-flat-depth",
       "plugin": "unicorn"
@@ -12538,7 +12581,7 @@
       "docs": {
         "description": "Disallow named usage of default import and export.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-named-default.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-named-default.md"
       },
       "fixable": "code",
       "name": "unicorn/no-named-default",
@@ -12549,7 +12592,7 @@
       "docs": {
         "description": "Disallow negated conditions.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-negated-condition.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-negated-condition.md"
       },
       "fixable": "code",
       "name": "unicorn/no-negated-condition",
@@ -12560,7 +12603,7 @@
       "docs": {
         "description": "Disallow negated expression in equality check.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-negation-in-equality-check.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-negation-in-equality-check.md"
       },
       "hasSuggestions": true,
       "name": "unicorn/no-negation-in-equality-check",
@@ -12571,7 +12614,7 @@
       "docs": {
         "description": "Disallow nested ternary expressions.",
         "recommended": true,
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-nested-ternary.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-nested-ternary.md"
       },
       "fixable": "code",
       "name": "unicorn/no-nested-ternary",
@@ -12582,7 +12625,7 @@
       "docs": {
         "description": "Disallow `new Array()`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-new-array.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-new-array.md"
       },
       "fixable": "code",
       "hasSuggestions": true,
@@ -12594,7 +12637,7 @@
       "docs": {
         "description": "Enforce the use of `Buffer.from()` and `Buffer.alloc()` instead of the deprecated `new Buffer()`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-new-buffer.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-new-buffer.md"
       },
       "fixable": "code",
       "hasSuggestions": true,
@@ -12606,7 +12649,7 @@
       "docs": {
         "description": "Disallow the use of the `null` literal.",
         "recommended": true,
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-null.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-null.md"
       },
       "fixable": "code",
       "hasSuggestions": true,
@@ -12623,7 +12666,7 @@
       "docs": {
         "description": "Disallow the use of objects as default parameters.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-object-as-default-parameter.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-object-as-default-parameter.md"
       },
       "name": "unicorn/no-object-as-default-parameter",
       "plugin": "unicorn"
@@ -12633,7 +12676,7 @@
       "docs": {
         "description": "Disallow `process.exit()`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-process-exit.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-process-exit.md"
       },
       "name": "unicorn/no-process-exit",
       "plugin": "unicorn"
@@ -12643,7 +12686,7 @@
       "docs": {
         "description": "Disallow passing single-element arrays to `Promise` methods.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-single-promise-in-promise-methods.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-single-promise-in-promise-methods.md"
       },
       "fixable": "code",
       "hasSuggestions": true,
@@ -12655,7 +12698,7 @@
       "docs": {
         "description": "Disallow classes that only have static members.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-static-only-class.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-static-only-class.md"
       },
       "fixable": "code",
       "name": "unicorn/no-static-only-class",
@@ -12666,7 +12709,7 @@
       "docs": {
         "description": "Disallow `then` property.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-thenable.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-thenable.md"
       },
       "name": "unicorn/no-thenable",
       "plugin": "unicorn"
@@ -12676,7 +12719,7 @@
       "docs": {
         "description": "Disallow assigning `this` to a variable.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-this-assignment.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-this-assignment.md"
       },
       "name": "unicorn/no-this-assignment",
       "plugin": "unicorn"
@@ -12686,7 +12729,7 @@
       "docs": {
         "description": "Disallow comparing `undefined` using `typeof`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-typeof-undefined.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-typeof-undefined.md"
       },
       "fixable": "code",
       "hasSuggestions": true,
@@ -12703,7 +12746,7 @@
       "docs": {
         "description": "Disallow using `1` as the `depth` argument of `Array#flat()`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-unnecessary-array-flat-depth.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-unnecessary-array-flat-depth.md"
       },
       "fixable": "code",
       "name": "unicorn/no-unnecessary-array-flat-depth",
@@ -12714,7 +12757,7 @@
       "docs": {
         "description": "Disallow using `.length` or `Infinity` as the `deleteCount` or `skipCount` argument of `Array#{splice,toSpliced}()`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-unnecessary-array-splice-count.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-unnecessary-array-splice-count.md"
       },
       "fixable": "code",
       "name": "unicorn/no-unnecessary-array-splice-count",
@@ -12725,7 +12768,7 @@
       "docs": {
         "description": "Disallow awaiting non-promise values.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-unnecessary-await.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-unnecessary-await.md"
       },
       "fixable": "code",
       "name": "unicorn/no-unnecessary-await",
@@ -12736,7 +12779,7 @@
       "docs": {
         "description": "Enforce the use of built-in methods instead of unnecessary polyfills.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-unnecessary-polyfills.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-unnecessary-polyfills.md"
       },
       "defaultOptions": [],
       "name": "unicorn/no-unnecessary-polyfills",
@@ -12747,7 +12790,7 @@
       "docs": {
         "description": "Disallow using `.length` or `Infinity` as the `end` argument of `{Array,String,TypedArray}#slice()`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-unnecessary-slice-end.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-unnecessary-slice-end.md"
       },
       "fixable": "code",
       "name": "unicorn/no-unnecessary-slice-end",
@@ -12758,7 +12801,7 @@
       "docs": {
         "description": "Disallow unreadable array destructuring.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-unreadable-array-destructuring.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-unreadable-array-destructuring.md"
       },
       "fixable": "code",
       "name": "unicorn/no-unreadable-array-destructuring",
@@ -12769,7 +12812,7 @@
       "docs": {
         "description": "Disallow unreadable IIFEs.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-unreadable-iife.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-unreadable-iife.md"
       },
       "hasSuggestions": false,
       "name": "unicorn/no-unreadable-iife",
@@ -12780,7 +12823,7 @@
       "docs": {
         "description": "Disallow unused object properties.",
         "recommended": false,
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-unused-properties.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-unused-properties.md"
       },
       "name": "unicorn/no-unused-properties",
       "plugin": "unicorn"
@@ -12790,7 +12833,7 @@
       "docs": {
         "description": "Disallow useless values or fallbacks in `Set`, `Map`, `WeakSet`, or `WeakMap`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-useless-collection-argument.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-useless-collection-argument.md"
       },
       "fixable": "code",
       "hasSuggestions": true,
@@ -12802,7 +12845,7 @@
       "docs": {
         "description": "Disallow unnecessary `Error.captureStackTrace(…)`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-useless-error-capture-stack-trace.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-useless-error-capture-stack-trace.md"
       },
       "fixable": "code",
       "name": "unicorn/no-useless-error-capture-stack-trace",
@@ -12813,10 +12856,22 @@
       "docs": {
         "description": "Disallow useless fallback when spreading in object literals.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-useless-fallback-in-spread.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-useless-fallback-in-spread.md"
       },
       "fixable": "code",
       "name": "unicorn/no-useless-fallback-in-spread",
+      "plugin": "unicorn"
+    },
+    "unicorn/no-useless-iterator-to-array": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Disallow unnecessary `.toArray()` on iterators.",
+        "recommended": "unopinionated",
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-useless-iterator-to-array.md"
+      },
+      "fixable": "code",
+      "hasSuggestions": true,
+      "name": "unicorn/no-useless-iterator-to-array",
       "plugin": "unicorn"
     },
     "unicorn/no-useless-length-check": {
@@ -12824,7 +12879,7 @@
       "docs": {
         "description": "Disallow useless array length check.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-useless-length-check.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-useless-length-check.md"
       },
       "fixable": "code",
       "name": "unicorn/no-useless-length-check",
@@ -12835,7 +12890,7 @@
       "docs": {
         "description": "Disallow returning/yielding `Promise.resolve/reject()` in async functions or promise callbacks",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-useless-promise-resolve-reject.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-useless-promise-resolve-reject.md"
       },
       "fixable": "code",
       "name": "unicorn/no-useless-promise-resolve-reject",
@@ -12846,7 +12901,7 @@
       "docs": {
         "description": "Disallow unnecessary spread.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-useless-spread.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-useless-spread.md"
       },
       "fixable": "code",
       "name": "unicorn/no-useless-spread",
@@ -12857,7 +12912,7 @@
       "docs": {
         "description": "Disallow useless case in switch statements.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-useless-switch-case.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-useless-switch-case.md"
       },
       "hasSuggestions": true,
       "name": "unicorn/no-useless-switch-case",
@@ -12868,7 +12923,7 @@
       "docs": {
         "description": "Disallow useless `undefined`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-useless-undefined.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-useless-undefined.md"
       },
       "fixable": "code",
       "defaultOptions": [
@@ -12885,7 +12940,7 @@
       "docs": {
         "description": "Disallow number literals with zero fractions or dangling dots.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-zero-fractions.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-zero-fractions.md"
       },
       "fixable": "code",
       "name": "unicorn/no-zero-fractions",
@@ -12896,7 +12951,7 @@
       "docs": {
         "description": "Enforce proper case for numeric literals.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/number-literal-case.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/number-literal-case.md"
       },
       "fixable": "code",
       "defaultOptions": [
@@ -12912,7 +12967,7 @@
       "docs": {
         "description": "Enforce the style of numeric separators by correctly grouping digits.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/numeric-separators-style.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/numeric-separators-style.md"
       },
       "fixable": "code",
       "defaultOptions": [
@@ -12944,7 +12999,7 @@
       "docs": {
         "description": "Prefer `.addEventListener()` and `.removeEventListener()` over `on`-functions.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-add-event-listener.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-add-event-listener.md"
       },
       "fixable": "code",
       "defaultOptions": [
@@ -12963,7 +13018,7 @@
       "docs": {
         "description": "Prefer `.find(…)` and `.findLast(…)` over the first or last element from `.filter(…)`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-array-find.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-array-find.md"
       },
       "fixable": "code",
       "hasSuggestions": true,
@@ -12980,7 +13035,7 @@
       "docs": {
         "description": "Prefer `Array#flat()` over legacy techniques to flatten arrays.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-array-flat.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-array-flat.md"
       },
       "fixable": "code",
       "defaultOptions": [
@@ -12996,7 +13051,7 @@
       "docs": {
         "description": "Prefer `.flatMap(…)` over `.map(…).flat()`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-array-flat-map.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-array-flat-map.md"
       },
       "fixable": "code",
       "name": "unicorn/prefer-array-flat-map",
@@ -13007,7 +13062,7 @@
       "docs": {
         "description": "Prefer `Array#{indexOf,lastIndexOf}()` over `Array#{findIndex,findLastIndex}()` when looking for the index of an item.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-array-index-of.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-array-index-of.md"
       },
       "fixable": "code",
       "hasSuggestions": true,
@@ -13019,7 +13074,7 @@
       "docs": {
         "description": "Prefer `.some(…)` over `.filter(…).length` check and `.{find,findLast,findIndex,findLastIndex}(…)`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-array-some.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-array-some.md"
       },
       "fixable": "code",
       "hasSuggestions": true,
@@ -13031,7 +13086,7 @@
       "docs": {
         "description": "Prefer `.at()` method for index access and `String#charAt()`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-at.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-at.md"
       },
       "fixable": "code",
       "hasSuggestions": true,
@@ -13049,7 +13104,7 @@
       "docs": {
         "description": "Prefer `BigInt` literals over the constructor.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-bigint-literals.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-bigint-literals.md"
       },
       "fixable": "code",
       "hasSuggestions": true,
@@ -13061,7 +13116,7 @@
       "docs": {
         "description": "Prefer `Blob#arrayBuffer()` over `FileReader#readAsArrayBuffer(…)` and `Blob#text()` over `FileReader#readAsText(…)`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-blob-reading-methods.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-blob-reading-methods.md"
       },
       "name": "unicorn/prefer-blob-reading-methods",
       "plugin": "unicorn"
@@ -13071,7 +13126,7 @@
       "docs": {
         "description": "Prefer class field declarations over `this` assignments in constructors.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-class-fields.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-class-fields.md"
       },
       "fixable": "code",
       "hasSuggestions": true,
@@ -13083,7 +13138,7 @@
       "docs": {
         "description": "Prefer using `Element#classList.toggle()` to toggle class names.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-classlist-toggle.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-classlist-toggle.md"
       },
       "fixable": "code",
       "hasSuggestions": true,
@@ -13095,7 +13150,7 @@
       "docs": {
         "description": "Prefer `String#codePointAt(…)` over `String#charCodeAt(…)` and `String.fromCodePoint(…)` over `String.fromCharCode(…)`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-code-point.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-code-point.md"
       },
       "hasSuggestions": true,
       "name": "unicorn/prefer-code-point",
@@ -13106,7 +13161,7 @@
       "docs": {
         "description": "Prefer `Date.now()` to get the number of milliseconds since the Unix Epoch.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-date-now.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-date-now.md"
       },
       "fixable": "code",
       "name": "unicorn/prefer-date-now",
@@ -13117,7 +13172,7 @@
       "docs": {
         "description": "Prefer default parameters over reassignment.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-default-parameters.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-default-parameters.md"
       },
       "hasSuggestions": true,
       "name": "unicorn/prefer-default-parameters",
@@ -13128,7 +13183,7 @@
       "docs": {
         "description": "Prefer `Node#append()` over `Node#appendChild()`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-dom-node-append.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-dom-node-append.md"
       },
       "fixable": "code",
       "name": "unicorn/prefer-dom-node-append",
@@ -13139,7 +13194,7 @@
       "docs": {
         "description": "Prefer using `.dataset` on DOM elements over calling attribute methods.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-dom-node-dataset.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-dom-node-dataset.md"
       },
       "fixable": "code",
       "name": "unicorn/prefer-dom-node-dataset",
@@ -13150,7 +13205,7 @@
       "docs": {
         "description": "Prefer `childNode.remove()` over `parentNode.removeChild(childNode)`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-dom-node-remove.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-dom-node-remove.md"
       },
       "fixable": "code",
       "hasSuggestions": true,
@@ -13162,7 +13217,7 @@
       "docs": {
         "description": "Prefer `.textContent` over `.innerText`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-dom-node-text-content.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-dom-node-text-content.md"
       },
       "hasSuggestions": true,
       "name": "unicorn/prefer-dom-node-text-content",
@@ -13173,7 +13228,7 @@
       "docs": {
         "description": "Prefer `EventTarget` over `EventEmitter`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-event-target.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-event-target.md"
       },
       "name": "unicorn/prefer-event-target",
       "plugin": "unicorn"
@@ -13183,7 +13238,7 @@
       "docs": {
         "description": "Prefer `export…from` when re-exporting.",
         "recommended": true,
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-export-from.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-export-from.md"
       },
       "fixable": "code",
       "hasSuggestions": true,
@@ -13200,7 +13255,7 @@
       "docs": {
         "description": "Prefer `globalThis` over `window`, `self`, and `global`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-global-this.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-global-this.md"
       },
       "fixable": "code",
       "hasSuggestions": false,
@@ -13212,7 +13267,7 @@
       "docs": {
         "description": "Prefer `import.meta.{dirname,filename}` over legacy techniques for getting file paths.",
         "recommended": false,
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-import-meta-properties.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-import-meta-properties.md"
       },
       "fixable": "code",
       "name": "unicorn/prefer-import-meta-properties",
@@ -13223,7 +13278,7 @@
       "docs": {
         "description": "Prefer `.includes()` over `.indexOf()`, `.lastIndexOf()`, and `Array#some()` when checking for existence or non-existence.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-includes.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-includes.md"
       },
       "fixable": "code",
       "hasSuggestions": true,
@@ -13235,7 +13290,7 @@
       "docs": {
         "description": "Prefer reading a JSON file as a buffer.",
         "recommended": false,
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-json-parse-buffer.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-json-parse-buffer.md"
       },
       "fixable": "code",
       "name": "unicorn/prefer-json-parse-buffer",
@@ -13246,7 +13301,7 @@
       "docs": {
         "description": "Prefer `KeyboardEvent#key` over `KeyboardEvent#keyCode`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-keyboard-event-key.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-keyboard-event-key.md"
       },
       "fixable": "code",
       "name": "unicorn/prefer-keyboard-event-key",
@@ -13257,7 +13312,7 @@
       "docs": {
         "description": "Prefer using a logical operator over a ternary.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-logical-operator-over-ternary.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-logical-operator-over-ternary.md"
       },
       "hasSuggestions": true,
       "name": "unicorn/prefer-logical-operator-over-ternary",
@@ -13268,7 +13323,7 @@
       "docs": {
         "description": "Prefer `Math.min()` and `Math.max()` over ternaries for simple comparisons.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-math-min-max.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-math-min-max.md"
       },
       "fixable": "code",
       "name": "unicorn/prefer-math-min-max",
@@ -13279,7 +13334,7 @@
       "docs": {
         "description": "Enforce the use of `Math.trunc` instead of bitwise operators.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-math-trunc.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-math-trunc.md"
       },
       "fixable": "code",
       "hasSuggestions": true,
@@ -13291,7 +13346,7 @@
       "docs": {
         "description": "Prefer `.before()` over `.insertBefore()`, `.replaceWith()` over `.replaceChild()`, prefer one of `.before()`, `.after()`, `.append()` or `.prepend()` over `insertAdjacentText()` and `insertAdjacentElement()`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-modern-dom-apis.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-modern-dom-apis.md"
       },
       "fixable": "code",
       "name": "unicorn/prefer-modern-dom-apis",
@@ -13302,7 +13357,7 @@
       "docs": {
         "description": "Prefer modern `Math` APIs over legacy patterns.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-modern-math-apis.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-modern-math-apis.md"
       },
       "fixable": "code",
       "name": "unicorn/prefer-modern-math-apis",
@@ -13313,7 +13368,7 @@
       "docs": {
         "description": "Prefer JavaScript modules (ESM) over CommonJS.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-module.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-module.md"
       },
       "fixable": "code",
       "hasSuggestions": true,
@@ -13325,7 +13380,7 @@
       "docs": {
         "description": "Prefer using `String`, `Number`, `BigInt`, `Boolean`, and `Symbol` directly.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-native-coercion-functions.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-native-coercion-functions.md"
       },
       "fixable": "code",
       "name": "unicorn/prefer-native-coercion-functions",
@@ -13336,7 +13391,7 @@
       "docs": {
         "description": "Prefer negative index over `.length - index` when possible.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-negative-index.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-negative-index.md"
       },
       "fixable": "code",
       "name": "unicorn/prefer-negative-index",
@@ -13347,7 +13402,7 @@
       "docs": {
         "description": "Prefer using the `node:` protocol when importing Node.js builtin modules.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-node-protocol.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-node-protocol.md"
       },
       "fixable": "code",
       "name": "unicorn/prefer-node-protocol",
@@ -13358,7 +13413,7 @@
       "docs": {
         "description": "Prefer `Number` static properties over global ones.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-number-properties.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-number-properties.md"
       },
       "fixable": "code",
       "hasSuggestions": true,
@@ -13376,7 +13431,7 @@
       "docs": {
         "description": "Prefer using `Object.fromEntries(…)` to transform a list of key-value pairs into an object.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-object-from-entries.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-object-from-entries.md"
       },
       "fixable": "code",
       "defaultOptions": [
@@ -13392,7 +13447,7 @@
       "docs": {
         "description": "Prefer omitting the `catch` binding parameter.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-optional-catch-binding.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-optional-catch-binding.md"
       },
       "fixable": "code",
       "name": "unicorn/prefer-optional-catch-binding",
@@ -13403,7 +13458,7 @@
       "docs": {
         "description": "Prefer borrowing methods from the prototype instead of the instance.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-prototype-methods.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-prototype-methods.md"
       },
       "fixable": "code",
       "name": "unicorn/prefer-prototype-methods",
@@ -13414,7 +13469,7 @@
       "docs": {
         "description": "Prefer `.querySelector()` over `.getElementById()`, `.querySelectorAll()` over `.getElementsByClassName()` and `.getElementsByTagName()` and `.getElementsByName()`.",
         "recommended": true,
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-query-selector.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-query-selector.md"
       },
       "fixable": "code",
       "name": "unicorn/prefer-query-selector",
@@ -13425,7 +13480,7 @@
       "docs": {
         "description": "Prefer `Reflect.apply()` over `Function#apply()`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-reflect-apply.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-reflect-apply.md"
       },
       "fixable": "code",
       "name": "unicorn/prefer-reflect-apply",
@@ -13436,7 +13491,7 @@
       "docs": {
         "description": "Prefer `RegExp#test()` over `String#match()` and `RegExp#exec()`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-regexp-test.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-regexp-test.md"
       },
       "fixable": "code",
       "hasSuggestions": true,
@@ -13448,7 +13503,7 @@
       "docs": {
         "description": "Prefer `Response.json()` over `new Response(JSON.stringify())`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-response-static-json.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-response-static-json.md"
       },
       "fixable": "code",
       "name": "unicorn/prefer-response-static-json",
@@ -13459,7 +13514,7 @@
       "docs": {
         "description": "Prefer `Set#has()` over `Array#includes()` when checking for existence or non-existence.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-set-has.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-set-has.md"
       },
       "fixable": "code",
       "hasSuggestions": true,
@@ -13471,10 +13526,22 @@
       "docs": {
         "description": "Prefer using `Set#size` instead of `Array#length`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-set-size.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-set-size.md"
       },
       "fixable": "code",
       "name": "unicorn/prefer-set-size",
+      "plugin": "unicorn"
+    },
+    "unicorn/prefer-simple-condition-first": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Prefer simple conditions first in logical expressions.",
+        "recommended": "unopinionated",
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-simple-condition-first.md"
+      },
+      "fixable": "code",
+      "hasSuggestions": true,
+      "name": "unicorn/prefer-simple-condition-first",
       "plugin": "unicorn"
     },
     "unicorn/prefer-single-call": {
@@ -13482,7 +13549,7 @@
       "docs": {
         "description": "Enforce combining multiple `Array#push()`, `Element#classList.{add,remove}()`, and `importScripts()` into one call.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-single-call.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-single-call.md"
       },
       "fixable": "code",
       "hasSuggestions": true,
@@ -13499,7 +13566,7 @@
       "docs": {
         "description": "Prefer the spread operator over `Array.from(…)`, `Array#concat(…)`, `Array#{slice,toSpliced}()` and `String#split('')`.",
         "recommended": true,
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-spread.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-spread.md"
       },
       "fixable": "code",
       "hasSuggestions": true,
@@ -13511,7 +13578,7 @@
       "docs": {
         "description": "Prefer using the `String.raw` tag to avoid escaping `\\`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-string-raw.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-string-raw.md"
       },
       "fixable": "code",
       "name": "unicorn/prefer-string-raw",
@@ -13522,7 +13589,7 @@
       "docs": {
         "description": "Prefer `String#replaceAll()` over regex searches with the global flag.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-string-replace-all.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-string-replace-all.md"
       },
       "fixable": "code",
       "name": "unicorn/prefer-string-replace-all",
@@ -13533,7 +13600,7 @@
       "docs": {
         "description": "Prefer `String#slice()` over `String#substr()` and `String#substring()`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-string-slice.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-string-slice.md"
       },
       "fixable": "code",
       "name": "unicorn/prefer-string-slice",
@@ -13544,7 +13611,7 @@
       "docs": {
         "description": "Prefer `String#startsWith()` & `String#endsWith()` over `RegExp#test()`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-string-starts-ends-with.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-string-starts-ends-with.md"
       },
       "fixable": "code",
       "hasSuggestions": true,
@@ -13556,7 +13623,7 @@
       "docs": {
         "description": "Prefer `String#trimStart()` / `String#trimEnd()` over `String#trimLeft()` / `String#trimRight()`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-string-trim-start-end.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-string-trim-start-end.md"
       },
       "fixable": "code",
       "name": "unicorn/prefer-string-trim-start-end",
@@ -13567,7 +13634,7 @@
       "docs": {
         "description": "Prefer using `structuredClone` to create a deep clone.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-structured-clone.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-structured-clone.md"
       },
       "hasSuggestions": true,
       "defaultOptions": [
@@ -13583,7 +13650,7 @@
       "docs": {
         "description": "Prefer `switch` over multiple `else-if`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-switch.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-switch.md"
       },
       "fixable": "code",
       "defaultOptions": [
@@ -13600,7 +13667,7 @@
       "docs": {
         "description": "Prefer ternary expressions over simple `if-else` statements.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-ternary.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-ternary.md"
       },
       "fixable": "code",
       "defaultOptions": [
@@ -13614,7 +13681,7 @@
       "docs": {
         "description": "Prefer top-level await over top-level promises and async function calls.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-top-level-await.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-top-level-await.md"
       },
       "hasSuggestions": true,
       "name": "unicorn/prefer-top-level-await",
@@ -13625,7 +13692,7 @@
       "docs": {
         "description": "Enforce throwing `TypeError` in type checking conditions.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-type-error.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-type-error.md"
       },
       "fixable": "code",
       "name": "unicorn/prefer-type-error",
@@ -13636,7 +13703,7 @@
       "docs": {
         "description": "Prevent abbreviations.",
         "recommended": true,
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prevent-abbreviations.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prevent-abbreviations.md"
       },
       "fixable": "code",
       "defaultOptions": [
@@ -13650,7 +13717,7 @@
       "docs": {
         "description": "Enforce consistent relative URL style.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/relative-url-style.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/relative-url-style.md"
       },
       "fixable": "code",
       "hasSuggestions": true,
@@ -13665,7 +13732,7 @@
       "docs": {
         "description": "Enforce using the separator argument with `Array#join()`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/require-array-join-separator.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/require-array-join-separator.md"
       },
       "fixable": "code",
       "name": "unicorn/require-array-join-separator",
@@ -13676,7 +13743,7 @@
       "docs": {
         "description": "Require non-empty module attributes for imports and exports",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/require-module-attributes.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/require-module-attributes.md"
       },
       "fixable": "code",
       "name": "unicorn/require-module-attributes",
@@ -13687,7 +13754,7 @@
       "docs": {
         "description": "Require non-empty specifier list in import and export statements.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/require-module-specifiers.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/require-module-specifiers.md"
       },
       "fixable": "code",
       "hasSuggestions": true,
@@ -13699,7 +13766,7 @@
       "docs": {
         "description": "Enforce using the digits argument with `Number#toFixed()`.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/require-number-to-fixed-digits-argument.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/require-number-to-fixed-digits-argument.md"
       },
       "fixable": "code",
       "name": "unicorn/require-number-to-fixed-digits-argument",
@@ -13710,7 +13777,7 @@
       "docs": {
         "description": "Enforce using the `targetOrigin` argument with `window.postMessage()`.",
         "recommended": false,
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/require-post-message-target-origin.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/require-post-message-target-origin.md"
       },
       "hasSuggestions": true,
       "name": "unicorn/require-post-message-target-origin",
@@ -13721,7 +13788,7 @@
       "docs": {
         "description": "Enforce better string content.",
         "recommended": false,
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/string-content.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/string-content.md"
       },
       "fixable": "code",
       "hasSuggestions": true,
@@ -13738,7 +13805,7 @@
       "docs": {
         "description": "Enforce consistent brace style for `case` clauses.",
         "recommended": true,
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/switch-case-braces.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/switch-case-braces.md"
       },
       "fixable": "code",
       "defaultOptions": [
@@ -13747,12 +13814,23 @@
       "name": "unicorn/switch-case-braces",
       "plugin": "unicorn"
     },
+    "unicorn/switch-case-break-position": {
+      "type": "layout",
+      "docs": {
+        "description": "Enforce consistent `break`/`return`/`continue`/`throw` position in `case` clauses.",
+        "recommended": true,
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/switch-case-break-position.md"
+      },
+      "fixable": "code",
+      "name": "unicorn/switch-case-break-position",
+      "plugin": "unicorn"
+    },
     "unicorn/template-indent": {
       "type": "suggestion",
       "docs": {
         "description": "Fix whitespace-insensitive template indentation.",
         "recommended": true,
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/template-indent.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/template-indent.md"
       },
       "fixable": "code",
       "defaultOptions": [
@@ -13784,7 +13862,7 @@
       "docs": {
         "description": "Enforce consistent case for text encoding identifiers.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/text-encoding-identifier-case.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/text-encoding-identifier-case.md"
       },
       "fixable": "code",
       "hasSuggestions": true,
@@ -13801,7 +13879,7 @@
       "docs": {
         "description": "Require `new` when creating an error.",
         "recommended": "unopinionated",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/throw-new-error.md"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/throw-new-error.md"
       },
       "fixable": "code",
       "name": "unicorn/throw-new-error",
@@ -13810,16 +13888,16 @@
     "unicorn/no-instanceof-array": {
       "docs": {
         "description": "Replaced by `unicorn/no-instanceof-builtins` which covers more cases.",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/deleted-and-deprecated-rules.md#no-instanceof-array"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/deleted-and-deprecated-rules.md#no-instanceof-array"
       },
       "deprecated": {
         "message": "Replaced by `unicorn/no-instanceof-builtins` which covers more cases.",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/deleted-and-deprecated-rules.md#no-instanceof-array",
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/deleted-and-deprecated-rules.md#no-instanceof-array",
         "replacedBy": [
           {
             "rule": {
               "name": "unicorn/no-instanceof-builtins",
-              "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-instanceof-builtins.md"
+              "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-instanceof-builtins.md"
             }
           }
         ]
@@ -13830,16 +13908,16 @@
     "unicorn/no-length-as-slice-end": {
       "docs": {
         "description": "Replaced by `unicorn/no-unnecessary-slice-end` which covers more cases.",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/deleted-and-deprecated-rules.md#no-length-as-slice-end"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/deleted-and-deprecated-rules.md#no-length-as-slice-end"
       },
       "deprecated": {
         "message": "Replaced by `unicorn/no-unnecessary-slice-end` which covers more cases.",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/deleted-and-deprecated-rules.md#no-length-as-slice-end",
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/deleted-and-deprecated-rules.md#no-length-as-slice-end",
         "replacedBy": [
           {
             "rule": {
               "name": "unicorn/no-unnecessary-slice-end",
-              "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/no-unnecessary-slice-end.md"
+              "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/no-unnecessary-slice-end.md"
             }
           }
         ]
@@ -13850,16 +13928,16 @@
     "unicorn/no-array-push-push": {
       "docs": {
         "description": "Replaced by `unicorn/prefer-single-call` which covers more cases.",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/deleted-and-deprecated-rules.md#no-array-push-push"
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/deleted-and-deprecated-rules.md#no-array-push-push"
       },
       "deprecated": {
         "message": "Replaced by `unicorn/prefer-single-call` which covers more cases.",
-        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/deleted-and-deprecated-rules.md#no-array-push-push",
+        "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/deleted-and-deprecated-rules.md#no-array-push-push",
         "replacedBy": [
           {
             "rule": {
               "name": "unicorn/prefer-single-call",
-              "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v63.0.0/docs/rules/prefer-single-call.md"
+              "url": "https://github.com/sindresorhus/eslint-plugin-unicorn/blob/v64.0.0/docs/rules/prefer-single-call.md"
             }
           }
         ]
@@ -19327,16 +19405,6 @@
       "name": "test/require-hook",
       "plugin": "test"
     },
-    "test/require-test-timeout": {
-      "type": "suggestion",
-      "docs": {
-        "description": "require tests to declare a timeout",
-        "recommended": false,
-        "url": "https://github.com/vitest-dev/eslint-plugin-vitest/blob/main/docs/rules/require-test-timeout.md"
-      },
-      "name": "test/require-test-timeout",
-      "plugin": "test"
-    },
     "test/require-local-test-context-for-concurrent-snapshots": {
       "docs": {
         "description": "require local Test Context for concurrent snapshot tests",
@@ -19363,6 +19431,16 @@
       "name": "test/require-mock-type-parameters",
       "plugin": "test"
     },
+    "test/require-test-timeout": {
+      "type": "suggestion",
+      "docs": {
+        "description": "require tests to declare a timeout",
+        "recommended": false,
+        "url": "https://github.com/vitest-dev/eslint-plugin-vitest/blob/main/docs/rules/require-test-timeout.md"
+      },
+      "name": "test/require-test-timeout",
+      "plugin": "test"
+    },
     "test/require-to-throw-message": {
       "type": "suggestion",
       "docs": {
@@ -19386,6 +19464,22 @@
         }
       ],
       "name": "test/require-top-level-describe",
+      "plugin": "test"
+    },
+    "test/unbound-method": {
+      "type": "problem",
+      "docs": {
+        "description": "enforce unbound methods are called with their expected scope",
+        "recommended": false,
+        "requiresTypeChecking": true,
+        "url": "https://github.com/vitest-dev/eslint-plugin-vitest/blob/main/docs/rules/unbound-method.md"
+      },
+      "defaultOptions": [
+        {
+          "ignoreStatic": false
+        }
+      ],
+      "name": "test/unbound-method",
       "plugin": "test"
     },
     "test/valid-describe-callback": {
@@ -22924,8 +23018,47 @@
       "name": "vue-a11y/tabindex-no-positive",
       "plugin": "vue-a11y"
     },
-    "react/jsx-dollar": {
+    "react/component-hook-factories": {
       "type": "problem",
+      "docs": {
+        "description": "Disallows higher order functions that define components or hooks inside them.",
+        "url": "https://eslint-react.xyz/docs/rules/component-hook-factories"
+      },
+      "name": "react/component-hook-factories",
+      "plugin": "react"
+    },
+    "react/error-boundaries": {
+      "type": "problem",
+      "docs": {
+        "description": "Validates usage of Error Boundaries instead of try/catch for errors in child components.",
+        "url": "https://eslint-react.xyz/docs/rules/error-boundaries"
+      },
+      "name": "react/error-boundaries",
+      "plugin": "react"
+    },
+    "react/exhaustive-deps": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Verifies the list of dependencies for Hooks like 'useEffect' and similar.",
+        "recommended": true,
+        "url": "https://github.com/facebook/react/issues/14920"
+      },
+      "fixable": "code",
+      "hasSuggestions": true,
+      "name": "react/exhaustive-deps",
+      "plugin": "react"
+    },
+    "react/immutability": {
+      "type": "problem",
+      "docs": {
+        "description": "Validates against mutating props, state, and other values that are immutable.",
+        "url": "https://eslint-react.xyz/docs/rules/immutability"
+      },
+      "name": "react/immutability",
+      "plugin": "react"
+    },
+    "react/jsx-dollar": {
+      "type": "suggestion",
       "docs": {
         "description": "Prevents unintentional '$' sign before expression.",
         "url": "https://eslint-react.xyz/docs/rules/jsx-dollar"
@@ -22947,41 +23080,14 @@
     "react/jsx-no-comment-textnodes": {
       "type": "problem",
       "docs": {
-        "description": "Prevents comment strings (e.g., beginning with '//' or '/*') from being accidentally inserted into a JSX element's text nodes.",
+        "description": "Prevents comment strings (ex: beginning with '//' or '/*') from being accidentally inserted into a JSX element's text nodes.",
         "url": "https://eslint-react.xyz/docs/rules/jsx-no-comment-textnodes"
       },
       "name": "react/jsx-no-comment-textnodes",
       "plugin": "react"
     },
-    "react/jsx-no-duplicate-props": {
-      "type": "problem",
-      "docs": {
-        "description": "Disallows duplicate props in JSX elements.",
-        "url": "https://eslint-react.xyz/docs/rules/jsx-no-duplicate-props"
-      },
-      "name": "react/jsx-no-duplicate-props",
-      "plugin": "react"
-    },
-    "react/jsx-no-iife": {
-      "type": "problem",
-      "docs": {
-        "description": "Disallows immediately-invoked function expressions in JSX.",
-        "url": "https://eslint-react.xyz/docs/rules/jsx-no-iife"
-      },
-      "name": "react/jsx-no-iife",
-      "plugin": "react"
-    },
-    "react/jsx-no-undef": {
-      "type": "problem",
-      "docs": {
-        "description": "Prevents using variables in JSX that are not defined in the scope.",
-        "url": "https://eslint-react.xyz/docs/rules/jsx-no-undef"
-      },
-      "name": "react/jsx-no-undef",
-      "plugin": "react"
-    },
     "react/jsx-shorthand-boolean": {
-      "type": "problem",
+      "type": "suggestion",
       "docs": {
         "description": "Enforces shorthand syntax for boolean props.",
         "url": "https://eslint-react.xyz/docs/rules/jsx-shorthand-boolean"
@@ -22991,31 +23097,13 @@
       "plugin": "react"
     },
     "react/jsx-shorthand-fragment": {
-      "type": "problem",
+      "type": "suggestion",
       "docs": {
         "description": "Enforces shorthand syntax for fragment elements.",
         "url": "https://eslint-react.xyz/docs/rules/jsx-shorthand-fragment"
       },
       "fixable": "code",
       "name": "react/jsx-shorthand-fragment",
-      "plugin": "react"
-    },
-    "react/jsx-uses-react": {
-      "type": "problem",
-      "docs": {
-        "description": "Marks React variables as used when JSX is present.",
-        "url": "https://eslint-react.xyz/docs/rules/jsx-uses-react"
-      },
-      "name": "react/jsx-uses-react",
-      "plugin": "react"
-    },
-    "react/jsx-uses-vars": {
-      "type": "problem",
-      "docs": {
-        "description": "Marks JSX element variables as used.",
-        "url": "https://eslint-react.xyz/docs/rules/jsx-uses-vars"
-      },
-      "name": "react/jsx-uses-vars",
       "plugin": "react"
     },
     "react/no-access-state-in-setstate": {
@@ -23028,7 +23116,7 @@
       "plugin": "react"
     },
     "react/no-array-index-key": {
-      "type": "problem",
+      "type": "suggestion",
       "docs": {
         "description": "Disallows using an item's index in the array as its key.",
         "url": "https://eslint-react.xyz/docs/rules/no-array-index-key"
@@ -23037,7 +23125,7 @@
       "plugin": "react"
     },
     "react/no-children-count": {
-      "type": "problem",
+      "type": "suggestion",
       "docs": {
         "description": "Disallows the use of 'Children.count' from the 'react' package.",
         "url": "https://eslint-react.xyz/docs/rules/no-children-count"
@@ -23046,7 +23134,7 @@
       "plugin": "react"
     },
     "react/no-children-for-each": {
-      "type": "problem",
+      "type": "suggestion",
       "docs": {
         "description": "Disallows the use of 'Children.forEach' from the 'react' package.",
         "url": "https://eslint-react.xyz/docs/rules/no-children-for-each"
@@ -23055,7 +23143,7 @@
       "plugin": "react"
     },
     "react/no-children-map": {
-      "type": "problem",
+      "type": "suggestion",
       "docs": {
         "description": "Disallows the use of 'Children.map' from the 'react' package.",
         "url": "https://eslint-react.xyz/docs/rules/no-children-map"
@@ -23064,7 +23152,7 @@
       "plugin": "react"
     },
     "react/no-children-only": {
-      "type": "problem",
+      "type": "suggestion",
       "docs": {
         "description": "Disallows the use of 'Children.only' from the 'react' package.",
         "url": "https://eslint-react.xyz/docs/rules/no-children-only"
@@ -23073,7 +23161,7 @@
       "plugin": "react"
     },
     "react/no-children-prop": {
-      "type": "problem",
+      "type": "suggestion",
       "docs": {
         "description": "Disallows passing 'children' as a prop.",
         "url": "https://eslint-react.xyz/docs/rules/no-children-prop"
@@ -23082,7 +23170,7 @@
       "plugin": "react"
     },
     "react/no-children-to-array": {
-      "type": "problem",
+      "type": "suggestion",
       "docs": {
         "description": "Disallows the use of 'Children.toArray' from the 'react' package.",
         "url": "https://eslint-react.xyz/docs/rules/no-children-to-array"
@@ -23091,7 +23179,7 @@
       "plugin": "react"
     },
     "react/no-class-component": {
-      "type": "problem",
+      "type": "suggestion",
       "docs": {
         "description": "Disallows class components except for error boundaries.",
         "url": "https://eslint-react.xyz/docs/rules/no-class-component"
@@ -23100,7 +23188,7 @@
       "plugin": "react"
     },
     "react/no-clone-element": {
-      "type": "problem",
+      "type": "suggestion",
       "docs": {
         "description": "Disallows 'cloneElement'.",
         "url": "https://eslint-react.xyz/docs/rules/no-clone-element"
@@ -23139,17 +23227,18 @@
       "plugin": "react"
     },
     "react/no-context-provider": {
-      "type": "problem",
+      "type": "suggestion",
       "docs": {
         "description": "Replaces usage of '<Context.Provider>' with '<Context>'.",
         "url": "https://eslint-react.xyz/docs/rules/no-context-provider"
       },
       "fixable": "code",
+      "hasSuggestions": true,
       "name": "react/no-context-provider",
       "plugin": "react"
     },
     "react/no-create-ref": {
-      "type": "problem",
+      "type": "suggestion",
       "docs": {
         "description": "Disallows 'createRef' in function components.",
         "url": "https://eslint-react.xyz/docs/rules/no-create-ref"
@@ -23176,13 +23265,23 @@
       "plugin": "react"
     },
     "react/no-forward-ref": {
-      "type": "problem",
+      "type": "suggestion",
       "docs": {
         "description": "Replaces usage of 'forwardRef' with passing 'ref' as a prop.",
         "url": "https://eslint-react.xyz/docs/rules/no-forward-ref"
       },
       "fixable": "code",
+      "hasSuggestions": true,
       "name": "react/no-forward-ref",
+      "plugin": "react"
+    },
+    "react/no-implicit-children": {
+      "type": "problem",
+      "docs": {
+        "description": "Prevents implicitly passing the 'children' prop to components.",
+        "url": "https://eslint-react.xyz/docs/rules/no-implicit-children"
+      },
+      "name": "react/no-implicit-children",
       "plugin": "react"
     },
     "react/no-implicit-key": {
@@ -23192,6 +23291,15 @@
         "url": "https://eslint-react.xyz/docs/rules/no-implicit-key"
       },
       "name": "react/no-implicit-key",
+      "plugin": "react"
+    },
+    "react/no-implicit-ref": {
+      "type": "problem",
+      "docs": {
+        "description": "Prevents implicitly passing the 'ref' prop to components.",
+        "url": "https://eslint-react.xyz/docs/rules/no-implicit-ref"
+      },
+      "name": "react/no-implicit-ref",
       "plugin": "react"
     },
     "react/no-leaked-conditional-rendering": {
@@ -23204,7 +23312,7 @@
       "plugin": "react"
     },
     "react/no-missing-component-display-name": {
-      "type": "problem",
+      "type": "suggestion",
       "docs": {
         "description": "Enforces that all components have a 'displayName' that can be used in DevTools.",
         "url": "https://eslint-react.xyz/docs/rules/no-missing-component-display-name"
@@ -23213,7 +23321,7 @@
       "plugin": "react"
     },
     "react/no-missing-context-display-name": {
-      "type": "problem",
+      "type": "suggestion",
       "docs": {
         "description": "Enforces that all contexts have a 'displayName' that can be used in DevTools.",
         "url": "https://eslint-react.xyz/docs/rules/no-missing-context-display-name"
@@ -23294,17 +23402,8 @@
       "name": "react/no-set-state-in-component-will-update",
       "plugin": "react"
     },
-    "react/no-unnecessary-key": {
-      "type": "problem",
-      "docs": {
-        "description": "Disallows unnecessary 'key' props on nested child elements when rendering lists.",
-        "url": "https://eslint-react.xyz/docs/rules/no-unnecessary-key"
-      },
-      "name": "react/no-unnecessary-key",
-      "plugin": "react"
-    },
     "react/no-unnecessary-use-callback": {
-      "type": "problem",
+      "type": "suggestion",
       "docs": {
         "description": "Disallows unnecessary usage of 'useCallback'.",
         "url": "https://eslint-react.xyz/docs/rules/no-unnecessary-use-callback"
@@ -23313,7 +23412,7 @@
       "plugin": "react"
     },
     "react/no-unnecessary-use-memo": {
-      "type": "problem",
+      "type": "suggestion",
       "docs": {
         "description": "Disallows unnecessary usage of 'useMemo'.",
         "url": "https://eslint-react.xyz/docs/rules/no-unnecessary-use-memo"
@@ -23376,7 +23475,7 @@
       "plugin": "react"
     },
     "react/no-unused-class-component-members": {
-      "type": "problem",
+      "type": "suggestion",
       "docs": {
         "description": "Warns about unused class component methods and properties.",
         "url": "https://eslint-react.xyz/docs/rules/no-unused-class-component-members"
@@ -23385,7 +23484,7 @@
       "plugin": "react"
     },
     "react/no-unused-props": {
-      "type": "problem",
+      "type": "suggestion",
       "docs": {
         "description": "Warns about component props that are defined but never used.",
         "url": "https://eslint-react.xyz/docs/rules/no-unused-props"
@@ -23394,7 +23493,7 @@
       "plugin": "react"
     },
     "react/no-unused-state": {
-      "type": "problem",
+      "type": "suggestion",
       "docs": {
         "description": "Warns about unused class component state.",
         "url": "https://eslint-react.xyz/docs/rules/no-unused-state"
@@ -23403,26 +23502,18 @@
       "plugin": "react"
     },
     "react/no-use-context": {
-      "type": "problem",
+      "type": "suggestion",
       "docs": {
         "description": "Replaces usage of 'useContext' with 'use'.",
         "url": "https://eslint-react.xyz/docs/rules/no-use-context"
       },
       "fixable": "code",
+      "hasSuggestions": true,
       "name": "react/no-use-context",
       "plugin": "react"
     },
-    "react/no-useless-forward-ref": {
-      "type": "problem",
-      "docs": {
-        "description": "Disallows useless 'forwardRef' calls on components that don't use 'ref's.",
-        "url": "https://eslint-react.xyz/docs/rules/no-useless-forward-ref"
-      },
-      "name": "react/no-useless-forward-ref",
-      "plugin": "react"
-    },
     "react/no-useless-fragment": {
-      "type": "problem",
+      "type": "suggestion",
       "defaultOptions": [
         {
           "allowEmptyFragment": false,
@@ -23438,7 +23529,7 @@
       "plugin": "react"
     },
     "react/prefer-destructuring-assignment": {
-      "type": "problem",
+      "type": "suggestion",
       "docs": {
         "description": "Enforces destructuring assignment for component props and context.",
         "url": "https://eslint-react.xyz/docs/rules/prefer-destructuring-assignment"
@@ -23447,7 +23538,7 @@
       "plugin": "react"
     },
     "react/prefer-namespace-import": {
-      "type": "problem",
+      "type": "suggestion",
       "docs": {
         "description": "Enforces importing React via a namespace import.",
         "url": "https://eslint-react.xyz/docs/rules/prefer-namespace-import"
@@ -23456,89 +23547,95 @@
       "name": "react/prefer-namespace-import",
       "plugin": "react"
     },
-    "react/prefer-read-only-props": {
+    "react/purity": {
       "type": "problem",
       "docs": {
-        "description": "Enforces read-only props in components.",
-        "url": "https://eslint-react.xyz/docs/rules/prefer-read-only-props"
+        "description": "Validates that components and hooks are pure by checking that they do not call known-impure functions during render.",
+        "url": "https://eslint-react.xyz/docs/rules/purity"
       },
-      "name": "react/prefer-read-only-props",
+      "name": "react/purity",
       "plugin": "react"
     },
-    "react/prefer-use-state-lazy-initialization": {
+    "react/refs": {
       "type": "problem",
       "docs": {
-        "description": "Enforces wrapping function calls made inside 'useState' in an 'initializer function'.",
-        "url": "https://eslint-react.xyz/docs/rules/prefer-use-state-lazy-initialization"
+        "description": "Validates correct usage of refs by checking that 'ref.current' is not read or written during render.",
+        "url": "https://eslint-react.xyz/docs/rules/refs"
       },
-      "name": "react/prefer-use-state-lazy-initialization",
+      "name": "react/refs",
       "plugin": "react"
     },
-    "react/no-default-props": {
+    "react/rules-of-hooks": {
       "type": "problem",
       "docs": {
-        "description": "Disallows the 'defaultProps' property in favor of ES6 default parameters.",
-        "url": "https://eslint-react.xyz/docs/rules/no-default-props"
+        "description": "Enforces the Rules of Hooks.",
+        "recommended": true,
+        "url": "https://react.dev/reference/rules/rules-of-hooks"
       },
-      "name": "react/no-default-props",
+      "name": "react/rules-of-hooks",
       "plugin": "react"
     },
-    "react/no-forbidden-props": {
+    "react/set-state-in-effect": {
       "type": "problem",
-      "defaultOptions": [
-        {
-          "forbid": [
-            {
-              "prop": "/_/"
-            }
-          ]
-        }
-      ],
-      "deprecated": {
-        "deprecatedSince": "2.3.2",
-        "message": "This rule is deprecated and will be removed in future versions.",
-        "replacedBy": [
-          {
-            "rule": {
-              "name": "no-restricted-syntax",
-              "url": "https://eslint.org/docs/latest/rules/no-restricted-syntax"
-            }
-          }
-        ]
-      },
       "docs": {
-        "description": "Disallows certain props on components.",
-        "url": "https://eslint-react.xyz/docs/rules/no-forbidden-props"
+        "description": "Validates against setting state synchronously in an effect, which can lead to re-renders that degrade performance.",
+        "url": "https://eslint-react.xyz/docs/rules/set-state-in-effect"
       },
-      "name": "react/no-forbidden-props",
+      "name": "react/set-state-in-effect",
       "plugin": "react"
     },
-    "react/no-prop-types": {
+    "react/set-state-in-render": {
       "type": "problem",
       "docs": {
-        "description": "Disallows 'propTypes' in favor of TypeScript or another type-checking solution.",
-        "url": "https://eslint-react.xyz/docs/rules/no-prop-types"
+        "description": "Validates against unconditionally setting state during render, which can trigger additional renders and potential infinite render loops.",
+        "url": "https://eslint-react.xyz/docs/rules/set-state-in-render"
       },
-      "name": "react/no-prop-types",
+      "name": "react/set-state-in-render",
       "plugin": "react"
     },
-    "react/no-string-refs": {
+    "react/unstable-rules-of-props": {
       "type": "problem",
       "docs": {
-        "description": "Replaces string refs with callback refs.",
-        "url": "https://eslint-react.xyz/docs/rules/no-string-refs"
+        "description": "Enforces the Rules of Props.",
+        "url": "https://eslint-react.xyz/docs/rules/unstable-rules-of-props"
       },
-      "fixable": "code",
-      "name": "react/no-string-refs",
+      "name": "react/unstable-rules-of-props",
       "plugin": "react"
     },
-    "react/no-unnecessary-use-ref": {
+    "react/unstable-rules-of-state": {
       "type": "problem",
       "docs": {
-        "description": "Disallows unnecessary usage of 'useRef'.",
-        "url": "https://eslint-react.xyz/docs/rules/no-unnecessary-use-ref"
+        "description": "Enforces the Rules of State.",
+        "url": "https://eslint-react.xyz/docs/rules/unstable-rules-of-state"
       },
-      "name": "react/no-unnecessary-use-ref",
+      "name": "react/unstable-rules-of-state",
+      "plugin": "react"
+    },
+    "react/unsupported-syntax": {
+      "type": "problem",
+      "docs": {
+        "description": "Validates against syntax that React Compiler does not support.",
+        "url": "https://eslint-react.xyz/docs/rules/unsupported-syntax"
+      },
+      "name": "react/unsupported-syntax",
+      "plugin": "react"
+    },
+    "react/use-memo": {
+      "type": "problem",
+      "docs": {
+        "description": "Validates that 'useMemo' is called with a callback that returns a value.",
+        "url": "https://eslint-react.xyz/docs/rules/use-memo"
+      },
+      "name": "react/use-memo",
+      "plugin": "react"
+    },
+    "react/use-state": {
+      "type": "suggestion",
+      "docs": {
+        "description": "Enforces correct usage of 'useState', including destructuring, symmetric naming of the value and setter, and wrapping expensive initializers in a lazy initializer function.",
+        "url": "https://eslint-react.xyz/docs/rules/use-state"
+      },
+      "name": "react/use-state",
       "plugin": "react"
     },
     "react-dom/no-dangerously-set-innerhtml": {
@@ -23704,7 +23801,7 @@
       "plugin": "react-dom"
     },
     "react-dom/prefer-namespace-import": {
-      "type": "problem",
+      "type": "suggestion",
       "docs": {
         "description": "Enforces importing React DOM via a namespace import.",
         "url": "https://eslint-react.xyz/docs/rules/dom-prefer-namespace-import"
@@ -23712,350 +23809,6 @@
       "fixable": "code",
       "name": "react-dom/prefer-namespace-import",
       "plugin": "react-dom"
-    },
-    "react-hooks/exhaustive-deps": {
-      "type": "suggestion",
-      "docs": {
-        "description": "verifies the list of dependencies for Hooks like useEffect and similar",
-        "recommended": true,
-        "url": "https://github.com/facebook/react/issues/14920"
-      },
-      "fixable": "code",
-      "hasSuggestions": true,
-      "name": "react-hooks/exhaustive-deps",
-      "plugin": "react-hooks"
-    },
-    "react-hooks/rules-of-hooks": {
-      "type": "problem",
-      "docs": {
-        "description": "enforces the Rules of Hooks",
-        "recommended": true,
-        "url": "https://react.dev/reference/rules/rules-of-hooks"
-      },
-      "name": "react-hooks/rules-of-hooks",
-      "plugin": "react-hooks"
-    },
-    "react-hooks/hooks": {
-      "type": "problem",
-      "docs": {
-        "description": "Validates the rules of hooks",
-        "recommended": false
-      },
-      "fixable": "code",
-      "hasSuggestions": true,
-      "name": "react-hooks/hooks",
-      "plugin": "react-hooks"
-    },
-    "react-hooks/capitalized-calls": {
-      "type": "problem",
-      "docs": {
-        "description": "Validates against calling capitalized functions/methods instead of using JSX",
-        "recommended": false
-      },
-      "fixable": "code",
-      "hasSuggestions": true,
-      "name": "react-hooks/capitalized-calls",
-      "plugin": "react-hooks"
-    },
-    "react-hooks/static-components": {
-      "type": "problem",
-      "docs": {
-        "description": "Validates that components are static, not recreated every render. Components that are recreated dynamically can reset state and trigger excessive re-rendering",
-        "recommended": true
-      },
-      "fixable": "code",
-      "hasSuggestions": true,
-      "name": "react-hooks/static-components",
-      "plugin": "react-hooks"
-    },
-    "react-hooks/use-memo": {
-      "type": "problem",
-      "docs": {
-        "description": "Validates usage of the useMemo() hook against common mistakes. See [`useMemo()` docs](https://react.dev/reference/react/useMemo) for more information.",
-        "recommended": true
-      },
-      "fixable": "code",
-      "hasSuggestions": true,
-      "name": "react-hooks/use-memo",
-      "plugin": "react-hooks"
-    },
-    "react-hooks/void-use-memo": {
-      "type": "problem",
-      "docs": {
-        "description": "Validates that useMemos always return a value and that the result of the useMemo is used by the component/hook. See [`useMemo()` docs](https://react.dev/reference/react/useMemo) for more information.",
-        "recommended": false
-      },
-      "fixable": "code",
-      "hasSuggestions": true,
-      "name": "react-hooks/void-use-memo",
-      "plugin": "react-hooks"
-    },
-    "react-hooks/component-hook-factories": {
-      "type": "problem",
-      "docs": {
-        "description": "Validates against higher order functions defining nested components or hooks. Components and hooks should be defined at the module level",
-        "recommended": true
-      },
-      "fixable": "code",
-      "hasSuggestions": true,
-      "name": "react-hooks/component-hook-factories",
-      "plugin": "react-hooks"
-    },
-    "react-hooks/preserve-manual-memoization": {
-      "type": "problem",
-      "docs": {
-        "description": "Validates that existing manual memoized is preserved by the compiler. React Compiler will only compile components and hooks if its inference [matches or exceeds the existing manual memoization](https://react.dev/learn/react-compiler/introduction#what-should-i-do-about-usememo-usecallback-and-reactmemo)",
-        "recommended": true
-      },
-      "fixable": "code",
-      "hasSuggestions": true,
-      "name": "react-hooks/preserve-manual-memoization",
-      "plugin": "react-hooks"
-    },
-    "react-hooks/incompatible-library": {
-      "type": "problem",
-      "docs": {
-        "description": "Validates against usage of libraries which are incompatible with memoization (manual or automatic)",
-        "recommended": true
-      },
-      "fixable": "code",
-      "hasSuggestions": true,
-      "name": "react-hooks/incompatible-library",
-      "plugin": "react-hooks"
-    },
-    "react-hooks/immutability": {
-      "type": "problem",
-      "docs": {
-        "description": "Validates against mutating props, state, and other values that [are immutable](https://react.dev/reference/rules/components-and-hooks-must-be-pure#props-and-state-are-immutable)",
-        "recommended": true
-      },
-      "fixable": "code",
-      "hasSuggestions": true,
-      "name": "react-hooks/immutability",
-      "plugin": "react-hooks"
-    },
-    "react-hooks/globals": {
-      "type": "problem",
-      "docs": {
-        "description": "Validates against assignment/mutation of globals during render, part of ensuring that [side effects must render outside of render](https://react.dev/reference/rules/components-and-hooks-must-be-pure#side-effects-must-run-outside-of-render)",
-        "recommended": true
-      },
-      "fixable": "code",
-      "hasSuggestions": true,
-      "name": "react-hooks/globals",
-      "plugin": "react-hooks"
-    },
-    "react-hooks/refs": {
-      "type": "problem",
-      "docs": {
-        "description": "Validates correct usage of refs, not reading/writing during render. See the \"pitfalls\" section in [`useRef()` usage](https://react.dev/reference/react/useRef#usage)",
-        "recommended": true
-      },
-      "fixable": "code",
-      "hasSuggestions": true,
-      "name": "react-hooks/refs",
-      "plugin": "react-hooks"
-    },
-    "react-hooks/memoized-effect-dependencies": {
-      "type": "problem",
-      "docs": {
-        "description": "Validates that effect dependencies are memoized",
-        "recommended": false
-      },
-      "fixable": "code",
-      "hasSuggestions": true,
-      "name": "react-hooks/memoized-effect-dependencies",
-      "plugin": "react-hooks"
-    },
-    "react-hooks/set-state-in-effect": {
-      "type": "problem",
-      "docs": {
-        "description": "Validates against calling setState synchronously in an effect, which can lead to re-renders that degrade performance",
-        "recommended": true
-      },
-      "fixable": "code",
-      "hasSuggestions": true,
-      "name": "react-hooks/set-state-in-effect",
-      "plugin": "react-hooks"
-    },
-    "react-hooks/no-deriving-state-in-effects": {
-      "type": "problem",
-      "docs": {
-        "description": "Validates against deriving values from state in an effect",
-        "recommended": false
-      },
-      "fixable": "code",
-      "hasSuggestions": true,
-      "name": "react-hooks/no-deriving-state-in-effects",
-      "plugin": "react-hooks"
-    },
-    "react-hooks/error-boundaries": {
-      "type": "problem",
-      "docs": {
-        "description": "Validates usage of error boundaries instead of try/catch for errors in child components",
-        "recommended": true
-      },
-      "fixable": "code",
-      "hasSuggestions": true,
-      "name": "react-hooks/error-boundaries",
-      "plugin": "react-hooks"
-    },
-    "react-hooks/purity": {
-      "type": "problem",
-      "docs": {
-        "description": "Validates that [components/hooks are pure](https://react.dev/reference/rules/components-and-hooks-must-be-pure) by checking that they do not call known-impure functions",
-        "recommended": true
-      },
-      "fixable": "code",
-      "hasSuggestions": true,
-      "name": "react-hooks/purity",
-      "plugin": "react-hooks"
-    },
-    "react-hooks/set-state-in-render": {
-      "type": "problem",
-      "docs": {
-        "description": "Validates against setting state during render, which can trigger additional renders and potential infinite render loops",
-        "recommended": true
-      },
-      "fixable": "code",
-      "hasSuggestions": true,
-      "name": "react-hooks/set-state-in-render",
-      "plugin": "react-hooks"
-    },
-    "react-hooks/invariant": {
-      "type": "problem",
-      "docs": {
-        "description": "Internal invariants",
-        "recommended": false
-      },
-      "fixable": "code",
-      "hasSuggestions": true,
-      "name": "react-hooks/invariant",
-      "plugin": "react-hooks"
-    },
-    "react-hooks/todo": {
-      "type": "problem",
-      "docs": {
-        "description": "Unimplemented features",
-        "recommended": false
-      },
-      "fixable": "code",
-      "hasSuggestions": true,
-      "name": "react-hooks/todo",
-      "plugin": "react-hooks"
-    },
-    "react-hooks/syntax": {
-      "type": "problem",
-      "docs": {
-        "description": "Validates against invalid syntax",
-        "recommended": false
-      },
-      "fixable": "code",
-      "hasSuggestions": true,
-      "name": "react-hooks/syntax",
-      "plugin": "react-hooks"
-    },
-    "react-hooks/unsupported-syntax": {
-      "type": "problem",
-      "docs": {
-        "description": "Validates against syntax that we do not plan to support in React Compiler",
-        "recommended": true
-      },
-      "fixable": "code",
-      "hasSuggestions": true,
-      "name": "react-hooks/unsupported-syntax",
-      "plugin": "react-hooks"
-    },
-    "react-hooks/config": {
-      "type": "problem",
-      "docs": {
-        "description": "Validates the compiler configuration options",
-        "recommended": true
-      },
-      "fixable": "code",
-      "hasSuggestions": true,
-      "name": "react-hooks/config",
-      "plugin": "react-hooks"
-    },
-    "react-hooks/gating": {
-      "type": "problem",
-      "docs": {
-        "description": "Validates configuration of [gating mode](https://react.dev/reference/react-compiler/gating)",
-        "recommended": true
-      },
-      "fixable": "code",
-      "hasSuggestions": true,
-      "name": "react-hooks/gating",
-      "plugin": "react-hooks"
-    },
-    "react-hooks/rule-suppression": {
-      "type": "problem",
-      "docs": {
-        "description": "Validates against suppression of other rules",
-        "recommended": false
-      },
-      "fixable": "code",
-      "hasSuggestions": true,
-      "name": "react-hooks/rule-suppression",
-      "plugin": "react-hooks"
-    },
-    "react-hooks/automatic-effect-dependencies": {
-      "type": "problem",
-      "docs": {
-        "description": "Verifies that automatic effect dependencies are compiled if opted-in",
-        "recommended": false
-      },
-      "fixable": "code",
-      "hasSuggestions": true,
-      "name": "react-hooks/automatic-effect-dependencies",
-      "plugin": "react-hooks"
-    },
-    "react-hooks/fire": {
-      "type": "problem",
-      "docs": {
-        "description": "Validates usage of `fire`",
-        "recommended": false
-      },
-      "fixable": "code",
-      "hasSuggestions": true,
-      "name": "react-hooks/fire",
-      "plugin": "react-hooks"
-    },
-    "react-hooks/fbt": {
-      "type": "problem",
-      "docs": {
-        "description": "Validates usage of fbt",
-        "recommended": false
-      },
-      "fixable": "code",
-      "hasSuggestions": true,
-      "name": "react-hooks/fbt",
-      "plugin": "react-hooks"
-    },
-    "react-hooks-extra/no-direct-set-state-in-use-effect": {
-      "type": "problem",
-      "docs": {
-        "description": "Disallows direct calls to the ['set' function](https://react.dev/reference/react/useState#setstate) of 'useState' in 'useEffect'.",
-        "url": "https://eslint-react.xyz/docs/rules/hooks-extra-no-direct-set-state-in-use-effect"
-      },
-      "name": "react-hooks-extra/no-direct-set-state-in-use-effect",
-      "plugin": "react-hooks-extra"
-    },
-    "react-naming-convention/component-name": {
-      "type": "problem",
-      "defaultOptions": [
-        {
-          "allowAllCaps": false,
-          "excepts": [],
-          "rule": "PascalCase"
-        }
-      ],
-      "docs": {
-        "description": "Enforces naming conventions for components.",
-        "url": "https://eslint-react.xyz/docs/rules/naming-convention-component-name"
-      },
-      "name": "react-naming-convention/component-name",
-      "plugin": "react-naming-convention"
     },
     "react-naming-convention/context-name": {
       "type": "suggestion",
@@ -24084,55 +23837,6 @@
       "name": "react-naming-convention/ref-name",
       "plugin": "react-naming-convention"
     },
-    "react-naming-convention/use-state": {
-      "type": "suggestion",
-      "docs": {
-        "description": "Enforces destructuring and symmetric naming of the 'useState' hook value and setter.",
-        "url": "https://eslint-react.xyz/docs/rules/naming-convention-use-state"
-      },
-      "name": "react-naming-convention/use-state",
-      "plugin": "react-naming-convention"
-    },
-    "react-naming-convention/filename": {
-      "type": "suggestion",
-      "defaultOptions": [
-        {
-          "excepts": [
-            "index",
-            "/^_/",
-            "/^\\$/",
-            "/^[0-9]+$/",
-            "/^\\[[^\\]]+\\]$/"
-          ],
-          "rule": "PascalCase"
-        }
-      ],
-      "docs": {
-        "description": "Enforces consistent file-naming conventions.",
-        "url": "https://eslint-react.xyz/docs/rules/naming-convention-filename"
-      },
-      "name": "react-naming-convention/filename",
-      "plugin": "react-naming-convention"
-    },
-    "react-naming-convention/filename-extension": {
-      "type": "suggestion",
-      "defaultOptions": [
-        {
-          "allow": "as-needed",
-          "extensions": [
-            ".jsx",
-            ".tsx"
-          ],
-          "ignoreFilesWithoutCode": false
-        }
-      ],
-      "docs": {
-        "description": "Enforces consistent use of the JSX file extension.",
-        "url": "https://eslint-react.xyz/docs/rules/naming-convention-filename-extension"
-      },
-      "name": "react-naming-convention/filename-extension",
-      "plugin": "react-naming-convention"
-    },
     "react-refresh/only-export-components": {
       "type": "problem",
       "name": "react-refresh/only-export-components",
@@ -24141,7 +23845,7 @@
     "react-rsc/function-definition": {
       "type": "problem",
       "docs": {
-        "description": "Validate and transform React Client/Server Function definitions.",
+        "description": "Validates and transforms React Client/Server Function definitions.",
         "url": "https://eslint-react.xyz/docs/rules/function-definition"
       },
       "fixable": "code",
@@ -24655,6 +24359,20 @@
       "name": "svelte/max-attributes-per-line",
       "plugin": "svelte"
     },
+    "svelte/max-lines-per-block": {
+      "docs": {
+        "description": "enforce maximum number of lines in svelte component blocks",
+        "category": "Stylistic Issues",
+        "recommended": false,
+        "conflictWithPrettier": false,
+        "url": "https://sveltejs.github.io/eslint-plugin-svelte/rules/max-lines-per-block/",
+        "ruleId": "svelte/max-lines-per-block",
+        "ruleName": "max-lines-per-block"
+      },
+      "type": "suggestion",
+      "name": "svelte/max-lines-per-block",
+      "plugin": "svelte"
+    },
     "svelte/mustache-spacing": {
       "docs": {
         "description": "enforce unified spacing in mustache",
@@ -25010,7 +24728,7 @@
     },
     "svelte/no-navigation-without-resolve": {
       "docs": {
-        "description": "disallow using navigation (links, goto, pushState, replaceState) without a resolve()",
+        "description": "disallow internal navigation (links, `goto()`, `pushState()`, `replaceState()`) without a `resolve()`",
         "category": "SvelteKit",
         "recommended": true,
         "url": "https://sveltejs.github.io/eslint-plugin-svelte/rules/no-navigation-without-resolve/",
@@ -25849,6 +25567,19 @@
       },
       "type": "problem",
       "name": "astro/no-exports-from-components",
+      "plugin": "astro"
+    },
+    "astro/no-prerender-export-outside-pages": {
+      "docs": {
+        "description": "disallow `prerender` export outside of pages/ directory",
+        "category": "Possible Errors",
+        "recommended": false,
+        "url": "https://ota-meshi.github.io/eslint-plugin-astro/rules/no-prerender-export-outside-pages/",
+        "ruleId": "astro/no-prerender-export-outside-pages",
+        "ruleName": "no-prerender-export-outside-pages"
+      },
+      "type": "problem",
+      "name": "astro/no-prerender-export-outside-pages",
       "plugin": "astro"
     },
     "astro/no-set-html-directive": {
@@ -28330,6 +28061,19 @@
       "name": "markdown/fenced-code-language",
       "plugin": "markdown"
     },
+    "markdown/fenced-code-meta": {
+      "type": "problem",
+      "docs": {
+        "recommended": false,
+        "description": "Require or disallow metadata for fenced code blocks",
+        "url": "https://github.com/eslint/markdown/blob/main/docs/rules/fenced-code-meta.md"
+      },
+      "defaultOptions": [
+        "always"
+      ],
+      "name": "markdown/fenced-code-meta",
+      "plugin": "markdown"
+    },
     "markdown/heading-increment": {
       "type": "problem",
       "docs": {
@@ -28367,7 +28111,8 @@
           "allowDefinitions": [
             "//"
           ],
-          "allowFootnoteDefinitions": []
+          "allowFootnoteDefinitions": [],
+          "checkFootnoteDefinitions": true
         }
       ],
       "name": "markdown/no-duplicate-definitions",
@@ -28563,7 +28308,8 @@
           "allowDefinitions": [
             "//"
           ],
-          "allowFootnoteDefinitions": []
+          "allowFootnoteDefinitions": [],
+          "checkFootnoteDefinitions": true
         }
       ],
       "name": "markdown/no-unused-definitions",
@@ -29721,7 +29467,7 @@
     }
   ],
   "meta": {
-    "lastUpdate": 1773736810780,
+    "lastUpdate": 1777955273289,
     "basePath": "",
     "configPath": ""
   }
