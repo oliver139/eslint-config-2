@@ -39,7 +39,7 @@ jobs:
         run: pnpm build
 
       - name: Try to build the ESLint config preview site
-        run: pnpm dlx --allow-builds @eslint/config-inspector build --base "/eslint-config-2/"
+        run: pnpm dlx --allow-build @eslint/config-inspector build --base "/eslint-config-2/"
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
