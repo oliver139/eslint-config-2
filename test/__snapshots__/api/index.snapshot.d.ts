@@ -1964,7 +1964,7 @@ export interface RuleOptions {
   'yield-star-spacing'?: Linter.RuleEntry<YieldStarSpacing>;
   'yoda'?: Linter.RuleEntry<Yoda>;
 }
-export interface StylisticConfig extends Pick<StylisticCustomizeOptions, 'indent' | 'quotes' | 'jsx' | 'semi' | 'experimental'> {}
+export interface StylisticConfig extends Pick<StylisticCustomizeOptions, 'indent' | 'quotes' | 'jsx' | 'semi' | 'braceStyle' | 'experimental'> {}
 export interface StylisticOptions extends StylisticConfig, OptionsOverrides {
   lessOpinionated?: boolean;
 }
