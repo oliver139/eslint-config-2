@@ -183,7 +183,7 @@ export async function vue(
                 multiline: 'always',
                 singleline: 'always',
               }],
-              'vue/brace-style': ['error', braceStyle, { allowSingleLine: false }],
+              'vue/brace-style': ['error', braceStyle, { allowSingleLine: true }],
               'vue/comma-dangle': ['error', 'always-multiline'],
               'vue/comma-spacing': ['error', { after: true, before: false }],
               'vue/comma-style': ['error', 'last'],
