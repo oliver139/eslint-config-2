@@ -168,6 +168,14 @@ export function antfu(
     command(),
   )
 
+  if (enablePerfectionist) {
+    configs.push(
+      perfectionist({
+        overrides: getOverrides(options, 'perfectionist'),
+      }),
+    )
+  }
+
   if (enableNode) {
     configs.push(
       node(),
@@ -203,14 +211,6 @@ export function antfu(
   if (enableUnicorn) {
     configs.push(
       unicorn(enableUnicorn === true ? {} : enableUnicorn),
-    )
-  }
-
-  if (enablePerfectionist) {
-    configs.push(
-      perfectionist({
-        overrides: getOverrides(options, 'perfectionist'),
-      }),
     )
   }
 
