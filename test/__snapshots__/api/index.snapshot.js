@@ -59,7 +59,7 @@ export async function markdown(_) {}
 export async function nextjs(_) {}
 export async function node() {}
 export var parserPlain /* const */
-export async function perfectionist() {}
+export async function perfectionist(_) {}
 export async function pnpm(_) {}
 export async function react(_) {}
 export async function regexp(_) {}
